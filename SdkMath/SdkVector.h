@@ -83,8 +83,6 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  };
 
-vectum
-
  template<class Pi>
   public:
    #define PI 3.14
