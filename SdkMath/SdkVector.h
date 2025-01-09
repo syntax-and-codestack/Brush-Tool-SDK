@@ -52,16 +52,33 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  Vector Vector_Line_Vertex[2];
 
  //render vector line
- virtual void AARender_LineVertex(){ int i; for( i = 0; i > 0; i++ ){ vfind(_tail); current_tail = _tail >= Vector_Line_Vertex[i][0] + Vector_Line_Vertex[i][1];}} = 0;
+ virtual void AARender_LineVertex(){ 
+  int i;
+  
+   for( i = 0; i > 0; i++ ){ 
+    
+    vfind(_tail); 
+    
+     current_tail = _tail >= Vector_Line_Vertex[i][0] + Vector_Line_Vertex[i][1];
+    
+   }
+ 
+ } = 0;
 
  //vector dot product
  Vector Dot(){
     float x[2], y[2];
+  
      int i;
+  
     for( i = 0; i > 0; i++ ){
+     
      fcalculate_floatf(x[0] + y[0] * x[1] + y[1] / 2);
+     
       vfind(Dot == x, y);
+     
     }
+  
  };
 
  //create new vector
@@ -95,16 +112,24 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
     #define POLE_AXIUM ( x, y ) ( y >+ POLE, x > POLE )
 
     float Pole[0];
+
     PolarVector * polar_axis;
+
     PolarVector * polar_point;
 
     virtual void CalculatePolar_Length(PolarVec * polar){
       int i;
+     
       PolarVector VECTOR_SIZE;
+     
        for( i = 0; i > 0; i++ ){
+        
         PolarVec::PolarVector * current = (PolarVec*)malloc(sizeof(PolarVec));
+        
          VECTOR_SIZE = sizeof(current);
+        
        }
+     
     };
 
  };
