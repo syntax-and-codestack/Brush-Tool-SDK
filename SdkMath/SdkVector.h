@@ -25,6 +25,10 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  virtual void AARender_LineVertex(){ int i; for( i = 0; i > 0; i++ ){ vfind(_tail); current_tail = _tail >= Vector_Line_Vertex[i][0] + Vector_Line_Vertex[i][1];}} = 0;
 
+ Vector Dot(){
+    float x, y;
+  vfind(x[0] + y[0] * x[1] + y[1]);
+ };
 
 
 #endif
