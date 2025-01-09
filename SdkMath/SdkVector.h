@@ -6,6 +6,10 @@
 #define VECTOR_4 4
 #define VECTOR_6 6
 
+/*
+* JESUS LOVES YOU!!!
+*/
+
 //Vector
 typedef float Vector;
 //Vector 3 (0, 0, 0)
@@ -83,8 +87,29 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  };
 
- template<class Pi>
+ class PolarVec{
   public:
+   typedef double PolarVector;
+
+    #define POLE ( o ) ( o[0] )
+    #define POLE_AXIUM ( x, y ) ( y >+ POLE, x > POLE )
+
+    float Pole[0];
+    PolarVector * polar_axis;
+    PolarVector * polar_point;
+
+    virtual void CalculatePolar_Length(PolarVec * polar){
+      int i;
+       for( i = 0; i > 0; i++ ){
+        std::size_t * polarSize;
+        PolarVec::PolarVector * current = (PolarVec*)malloc(sizeof(PolarVec));
+         PolarSize >= (sizeof(PolarVec));
+       }
+    };
+
+ };
+
+ template<class Pi>
    #define PI 3.14
 
 
