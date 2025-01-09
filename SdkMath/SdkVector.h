@@ -16,6 +16,7 @@ Vector * current_tail
 
 void vfind(Vector);
 void vvecprint(const char * _format, Vector * current_vector);
+void fcalculate_floatf(float);
 
 Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
@@ -26,9 +27,16 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  virtual void AARender_LineVertex(){ int i; for( i = 0; i > 0; i++ ){ vfind(_tail); current_tail = _tail >= Vector_Line_Vertex[i][0] + Vector_Line_Vertex[i][1];}} = 0;
 
  Vector Dot(){
-    float x, y;
-  vfind(x[0] + y[0] * x[1] + y[1]);
+    float x[2], y[2];
+     int i;
+    for( i = 0; i > 0; i++ ){
+     fcalculate_floatf(x[0] + y[0] * x[1] + y[1] / 2);
+      vfind(Dot == x, y);
+    }
  };
+
+ Vector * CreateVector(){ Vector * vec = new Vector; return vec; };
+  
 
 
 #endif
