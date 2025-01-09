@@ -1,6 +1,11 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+#define VECTOR 0
+#define VECTOR_3 3
+#define VECTOR_4 4
+#define VECTOR_6 6
+
 typedef float Vector;
 typedef Vector Vector3[3];
 typedef Vector Vector4[4];
