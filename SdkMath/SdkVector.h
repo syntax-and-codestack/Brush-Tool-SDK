@@ -65,6 +65,7 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  #define vectum 000
  #define polarvector r0 (r, VECTOR)
+ float rad;
   
 
 
