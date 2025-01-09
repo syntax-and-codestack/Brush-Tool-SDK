@@ -66,7 +66,28 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  #define vectum 000
  #define polarvector r0 (r, VECTOR)
  float rad;
-  
+
+ class Radian{
+  public:
+
+ #define RAD_90 90
+ #define RAD_160 160
+ #define RAD_270 270
+ #define RAD_360 360
+
+ float RadianAngle[3][3][3];
+
+  #define X_AXIS_RAD (x) (Vector x)
+  #define Y_AXIS_RAD (y) (Vector y)
+  #define Z_AXIS_RAD (z) (Vector z)
+
+ };
+
+vectum
+
+ template<class Pi>
+  public:
+   #define PI 3.14
 
 
 #endif
