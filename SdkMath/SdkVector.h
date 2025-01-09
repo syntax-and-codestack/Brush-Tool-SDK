@@ -62,6 +62,8 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  //create new vector
  Vector * CreateVector(){ Vector * vec = new Vector; return vec; };
+
+ #define vectum 000
   
 
 
