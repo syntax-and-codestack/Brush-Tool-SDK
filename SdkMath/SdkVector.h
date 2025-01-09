@@ -10,6 +10,7 @@ Vector _tail;
 Vector * current_tail
 
 void vfind(Vector);
+void vvecprint(const char * _format, Vector * current_vector);
 
 Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
