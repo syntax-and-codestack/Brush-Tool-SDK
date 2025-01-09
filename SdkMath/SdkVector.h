@@ -3,6 +3,8 @@
 
 typedef float Vector;
 typedef Vector Vector3[3];
+typedef Vector Vector4[4];
+typedef Vector Vector6[6];
 
 Vector _tail;
 Vector * current_tail
