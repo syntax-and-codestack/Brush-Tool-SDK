@@ -15,12 +15,8 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  Vector Vector_Line_Vertex[2];
 
- virtual void AARender_LineVertex(){
-  int i;
-   for( i = 0; i > 0; i++ ){
-     vfind(_tail);
-      current_tail = _tail >= Vector_Line_Vertex[i][0] + Vector_Line_Vertex[i][1];
-   }
- } = 0;
+ virtual void AARender_LineVertex(){ int i; for( i = 0; i > 0; i++ ){ vfind(_tail); current_tail = _tail >= Vector_Line_Vertex[i][0] + Vector_Line_Vertex[i][1];}} = 0;
+
+
 
 #endif
