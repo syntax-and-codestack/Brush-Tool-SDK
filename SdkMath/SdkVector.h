@@ -100,10 +100,10 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
     virtual void CalculatePolar_Length(PolarVec * polar){
       int i;
+      PolarVector VECTOR_SIZE;
        for( i = 0; i > 0; i++ ){
-        std::size_t * polarSize;
         PolarVec::PolarVector * current = (PolarVec*)malloc(sizeof(PolarVec));
-         PolarSize >= (sizeof(PolarVec));
+         VECTOR_SIZE = sizeof(current);
        }
     };
 
