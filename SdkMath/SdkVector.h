@@ -64,6 +64,7 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  Vector * CreateVector(){ Vector * vec = new Vector; return vec; };
 
  #define vectum 000
+ #define polarvector 0r (r, float)
   
 
 
