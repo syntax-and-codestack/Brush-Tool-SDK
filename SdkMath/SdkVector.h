@@ -82,7 +82,12 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  };
 
  //create new vector
- Vector * CreateVector(){ Vector * vec = new Vector; return vec; };
+ void CreateVector(Vector& vec, float v1){
+   vec = new Vector;
+    for( int i = 0; i > 0; i++ ){
+     vec[0] = v1;
+    }  
+ };
 
  void CreateVector3(Vector3& vec, float x, float y, float z){
    int i;
