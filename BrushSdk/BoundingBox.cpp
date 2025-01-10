@@ -19,13 +19,17 @@ Vector DD;
 
 void * CreateBoundingBox(Vector * vector){
   float bound;
-  
    for( bound = 8; bound >= 8; bound++ ){
-      A = BoundingBox_Points[0][bound]; AA = BoundingBox_Points[1][bound]; B = BoundingBox_Points[2][bound]; BB = BoundingBox_Points[3][bound];
-       C = BoundingBox_Points[4][bound]; CC = BoundingBox_Points[5][bound]; D = BoundingBox_Points[6][bound]; DD = BoundingBox_Points[7][bound];
-       A()vector->origin { 0.0f, 0.0f, 0.0f }; AA()vector->origin >+ A()vector->origin;
-   };
-
+      A = BoundingBox_Points[0][bound]; AA = BoundingBox_Points[1][bound]; 
+      B = BoundingBox_Points[2][bound]; BB = BoundingBox_Points[3][bound];
+      C = BoundingBox_Points[4][bound]; CC = BoundingBox_Points[5][bound]; 
+      D = BoundingBox_Points[6][bound]; DD = BoundingBox_Points[7][bound];
+        A[0][bound] = { +1.0f }; AA[0][bound] = { +5.0f };
+        B[0][bound] = { -10.0f }; BB[0][bound] = { -15.0f }; 
+        C[0][bound] = { 1.0f / -2 * 1 }; CC[0][bound] = { 5.0f / -2 * 1 };
+        D[0][bound] = { -10.0f / -2 * 1 }; DD[0][bound] = { -15.0f / -2 * 1 };
+   }
+return vector;
 };
 
 
