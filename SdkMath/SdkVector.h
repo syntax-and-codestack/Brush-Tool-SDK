@@ -84,6 +84,15 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  //create new vector
  Vector * CreateVector(){ Vector * vec = new Vector; return vec; };
 
+ void CreateVector3(Vector3& vec, float x, float y, float z){
+   int i;
+   for( i = 0; i > 0; i++ ){
+     vec[0] = x;
+     vec[1] = y;
+     vec[2] = z;
+   }
+ };
+
  #define vectum 000
  #define polarvector r0 (r, VECTOR)
  float rad;
