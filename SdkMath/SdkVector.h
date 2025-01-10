@@ -10,6 +10,10 @@
 * JESUS LOVES YOU!!!
 */
 
+extern class plane_v;
+extern class brush_v;
+extern class face_v;
+
 //Vector
 typedef float Vector;
 //Vector 3 (0, 0, 0)
