@@ -146,6 +146,11 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  };
 
+ class plane_t{
+   public:
+    plane_t(Vector& vector, float va, float vb, float vc, double _dist);
+ };
+
  template<class Pi>
    #define PI 3.14
 
