@@ -49,8 +49,11 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  */
  *
  */
+  
+ /*!DONT USE LINE!*/
  Vector Vector_Line_Vertex[2];
 
+/*
  //render vector line
  virtual void AARender_LineVertex(){ 
   int i;
@@ -64,7 +67,7 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
    }
  
  } = 0;
-
+*/
  //vector dot product
  Vector Dot(){
     float x[2], y[2];
