@@ -17,9 +17,9 @@ brush_v ** brush_current;
 extern class face_v; 
 face_v ** face_current;
 
-typedef struct plane_c = static_cast<class>(plane_v);
-typedef struct brush_c = static_cast<class>(brush_v);
-typedef struct face_c = static_cast<class>(face_v);
+typedef plane_v plane_c;
+typedef brush_v brush_c;
+typedef face_v face_c;
 
 //Vector
 typedef float Vector;
@@ -36,11 +36,7 @@ Vector _tail;
 Vector * current_tail
 
 //call vector
-void vfind(Vector);
-//print vector format
-void vvecprint(const char * _format, Vector * current_vector);
-//calculate float value
-void fcalculate_floatf(float);
+void vfind(Vector& vector);
 
 //origin coordinates
 Vector3 Origin = { 0.0f, 0.0f, 0.0f };
