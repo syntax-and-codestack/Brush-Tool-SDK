@@ -10,9 +10,12 @@
 * JESUS LOVES YOU!!!
 */
 
-extern class plane_v; plane_v ** plane_current;
-extern class brush_v; brush_v ** brush_current;
-extern class face_v; face_v ** face_current;
+extern class plane_v; 
+plane_v ** plane_current;
+extern class brush_v; 
+brush_v ** brush_current;
+extern class face_v; 
+face_v ** face_current;
 
 typedef struct plane_c = static_cast<class>(plane_v);
 typedef struct brush_c = static_cast<class>(brush_v);
