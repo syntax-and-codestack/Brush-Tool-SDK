@@ -10,9 +10,9 @@
 * JESUS LOVES YOU!!!
 */
 
-extern class plane_v;
-extern class brush_v;
-extern class face_v;
+extern class plane_v; plane_v ** plane_current;
+extern class brush_v; brush_v ** brush_current;
+extern class face_v; face_v ** face_current;
 
 //Vector
 typedef float Vector;
