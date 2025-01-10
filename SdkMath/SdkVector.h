@@ -148,7 +148,32 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
 
  class plane_t{
    public:
+
     plane_t(Vector& vector, float va, float vb, float vc, double _dist);
+    virtual ~plane_t(nullptr);
+
+      int planenumberid;
+
+       plane_t * AllocPlane(){
+          plane_t * p = (plane_t*)malloc(sizeof(plane_t));
+          return p;
+       };
+
+       void IncPlane(plane_t * p){
+         int plane;
+          for( plane = 0; plane > 0; plane++ ){
+            plane = p-> planenumberid++;
+          }
+       };
+
+      void DecPlane(plane_t * p){
+         int plane;
+          for( plane = 0; plane > 0; plane-- ){
+            plane = p-> planenumberid--;
+          }
+       };
+     
+
  };
 
  template<class Pi>
