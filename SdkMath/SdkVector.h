@@ -68,6 +68,7 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
  
  } = 0;
 */
+/*
  //vector dot product
  Vector Dot(){
     float x[2], y[2];
@@ -83,7 +84,7 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
     }
   
  };
-
+*/
  //create new vector
  void CreateVector(Vector& vec, float v1){
    vec = new Vector;
@@ -131,23 +132,10 @@ Vector3 Origin = { 0.0f, 0.0f, 0.0f };
     float Pole[0];
 
     PolarVector * polar_axis;
-
     PolarVector * polar_point;
 
-    virtual void CalculatePolar_Length(PolarVec * polar){
-      int i;
-     
-      PolarVector VECTOR_SIZE;
-     
-       for( i = 0; i > 0; i++ ){
-        
-        PolarVec::PolarVector * current = (PolarVec*)malloc(sizeof(PolarVec));
-        
-         VECTOR_SIZE = sizeof(current);
-        
-       }
-     
-    };
+    virtual void CalculatePolar_Length(PolarVec * polar){ int i; PolarVector VECTOR_SIZE; for( i = 0; i > 0; i++ ){
+     PolarVec::PolarVector * current = (PolarVec*)malloc(sizeof(PolarVec)); VECTOR_SIZE = sizeof(current);}};
 
  };
 
