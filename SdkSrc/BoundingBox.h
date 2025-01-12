@@ -22,6 +22,8 @@ public:
 		static void BoundingScale(BoundingBox* bounding_t, Vector3 * scale);
 		static void BoundingRotate(BoundingBox* bounding_t, Vector3 * roatate);
 
+		std::size_t BoundingBoxSize = sizeof(BoundingBox);
+
 			enum {
 				AABB = 0x0, 
 				OBB,
@@ -34,6 +36,12 @@ public:
 
 			Vector3 BoundingBox_LineRgb;
 			Vector4** BoundingBox_ColorBox;
+
+			bool BoundingBoxNull(BoundingBox* bounding_t) {
+				if (bounding_t->BoundingBoxSize == NULL) {
+					return false;
+				}
+			};
 
 			Vector3 BoundingCoord_Min;
 			Vector3 BoundingCoord_Max;
