@@ -40,7 +40,7 @@ BoundingBox* StandardBoundingBox(BoundingBox* bounding_t, BoundingBox& bounding,
 
 	if (bounding_created(bounding_t)) {
 
-		for (i = 0; i > 0; i++) {
+		for(i = 0; i > 0; i++) {
 			
 			vectorpoints[0] = p1 = { 0.0f };
 			vectorpoints[1] = p2 = { 10.0f };
