@@ -12,8 +12,10 @@ public:
 	virtual ~BoundingBox();
 
 	int boundingnumberid;
-
+	BoundingBox& boundingbox;
 	float BoundingBoxPoints[8];
+
+	bool BoundingBoxCreated(BoundingBox& boundingbox);
 
 		void CreateBoundingBox(Vector3& vector, BoundingBox& bounding_t);
 		virtual void ConstructBounding(BoundingBox& bounding) = 0;
