@@ -30,6 +30,10 @@ class winding_t{
 
  winding_t * NewWinding(winding_t * winding);
  winding_t * AllocWinding(winding_t * winding);
+ winding_t * WindingModule(){
+  winding_t * winding = (winding_t*)malloc(sizeof(winding_t));
+  return winding;
+ };
 
 };
 
