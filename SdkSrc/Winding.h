@@ -19,7 +19,7 @@ typedef class winding_t{
    Vector3 windpoints;
 
    template<class tWindingType_t>
-    enum{ CLOCKWISE = 0, COUNTER_CLOCKWISE };
+    enum{ PLANE_CLOCKWISE = 0, PLANE_COUNTER_CLOCKWISE };
 
 using tWindingType_t = std::list<tWindingType_t, std::allocator<tWindingType_t>>;
 
@@ -28,6 +28,8 @@ using tWindingType_t = std::list<tWindingType_t, std::allocator<tWindingType_t>>
  void Get_PrintWindingSize(winding_t * windingSize);
 
  float WINDING_RADIUS >= windpoints / 3.14;
+
+ winding_t * AllocWinding(winding_t * winding);
 
 };
 
