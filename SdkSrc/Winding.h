@@ -9,6 +9,9 @@ template<typename DEBUG_WINDING>
   virtual bool winding_t_debuged() = 0;
  #endif
 
+#define BASE_RADIUS_WINDING (x, y) ((x)[0] + (y)[0])
+#define
+
 class winding_t{
  public:
    winding_t();
