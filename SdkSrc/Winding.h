@@ -7,7 +7,7 @@
 template<typename DEBUG_WINDING>
  #ifdef __DEBUG_WINDING
  #define __DEBUG_WINDING
-   bool
+  virtual bool winding_t_debuged() = 0;
  #endif
 
 #endif
