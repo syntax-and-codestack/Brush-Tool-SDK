@@ -3,6 +3,7 @@
 #define WINDING_H
 
 #include "includes/SdkVector.h"
+
  #ifdef __DEBUG_WINDING
  #define __DEBUG_WINDING
 template<typename DEBUG_WINDING>
