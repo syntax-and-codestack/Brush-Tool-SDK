@@ -23,7 +23,8 @@ typedef class winding_t{
 
 using tWindingType_t = std::list<tWindingType_t, std::allocator<tWindingType_t>>;
 
- virtual void t_ConsturctWinding() = 0;
+ virtual void t_ConsturctWinding(winding_t * construct_t) = 0;
+ std::size_t PrintWindingSize_t = sizeof(winding_t);
 
 };
 
