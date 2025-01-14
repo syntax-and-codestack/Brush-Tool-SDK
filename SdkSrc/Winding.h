@@ -37,6 +37,11 @@ class winding_t{
   return winding;
  };
  void CallWindingType_t(winding_t * windingType_t);
+ void PrintWinding(static char * windingbuffer, const char * windingname, float * windingf);
+
+  struct __GLOBALWINDING_TABLE_{
+   const int MAX_WINDING_NUMBER[10000];
+  };
 
 };
 
