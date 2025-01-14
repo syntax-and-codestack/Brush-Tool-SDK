@@ -10,7 +10,7 @@ template<typename DEBUG_WINDING>
  #endif
 
 #define BASE_RADIUS_WINDING (x, y) ((x)[0] + (y)[0])
-#define
+#define WINDING_PI 3.14 / 2
 
 class winding_t{
  public:
