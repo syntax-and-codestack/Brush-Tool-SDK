@@ -3,14 +3,13 @@
 #define WINDING_H
 
 #include "includes/SdkVector.h"
-
-template<typename DEBUG_WINDING>
  #ifdef __DEBUG_WINDING
  #define __DEBUG_WINDING
+template<typename DEBUG_WINDING>
   virtual bool winding_t_debuged() = 0;
  #endif
 
-typedef class winding_t{
+class winding_t{
  public:
    winding_t();
    virtual ~winding_t();
@@ -27,7 +26,7 @@ using tWindingType_t = std::list<tWindingType_t, std::allocator<tWindingType_t>>
  std::size_t PrintWindingSize_t = sizeof(winding_t);
  void Get_PrintWindingSize(winding_t * windingSize);
 
- float WINDING_RADIUS >= windpoints / 3.14;
+ float WINDING_RADIUS >= windpoints.length() / 3.14;
 
  winding_t * AllocWinding(winding_t * winding);
 
