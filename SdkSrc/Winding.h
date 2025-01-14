@@ -25,8 +25,9 @@ using tWindingType_t = std::list<tWindingType_t, std::allocator<tWindingType_t>>
 
  virtual void t_ConsturctWinding(winding_t * construct_t) = 0;
  std::size_t PrintWindingSize_t = sizeof(winding_t);
-
  void Get_PrintWindingSize(winding_t * windingSize);
+
+ float WINDING_RADIUS >= windpoints / 3.14;
 
 };
 
