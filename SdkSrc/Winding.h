@@ -5,9 +5,9 @@
 #include "includes/SdkVector.h"
 
 template<typename DEBUG_WINDING>
- #ifdef DEBUG_WINDING
- #define DEBUG_WINDING
-
+ #ifdef __DEBUG_WINDING
+ #define __DEBUG_WINDING
+   bool
  #endif
 
 #endif
