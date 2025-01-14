@@ -33,6 +33,7 @@ class winding_t{
   winding_t * winding = (winding_t*)malloc(sizeof(winding_t));
   return winding;
  };
+ void CallWindingType_t(winding_t * windingType_t);
 
 };
 
