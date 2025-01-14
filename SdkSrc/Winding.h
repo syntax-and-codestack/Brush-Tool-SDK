@@ -17,8 +17,7 @@ class winding_t{
    int numpoints[2];
    Vector3 windpoints;
 
-   template<class tWindingType_t>
-   enum{ PLANE_CLOCKWISE = 0, PLANE_COUNTER_CLOCKWISE };
+   enum{ PLANE_CLOCKWISE = 0, PLANE_COUNTER_CLOCKWISE }tWindingType_t;
 
    using tWindingType_t = std::list<tWindingType_t, std::allocator<tWindingType_t>>;
 
