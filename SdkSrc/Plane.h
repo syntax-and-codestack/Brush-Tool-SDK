@@ -47,6 +47,7 @@ virtual void D3DPlane() = 0;
 virtual void NormalPlane() = 0;
 virtual void GLPlane() = 0;
 
+void returnsize_t(plane_t * sizeof_plane_t);
 void planeshader(plane_t * p, const char * pShaderName);
 
 #ifndef PLANEPRIMIT_MODE
