@@ -1,4 +1,5 @@
 /*Plane.h*/
+#include <string>
 #include "includes/SdkVector.h"
 #ifndef PLANE_H
 #define PLANE_H
@@ -18,6 +19,8 @@ public:
  Vector normal;
  Vector3 planevectors;
  float _dist;
+
+std::size_t PlaneSize = sizeof(plane_t);
 
 virtual bool resetplane(plane_t * p, winding_t * w) override = 0;
 
