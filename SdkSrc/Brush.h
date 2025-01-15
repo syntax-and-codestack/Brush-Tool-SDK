@@ -36,16 +36,33 @@ public:
    BRUSH TOOLS LIST
   :?
  */
+ //allocate a brush
  brush_t * alloc_brush(brush_t * b);
+ //create a new brush
  brush_t * new_brush(brush_t * b);
+ //signal previous brush
  brush_t * prev_brush(brush_t * previous_brush);
+ //signal current brush
  brush_t * current_brush(brush_t * current_brush);
+ //signal next brush
  brush_t ** next_brush(brush_t * next_brush);
+ //add brush to list
  brush_t * brush_addtolist(brush_t * b, brush_t * list);
+ //create brush winding
  brush_t * brush_winding(brush_t * b, winding_t * w);
+ //create brush plane
  brush_t * brush_plane(brush_t * b, winding_t * w, plane_t * p);
- brush_t * brush_shader(brush
+ //add shader to brush
+ brush_t * brush_shader(brush_t * b, const char * shader, float shader_winding_t[0], float shader_angle_t);
+ //brush epair values
+ brush_t * brush_epairtag(brush_t * b, const char * key, const char * value);
+ //brush minimum primit coord
+ brush_t * brushmin_coord(brush_t * b, Vector3 mincoord);
+ //brush maximum primit coord
+ brush_t * brushmax_coord(brush_t * b, Vector3 maxcoord);
 
+ template<class g_nBrushList>
+ using g_nBrushList = std::list<g_nBrushList, std::allocator<g_nBrushList>;
 
 };
 
