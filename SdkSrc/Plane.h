@@ -13,7 +13,7 @@ virtual bool debugged_plane_t() = 0;
 class plane_t{
 public:
  plane_t(Vector3& vectors, float ax, float by, float cz, Vector n, float d);
- virtual ~plane_t();
+ virtual ~plane_t(Vector3& vectors, float ax, float by, float cz, Vector n, float d);
 
  int planenumberid;
 
