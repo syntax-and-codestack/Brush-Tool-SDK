@@ -39,9 +39,15 @@ void windplane();
 #define NORMAL_PLANE_DESCRIPTOR 000x900 (Vector n)
 #define GL_PLANE_DESCRIPTOR 000x1000 (opengl32)
 
+plane_t ** d3d_plane();
+plane_t ** normal_plane();
+plane_t ** gl_plane();
+
 virtual void D3DPlane() = 0;
 virtual void NormalPlane() = 0;
 virtual void GLPlane() = 0;
+
+void planeshader(plane_t * p, const char * pShaderName);
 
 #ifndef PLANEPRIMIT_MODE
 #define PLANEPRIMIT_MODE
