@@ -35,6 +35,14 @@ enum { FREE = 0, PRIMIT = 1, WINDING = 2 }PlaneMode;
 void freeplane();
 void windplane();
 
+#define D3D_PLANE_DESCRIPTOR 000x800 (d3d)
+#define NORMAL_PLANE_DESCRIPTOR 000x900 (Vector n)
+#define GL_PLANE_DESCRIPTOR 000x1000 (opengl32)
+
+virtual void D3DPlane() = 0;
+virtual void NormalPlane() = 0;
+virtual void GLPlane() = 0;
+
 #ifndef PLANEPRIMIT_MODE
 #define PLANEPRIMIT_MODE
 bool planeprimitmode;
