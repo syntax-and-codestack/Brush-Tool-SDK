@@ -7,6 +7,7 @@
 
 #ifdef __PLANE_DEBUG
 template<class _PlaneDebugTool>
+/*debugged?*/
 virtual bool debugged_plane_t() = 0;
 #endif
 
