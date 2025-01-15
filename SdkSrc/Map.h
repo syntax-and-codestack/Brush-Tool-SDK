@@ -20,6 +20,7 @@ public:
     /*WINAPI Modules*/
     void WINAPI ApiObservor_GetMaps(Map * map, HWND hwndDatabase);
     void WINAPI ApiMap_GetTextures();
+    void WINAPI ApiMap_GetEntities();
     void WINAPI ApiMap_GetBrushes();
     void WINAPI ApiMap_GetModels();
     void WINAPI ApiMap_GetPlanes();
