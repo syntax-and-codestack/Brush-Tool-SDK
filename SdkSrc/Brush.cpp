@@ -6,7 +6,7 @@
 */
 
 int nBrushId = 0;
-const char * Brush_GlobalName;
+const char* Brush_GlobalName;
 bool BrushDrawn(void);
 
 /*
@@ -14,24 +14,37 @@ bool BrushDrawn(void);
   <?>
    : Create Plane Winding For All Faces On Brush
   <?>
-*/ 
-brush_t * CreateBrushWinding(winding_t * w, brush_t * b, plane_t * p, face_t * f){
-  int i;
-  Vector3& planevec = { 0.0f, 5.0f, 15.0f };
-  float ax; float by; float cz; 
-  Vector norm = {10.0f++};
-     if(p->global_plane.construct_plane_t(p->plane_current = p++), w->global_winding.construct_winding_t(w->current_id = w++)){
-       for(i = 0; w->global_winding.CallWindingType(w->PLANE_CLOCKWISE); i++){
-            w->WindingNumberId += p->planenumberid++;
-            p->plane_t(planevec, ax, by, cz, norm, p->_dist = 0.5f); 
-            p->plane_t = p->plane_t(planevec, ax, by, cz, norm, p->_dist = 0.5f)++;
-        
-              if(p->plane_t(planevec, ax, by, cz, norm, p->_dist = 0.5f)){
-                 p->WINDING == planenumberid;
-                 p->global_plane.freeplane(p);
-        }
-        printf("Winding Status: Brush Winding Created\n");
-     }
-  }
- return b->getmax_t;
+*/
+
+brush_t* CreateBrushWinding(winding_t* w, brush_t* b, plane_t* p, face_t* f) {
+    /*
+        winding variables
+    */
+    int i;
+    Vector3 planevec;
+    float ax; float by; float cz;
+    Vector norm = { 10.0f };
+                /*
+                    construct plane and winding types
+                */
+                p->global_plane.construct_plane_t(p->plane_current = p++, w->current_id = w++); 
+                w->global_winding.construct_winding_t(w->global_winding.NewWinding(w));
+                    w->createnumpoints(w->numpoints);
+                    p->global_plane.NewPlane();
+                    /*
+                        memory allocate size of current plane
+                    */
+                    plane_t* CurrentPlane = (plane_t*)malloc(sizeof(plane_t));
+                    CurrentPlane = p;
+                    /*
+                        free the plane
+                    */
+                    p->global_plane.freeplane(p = CurrentPlane);
+
+     /*
+        print winding message
+     */
+    printf("Winding Status: Brush winding created successfully\n");
+
+
 };
