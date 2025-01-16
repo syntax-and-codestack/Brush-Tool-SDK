@@ -71,6 +71,8 @@ public:
  #define HIGHLIGHT_PLANE (float r, float g, float b)
  #define HIGHLIGHT_FACE (float r, float g, float b)
 
+ void Highlight_SelectedBrush(HIGHLIGHT_BRUSH(float r, float g, float b(brush_t * b));
+
  #endif
 
  template<class g_nBrushList>
