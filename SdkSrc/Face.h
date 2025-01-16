@@ -26,7 +26,7 @@ public:
 
   float winding_face_points(winding_t * w, face_t * f, Vector n, plane_t * p){
     face_t& face;
-     if(face.wind_face(w->winding_t(), p->plane_t(), f->face_t(), n, 180))
+     if(face.wind_face(w->winding_t(), p->plane_t(), f->face_t(), n, 180(face)))
      {
        f->FacePoints * points = new f->FacePoints;
      }
