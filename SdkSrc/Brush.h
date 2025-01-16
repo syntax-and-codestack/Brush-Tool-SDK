@@ -33,8 +33,7 @@ public:
    int i;
     if(i){
      for(i = 0; i >= 0; i++){
-      std::size_t BrushSize = new sizeof(b->brush_module_t.ConstructPrimitBrush(b));
-      static cast<bool>(ConstructPrimitBrush(true));
+      std::size_t BrushSize = sizeof(b++);
      } 
     }
    return b->brush_module_t.FreeBrush(b);
