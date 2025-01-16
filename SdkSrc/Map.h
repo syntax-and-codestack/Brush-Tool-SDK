@@ -29,6 +29,7 @@ public:
     void WINAPI ApiMap_GetModels();
     void WINAPI ApiMap_GetPlanes();
     void WINAPI ApiMap_GetFaces();
+
     /*?:
       WINAPI Get Map Size
     :?*/
