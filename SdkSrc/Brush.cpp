@@ -27,9 +27,7 @@ brush_t * CreateBrushWinding(winding_t * w, brush_t * b, plane_t * p, face_t * f
                  p->WINDING == planenumberid;
                  p->global_plane.freeplane(p);
         }
-        #define CREATED_WINDING_MSG (const char * msg) (msg = "Winding Status: Brush Winding Created\n")
-
-        printf("%c", msg);
+        printf("Winding Status: Brush Winding Created\n");
      }
   }
  return b->getmax_t;
