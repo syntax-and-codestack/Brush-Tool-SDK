@@ -22,6 +22,8 @@ template<class __DEBUG_WINDING_T>
 	 winding_t();
 	 virtual ~winding_t();
 
+         winding_t& global_winding;
+
 	 int WindingNumberId;
 	 winding_t* current_id;
 
