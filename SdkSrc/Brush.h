@@ -73,6 +73,8 @@ public:
 
  void Highlight_SelectedBrush(HIGHLIGHT_BRUSH(float r, float g, float b(brush_t * b));
 
+ #define _COCERT_HIGHLIGHTING_BRUSH (if(Highlight_SelectedBrush)) ( std::size_t BrushMarkerSize = sizeof(BRUSH_MARKER))
+
  #endif
 
  template<class g_nBrushList>
