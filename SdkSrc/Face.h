@@ -5,6 +5,8 @@
 #include "Winding.h"
 #include "includes/SdkVetor.h"
 
+#define FACE_DETAIL 000x800
+
 #ifdef __FACE_DEBUG
 template<class _FaceDebugged>
   _FaceDebugged virtual bool FaceDebuggedON_Winding(face_t * f, winding_t * w) = 0;
