@@ -79,6 +79,9 @@ public:
  enum{ MAX_MARKER = 0, FADE_MARKER = 1, MIN_MARKER = 2 }b_mBrushMarkerPower;
 
  #endif
+ #define SIGNAL_BRUSH_TYPE 000x800
+ enum{ ENTITY_BRUSH = 0, CONSTRUCTION_BRUSH = 1, CAULK_BRUSH = 2 }b_tBrushType;
+ const char * const b_gBrushGameType;
 
  template<class g_nBrushList>
  using g_nBrushList = std::list<g_nBrushList, std::allocator<g_nBrushList>;
