@@ -25,7 +25,7 @@ public:
   }nBrushViewTypes;
 
   //connects views and brush to current grid window to draw
-  int nGlobalBrushView_ConnectToGridView(void WINAPI * GridWnd, int nViewType, bool nSignalView, brush_t * b_draw_t);
+  int nGlobalBrushView_ConnectToGridView(void WINAPI * GridWnd(HWND * _viewwnd), int nViewType, bool nSignalView, brush_t * b_draw_t);
   virtual void FreeBrush(brush_t * b) = 0;
   virtual void ConstructPrimitBrush(void * bprimitapi) = 0;
 
@@ -33,7 +33,7 @@ public:
 
  /*
   ?:
-   BRUSH TOOLS LIST
+   *BRUSH TOOLS LIST*
   :?
  */
  //allocate a brush
@@ -74,6 +74,8 @@ public:
  void Highlight_SelectedBrush(HIGHLIGHT_BRUSH(float r, float g, float b(brush_t * b));
 
  #define _COCERT_HIGHLIGHTING_BRUSH (if(Highlight_SelectedBrush)) ( std::size_t BrushMarkerSize = sizeof(BRUSH_MARKER))
+
+ enum{ MAX_MARKER = 0, FADE_MARKER = 1, MIN_MARKER = 2 }b_mBrushMarkerPower;
 
  #endif
 
