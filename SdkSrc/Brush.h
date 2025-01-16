@@ -63,6 +63,16 @@ public:
 
  brush_t * BrushMarker();
 
+ #ifdef BRUSH_MARKER
+ virtual bool MarkBrush(brush_t * b) = 0;
+ virtual void ConstructBrush_HighlightMarker() = 0;
+
+ #define HIGHLIGHT_BRUSH (float r, float g, float b)
+ #define HIGHLIGHT_PLANE (float r, float g, float b)
+ #define HIGHLIGHT_FACE (float r, float g, float b)
+
+ #endif
+
  template<class g_nBrushList>
  using g_nBrushList = std::list<g_nBrushList, std::allocator<g_nBrushList>;
 
