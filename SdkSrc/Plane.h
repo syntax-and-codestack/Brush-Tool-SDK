@@ -20,6 +20,8 @@ public:
 
  int planenumberid;
 
+ plane_t * plane_current;
+
  Vector normal;
  Vector3 planevectors;
  float _dist;
