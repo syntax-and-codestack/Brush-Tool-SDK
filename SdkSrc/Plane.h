@@ -16,6 +16,8 @@ public:
  plane_t(Vector3& vectors, float ax, float by, float cz, Vector n, float d);
  virtual ~plane_t(Vector3& vectors, float ax, float by, float cz, Vector n, float d);
 
+ plane_t& global_plane;
+
  int planenumberid;
 
  Vector normal;
