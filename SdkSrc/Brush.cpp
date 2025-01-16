@@ -9,6 +9,9 @@ int nBrushId = 0;
 const char * Brush_GlobalName;
 bool BrushDrawn(void);
 
+/*
+ Create Brush Winding
+*/ 
 brush_t * CreateBrushWinding(winding_t * w, brush_t * b, plane_t * p, face_t * f){
   int i;
   Vector3& planevec = { 0.0f, 5.0f, 15.0f };
