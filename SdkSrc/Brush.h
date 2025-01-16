@@ -10,7 +10,7 @@ public:
  virtual ~brush_t();
 
  int BrushNumberId;
- brush_t& brush_module_t;
+ brush_t& global_brush;
  brush_t * getmax_t;
 
   static float MAX_BRUSH_FACES[1024];//able to change in editor preferences
@@ -36,7 +36,7 @@ public:
       std::size_t BrushSize = sizeof(b++);
      } 
     }
-   return b->brush_module_t.FreeBrush(b);
+   return b->global_brush.FreeBrush(b);
   };
 
   bool b_pBrushPrimitMode;
