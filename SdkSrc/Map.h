@@ -1,5 +1,6 @@
 #include "Plane.h"
-#region MAP
+#include "Brush.h"
+#pragma region MAP
 
 extern plane_t * active_planes;
 extern plane_t * selected_planes;
@@ -40,4 +41,4 @@ public:
 
 };
 
-#endregion
+#pragma endregion
