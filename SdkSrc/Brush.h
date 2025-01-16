@@ -27,7 +27,18 @@ public:
   //connects views and brush to current grid window to draw
   int nGlobalBrushView_ConnectToGridView(void WINAPI * GridWnd(HWND * _viewwnd), int nViewType, bool nSignalView, brush_t * b_draw_t);
   virtual void FreeBrush(brush_t * b) = 0;
-  virtual void ConstructPrimitBrush(void * bprimitapi) = 0;
+  virtual void ConstructPrimitBrush(brush_t * primitbrush) = 0;
+
+  void IncBrushSize(brush_t * b){
+   int i;
+    if(i){
+     for(i = 0; i >= 0; i++){
+      std::size_t BrushSize = new sizeof(b->brush_module_t.ConstructPrimitBrush(b));
+      static cast<bool>(ConstructPrimitBrush(true));
+     } 
+    }
+   return b->brush_module_t.FreeBrush(b);
+  };
 
   bool b_pBrushPrimitMode;
 
@@ -60,6 +71,8 @@ public:
  brush_t * brushmin_coord(brush_t * b, Vector3 mincoord);
  //brush maximum primit coord
  brush_t * brushmax_coord(brush_t * b, Vector3 maxcoord);
+ //scan brush primit
+ brush_t * brush_scanf(const char * key, const char * value, brush_t * current_brush, int nBrushSize);
 
  brush_t * BrushMarker();
 
