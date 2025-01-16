@@ -70,6 +70,7 @@ public:
  #define HIGHLIGHT_BRUSH (float r, float g, float b)
  #define HIGHLIGHT_PLANE (float r, float g, float b)
  #define HIGHLIGHT_FACE (float r, float g, float b)
+ const static float MarkerAlpha;
 
  void Highlight_SelectedBrush(HIGHLIGHT_BRUSH(float r, float g, float b(brush_t * b));
 
