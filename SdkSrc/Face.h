@@ -18,6 +18,8 @@ public:
   face_t();
   virtual ~face_t();
 
+  face_t& global_face;
+
   float FacePoints[4];
   float FacePoint;
   Vector4 FaceVector;
