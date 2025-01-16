@@ -3,6 +3,9 @@
 
 extern plane_t * active_planes;
 extern plane_t * selected_planes;
+extern winding_t * active_winding;
+extern brush_t * active_brushes;
+extern brush_t * selected_brushes;
 
 class Map{
 public:
