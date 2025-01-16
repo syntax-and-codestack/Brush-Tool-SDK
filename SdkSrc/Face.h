@@ -18,7 +18,7 @@ public:
   face_t();
   virtual ~face_t();
 
-  float FacePoints;
+  float FacePoints[4];
   Vector4 FaceVectors;
 
   virtual void construct_face_t(face_t * face) = 0;
@@ -32,6 +32,7 @@ public:
      {
        f->FacePoints * points = new f->FacePoints;
      }
+   return f->FacePoints;
   };
   
   
