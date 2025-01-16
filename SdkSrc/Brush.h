@@ -61,6 +61,8 @@ public:
  //brush maximum primit coord
  brush_t * brushmax_coord(brush_t * b, Vector3 maxcoord);
 
+ brush_t * BrushMarker();
+
  template<class g_nBrushList>
  using g_nBrushList = std::list<g_nBrushList, std::allocator<g_nBrushList>;
 
