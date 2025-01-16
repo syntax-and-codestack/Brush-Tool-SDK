@@ -23,7 +23,9 @@ public:
 
   virtual void construct_face_t(face_t * face) = 0;
   void wind_face(winding_t * w, plane_t * p, face_t * f, Vector near, float winding_angle[45]);
-
+  /*
+   create face points after winding planes together to create face
+  */
   float winding_face_points(winding_t * w, face_t * f, Vector n, plane_t * p){
     face_t& face;
      if(face.wind_face(w->winding_t(), p->plane_t(), f->face_t(), n, 180(face)))
