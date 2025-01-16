@@ -9,7 +9,8 @@
 
 #ifdef __FACE_DEBUG
 template<class _FaceDebugged>
-  _FaceDebugged virtual bool FaceDebuggedON_Winding(face_t * f, winding_t * w) = 0;
+ /*debug the face after winding is complete*/
+  _FaceDebugged virtual bool FaceDebuggedOn_Winding(face_t * f, winding_t * w) = 0;
 #endif
 
 class face_t{
@@ -20,6 +21,17 @@ public:
   float FacePoints;
   Vector4 FaceVectors;
 
+  virtual void construct_face_t(face_t * face) = 0;
+  void wind_face(winding_t * w, plane_t * p, face_t * f, Vector near, float winding_angle[45]);
+
+  float winding_face_points(winding_t * w, face_t * f, Vector n, plane_t * p){
+    face_t& face;
+     if(face.wind_face(w->winding_t(), p->plane_t(), f->face_t(), n, 180))
+     {
+       f->FacePoints * points = new f->FacePoints;
+     }
+  };
+  
   
 
   
