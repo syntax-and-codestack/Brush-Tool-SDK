@@ -30,7 +30,12 @@ struct BListNode{
  Create Brush Points
 */
 brush_t * BrushPoints(brush_t * b){
- 
+ static char CBuff[1024];
+  if(b->b_pPrimitMode){
+   b->BrushPoints = 8;
+   printf("%f", b->BrushPoints);
+  }
+ return b;
 };
 
 
