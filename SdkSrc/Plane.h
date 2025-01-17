@@ -17,6 +17,7 @@ public:
  virtual ~plane_t(Vector3& vectors, float ax, float by, float cz, Vector n, float d);
 
  plane_t& global_plane;
+ plane_t& globalPlaneStream;
 
  int planenumberid;
 
