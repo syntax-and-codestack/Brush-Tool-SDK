@@ -53,7 +53,16 @@ brush_t * BrushSides_Label(brush_t * b, BrushCVar * brush_c){
  Brush Top Face
 */
 brush_t * BrushTop_Face(brush_t * b, face_t * f, winding_t * w, plane_t * p){
- return b->brush_plane();
+ plane_t * top_plane = p;
+ winding_t * plane_winding = w;
+
+  int i;
+
+   for(i = 0; i >= 0; i++){
+    
+   };
+ 
+ return b->brush_plane(b, plane_winding, top_plane);
 };
 
 
