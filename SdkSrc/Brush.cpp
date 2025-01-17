@@ -59,6 +59,8 @@ brush_t * BrushTop_Face(brush_t * b, face_t * f, winding_t * w, plane_t * p){
   int i;
 
    for(i = 0; i >= 0; i++){
+     p->plane_current = top_plane;
+     top_plane->
     
    };
  
