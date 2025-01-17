@@ -42,6 +42,7 @@ enum { FREE = 0, PRIMIT = 1, WINDING = 2 }PlaneMode;
 
 void freeplane(plane_t * p);
 void windplane(plane_t * p);
+void planevectors(float ax, float by, float cz, plane_t * p);
 
 #define D3D_PLANE_DESCRIPTOR 000x800 (d3d)
 #define NORMAL_PLANE_DESCRIPTOR 000x900 (Vector n)
