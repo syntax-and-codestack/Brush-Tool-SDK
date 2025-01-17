@@ -39,6 +39,9 @@ brush_t * BrushPoints(brush_t * b){
  return b->current_brush(b);
 };
 
+/*
+ Brush Sides Label
+*/
 brush_t * BrushSides_Label(brush_t * b, BrushCVar * brush_c){
  float brush_sides[6];
   brush_c->CBrushPrimit * primit_current = 'c';
@@ -46,6 +49,9 @@ brush_t * BrushSides_Label(brush_t * b, BrushCVar * brush_c){
  return b->current_brush(b);
 };
 
+/*
+ Brush Top Face
+*/
 brush_t * BrushTop_Face(brush_t * b, face_t * f){
  
 };
