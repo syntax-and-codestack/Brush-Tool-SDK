@@ -63,6 +63,8 @@ brush_t * BrushTop_Face(brush_t * b, face_t * f, winding_t * w, plane_t * p){
        top_plane->NewPlane(top_plane);
        top_plane->planevectors = { 0.0f, 5.0f, 15.0f };     
    };
+
+ top_plane->global_plane.freeplane(top_plane);
  
  return b->brush_plane(b, plane_winding, top_plane);
 };
