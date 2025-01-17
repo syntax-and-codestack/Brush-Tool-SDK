@@ -34,7 +34,10 @@ enum { FREE = 0, PRIMIT = 1, WINDING = 2 }PlaneMode;
 
  plane_t * AllocPlane();
  plane_t * SplitPlane(int spilt[2], plane_t * p);
- plane_t * NewPlane();
+ plane_t * NewPlane(){
+  plane_t * p = new plane_t;
+  return p;
+ };
 
 void freeplane(plane_t * p);
 void windplane(plane_t * p);
