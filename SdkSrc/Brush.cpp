@@ -15,7 +15,7 @@ bool BrushDrawn(void);
    : Create Plane Winding For All Faces On Brush
   <?>
 */
-
+/*
 brush_t* CreateBrushWinding(winding_t* w, brush_t* b, plane_t* p, face_t* f) {
     /*
         winding variables
@@ -48,3 +48,4 @@ brush_t* CreateBrushWinding(winding_t* w, brush_t* b, plane_t* p, face_t* f) {
 
 
 };
+*/
