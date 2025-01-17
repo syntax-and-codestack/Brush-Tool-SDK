@@ -36,10 +36,20 @@ brush_t * BrushPoints(brush_t * b){
      printf("%f", b->BrushPoints);
       b->global_brush.FreeBrush(b);
   }
- return b;
+ return b->current_brush(b);
 };
 
-brush_t * 
+brush_t * BrushSides_Label(brush_t * b, BrushCVar * brush_c){
+ float brush_sides[6];
+  brush_c->CBrushPrimit * primit_current = 'c';
+ 
+ return b->current_brush(b);
+};
+
+brush_t * BrushTop_Face(brush_t * b, face_t * f){
+ 
+};
+
 
 
 
