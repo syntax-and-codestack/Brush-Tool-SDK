@@ -9,6 +9,7 @@ public:
  brush_t();
  virtual ~brush_t();
 
+ float BrushPoints;
  int BrushNumberId;
  brush_t& global_brush;
  brush_t * getmax_t;
