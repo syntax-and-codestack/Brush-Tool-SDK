@@ -31,9 +31,10 @@ struct BListNode{
 */
 brush_t * BrushPoints(brush_t * b){
  static char CBuff[1024];
-  if(b->b_pPrimitMode){
-   b->BrushPoints = 8;
-   printf("%f", b->BrushPoints);
+  if(b->b_pBrushPrimitMode){
+     b->BrushPoints = 8;
+     printf("%f", b->BrushPoints);
+      b->global_brush.FreeBrush(b);
   }
  return b;
 };
