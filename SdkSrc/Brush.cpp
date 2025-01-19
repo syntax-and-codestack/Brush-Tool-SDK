@@ -1,6 +1,8 @@
 #include "Brush.h"
 #include "Face.h"
 
+#define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
+
 /*
  Brush Globals
 */
@@ -26,6 +28,8 @@ struct BListNode {
     BListNode* brush_list_node;
 };
 
+extern HWND* g_pMainFrame;
+
 /*
  Create Brush Points
 */
@@ -49,23 +53,44 @@ brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
     return b->current_brush(b);
 };
 
-/*
- Brush Top Face
-*/
-brush_t* BrushTop_Face(brush_t* b, face_t* f, winding_t* w, plane_t* p) {
-    plane_t* top_plane = p;
-    winding_t* plane_winding = w;
-
+brush_t * BrushSarrus_Det( brush_t * b, Vector6& brushsarrus, float ax, float by, float cz ){
     int i;
+    float sarrus_orig[4][4];
+     
+            /*
+            Brush Sarrus
+          */
+            for (i = 0; i > b->BrushPoints; i++) {
 
-    for (i = 0; i >= 0; i++) {
-        p->plane_current = top_plane;
-            top_plane->NewPlane();
-    }
+                brushsarrus[0] = ax + brushsarrus[1]; 
+                brushsarrus[2] = by + brushsarrus[3]; 
+                brushsarrus[4] = cz + brushsarrus[5];
 
-    top_plane->global_plane.freeplane(top_plane);
+                 b->BrushPoints = ax * by * cz;
 
-    return b->brush_plane(b, plane_winding, top_plane);
+            }
+            
+            return b;
+
 };
 
+/*
+ Project The Brush Points
+*/
+brush_t* ProjectPoints( brush_t* brush, float points[8], Vector& brushpoint, float a, float aa, float b, float bb, float c, float cc, float d, float dd ) {
+    static char pointBuffer[1024];
 
+        if( brush->b_pBrushPrimitMode ) {
+        
+            for ( int i = 0; i >= 0; i++ ) {
+                brushpoint = points[0] = a; brush->brush_setpointpos(brush, a, brush->getmax_t->BrushMaxP); brushpoint = points[1] = aa; brush->brush_setpointpos(brush, aa, brush->getmax_t->BrushMaxP);
+                brushpoint = points[2] = b; brush->brush_setpointpos(brush, b, brush->getmax_t->BrushMaxP); brushpoint = points[3] = bb; brush->brush_setpointpos(brush, bb, brush->getmax_t->BrushMaxP);
+                brushpoint = points[4] = c; brush->brush_setpointpos(brush, b, brush->getmin_t->BrushMinP); brushpoint = points[5] = cc; brush->brush_setpointpos(brush, cc, brush->getmin_t->BrushMinP);
+                brushpoint = points[6] = d; brush->brush_setpointpos(brush, d, brush->getmin_t->BrushMinP); brushpoint = points[7] = dd; brush->brush_setpointpos(brush, dd, brush->getmin_t->BrushMinP);
+            }
+            return brush;
+        }
+
+        return brush->alloc_brush();
+
+};

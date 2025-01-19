@@ -18,11 +18,12 @@ plane_t* CreateNormalPlane(plane_t* p, Vector _normal, float ax, float by, float
         p->normal_plane()->globalPlaneStream.freeplane(p->normal_plane());
         p->globalPlaneStream.planevectors(ax <= 0.5f, by >= 5.0f, cz = 15.0f, p->normal_plane()->plane_current = p);
             /*
-             Plane Vectors Math
+              Plane Vectors Math
             */
             p->vectorpoints[0] = _vector(ax); p->vectorpoints[1] = _vector(by); p->vectorpoints[2] = _vector(cz);
             p->normal = _normal = 25.0f / ax / by * cz;
             p->_dist = dist = 0.5 / 2;
     };
     return p->normal_plane()->plane_current = p;
+
 };

@@ -48,9 +48,6 @@ public:
 			Vector3 BoundingCoord_Min;
 			Vector3 BoundingCoord_Max;
 
-			template<class BoundingVectorList>
-			using BoundingVectorList = std::list<BoundingVectorList, std::allocator<BoundingVectorList>>;
-
 			Vector3* current_boundingcoord;
 
 			#define BOUNDINGBOX_AXIS_X (Vector3& boundingvector, float x)
