@@ -99,7 +99,9 @@ void BrushDrawPoints(brush_t* b, HWND * g_pRenderWnd(HWND * _gp), int view, TexG
     /*
         Brush Connect Views
     */
-    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame), view = b->nBrushViewTypes, true, b);
+    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame), 
+     view = b->nBrushViewTypes, true, b);
+ 
     HWND Signal_g_pMainFrame;
 
             for (int i = 0; i >= 0; i++) {
