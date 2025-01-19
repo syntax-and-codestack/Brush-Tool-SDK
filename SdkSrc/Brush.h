@@ -20,7 +20,7 @@ public:
     static float MAX_BRUSH_FACES[1024];//able to change in editor preferences
     /*Draw Brush To View Grid*/
     virtual void DrawBrushToView(brush_t* b, plane_t* p, winding_t* w, int nViewType) = 0;
-    void WINAPI* ApiBrush_Cracker(brush_t* b);
+    void WINAPI ApiBrush_Cracker(brush_t* b);
 
     enum {
         nViewXY = 0,
@@ -29,7 +29,7 @@ public:
     }nBrushViewTypes;
 
     //connects views and brush to current grid window to draw
-    int nGlobalBrushView_ConnectToGridView(void WINAPI* GridWnd(HWND* _viewwnd), int nViewType, bool nSignalView, brush_t* b_draw_t);
+    void nGlobalBrushView_ConnectToGridView(HWND * GridWnd, int nViewType, bool nSignalView, brush_t* b_draw_t);
     virtual void FreeBrush(brush_t* b) = 0;
     virtual void ConstructPrimitBrush(brush_t* primitbrush) = 0;
 
@@ -100,9 +100,6 @@ public:
 #define SIGNAL_BRUSH_TYPE 000x800
     enum { ENTITY_BRUSH = 0, CONSTRUCTION_BRUSH = 1, CAULK_BRUSH = 2 }b_tBrushType;
     const char* const b_gBrushGameType;
-
-    template<class g_nBrushList>
-    using g_nBrushList = std::list < g_nBrushList, std::allocator<g_nBrushList>;
 
 };
 

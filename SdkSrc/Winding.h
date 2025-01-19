@@ -6,6 +6,7 @@
 #include <list>
 #include "Windows.h"
 #include "SdkVector.h"
+#include "Plane.h"
 #include <string>
 
 #ifdef __DEBUG_WINDING
@@ -52,24 +53,13 @@ public:
 		const int MAX_WINDING_NUMBER[10000];
 	};
 
-	void WINAPI* WinApi_GetWinding_t(winding_t* winding, bool _debugged_winding_t);
+	void WINAPI WinApi_GetWinding_t(winding_t* winding, bool _debugged_winding_t);
 
 #define _COCERT_WINDING_T winding_t*(t(sizeof(winding_t)) = 000
-
-	template<typename winding_t_observor>
-	winding_t_observor flush_winding_t(winding_t* winding = NULL);
-	template<typename winding_t_observor>
-	winding_t_observor	 method_c_winding_t(winding_t* winding, float angle_clock);
-	template<typename winding_t_observor>
-	winding_t_observor method_cc_winding_t(winding_t* winding, float angle_counterclock);
 
 #define _WINDING_T_WHILE (while)(_COCERT_WINDING_T*t != current_id)
 
 	const char* const winding_name(winding_t* current_winding);
-
-
-	template<class winding_list_t>
-	using winding_list_t = std::list<winding_list_t, std::allocator<winding_list_t>>;
 
 
 };

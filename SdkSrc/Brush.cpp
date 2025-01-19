@@ -1,5 +1,6 @@
 #include "Brush.h"
 #include "Face.h"
+#include "texgridtool.h"
 
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 
@@ -28,7 +29,7 @@ struct BListNode {
     BListNode* brush_list_node;
 };
 
-extern HWND* g_pMainFrame;
+HWND* g_pMainFrame;
 
 /*
  Create Brush Points
@@ -48,7 +49,6 @@ brush_t* BrushPoints(brush_t* b) {
 */
 brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
     float brush_sides[6];
-    brush_c->CBrushPrimit = "c";
 
     return b->current_brush(b);
 };
@@ -91,6 +91,24 @@ brush_t* ProjectPoints( brush_t* brush, float points[8], Vector& brushpoint, flo
             return brush;
         }
 
-        return brush->alloc_brush();
+        return brush->alloc_brush(brush);
+
+};
+
+void BrushDrawPoints(brush_t* b, HWND * g_pRenderWnd(HWND * _gp), int view, TexGridTool * viewtool) {
+    /*
+        Brush Connect Views
+    */
+    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame), view = b->nBrushViewTypes, true, b);
+    HWND Signal_g_pMainFrame;
+
+            for (int i = 0; i >= 0; i++) {
+                viewtool++;
+                     HDC* (_BrushDc);
+                     void WINAPI * BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
+                     b->current_brush(b);
+             }
+
+            return b->ApiBrush_Cracker(b++);
 
 };

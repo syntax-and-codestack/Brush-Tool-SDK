@@ -2,6 +2,7 @@
 #include <string>
 #include "SdkVector.h"
 #include "Winding.h"
+
 #ifndef PLANE_H
 #define PLANE_H
 
@@ -30,7 +31,7 @@ public:
 
 	std::size_t PlaneSize = sizeof(plane_t);
 
-	virtual bool resetplane(plane_t* p, winding_t* w) = 0;
+	virtual bool resetplane(plane_t* p) = 0;
 
 	enum { FREE = 0, PRIMIT = 1, WINDING_M = 2 }PlaneMode;
 
@@ -56,26 +57,15 @@ public:
 	void returnsize_t(plane_t* sizeof_plane_t);
 	void planeshader(plane_t* p, const char* pShaderName);
 
-#ifndef PLANEPRIMIT_MODE
-#define PLANEPRIMIT_MODE
 	bool planeprimitmode;
-#endif
 
-	bool m_bPlaneCastFree(plane_t* p, plane_t plane) {
+	bool m_bPlaneCastFree(plane_t*p) {
 		if (p->planeprimitmode) {
 			static_cast<bool>(freeplane);
 		}
 		return p->planeprimitmode;
 	};
 
-	virtual void construct_plane_t(plane_t* p, winding_t* w) = 0;
-
-	template<typename plane_observor_module>
-	plane_observor_module plane_free(plane_t* p);
-	template<typename plane_observor_module>
-	plane_observor_module plane_primit(plane_t* p);
-	template<typename plane_observor_module>
-	plane_observor_module plane_winding(plane_t* p, winding_t* w);
 
 };
 
