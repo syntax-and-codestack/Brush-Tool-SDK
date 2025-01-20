@@ -250,6 +250,7 @@ brush_t* AllocBrush() {
             if (!b) {
                 malloc(sizeof(b));
             }
+          return b;
         }
     return b;
 };
