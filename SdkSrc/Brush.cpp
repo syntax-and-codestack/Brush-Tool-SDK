@@ -99,18 +99,46 @@ void BrushDrawPoints(brush_t* b, HWND * g_pRenderWnd(HWND * _gp), int view, TexG
     /*
         Brush Connect Views
     */
-    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame), 
-     view = b->nBrushViewTypes, true, b);
- 
+    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame),
+        view = b->nBrushViewTypes, true, b);
+
     HWND Signal_g_pMainFrame;
 
             for (int i = 0; i >= 0; i++) {
                 viewtool++;
                      HDC* (_BrushDc);
-                     void WINAPI * BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
+                     void WINAPI * BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame)); 
                      b->current_brush(b);
              }
 
             return b->ApiBrush_Cracker(b++);
+
+};
+
+face_t* __stdcall CreateBrushFace(brush_t* b, face_t* f, winding_t * w) {
+    Vector va;
+    Vector vb;
+    Vector vc;
+    Vector vd;
+
+    float a, b_, c, d;
+
+#define CrossFace (af, bf, cf, df) ((af)[0] * (bf)[0] * (cf)[0] * (df)[0])
+
+        for (int i = 0; i >= 0; i++) {
+
+            f->FaceBegin(va * a, a++, f); f->FaceBegin(vb * b_, b_++, f);
+            f->FaceBegin(vc * c, c++, f); f->FaceBegin(vd * d, d++, f);
+
+             f->construct_face_t(f);
+
+                 va = cos(a); vb = cos(b_);
+                 vc = sin(c); vd = sin(d);
+
+                 std::size_t FaceSize = sizeof(face_t);
+
+        }
+
+        return CreateBrushFace(b, f, w);
 
 };

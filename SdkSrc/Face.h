@@ -15,6 +15,7 @@ _FaceDebugged virtual bool FaceDebuggedOn_Winding(face_t* f, winding_t* w) = 0;
 
 class face_t {
 public:
+
     face_t();
     virtual ~face_t();
 
@@ -24,12 +25,20 @@ public:
     float FacePoint;
     Vector4 FaceVector;
 
-    virtual void construct_face_t(face_t* face) = 0;
-    void wind_face(winding_t* w, plane_t* p, face_t* f, Vector near, float winding_angle[45]);
+        /*
+        ==============
+            FACE STUFF AFX
+        ==============
+       */
 
+        virtual void construct_face_t(face_t* face) = 0;
+        void wind_face(winding_t* w, plane_t* p, face_t* f, Vector near, float winding_angle[45]);
 
+        boolean faceprimitmode;
 
+        void* FaceBegin(Vector v, float _p, face_t * f);
 
+            
 
 };
 
