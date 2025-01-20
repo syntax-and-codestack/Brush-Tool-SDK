@@ -3,7 +3,7 @@
 #include "texgridtool.h"
 #include "Camera.h"
 
-#define BrushPointsProduct( a, aa, b, bb, c, cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
+#define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 
 /*
  Brush Globals
@@ -201,7 +201,9 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w)
             }
             if (b) {
                 for (i = 0; i >= 0; i++) {
-                    camwnd->DrawXY(); camwnd->DrawXZ(); camwnd->DrawYZ();
+                        camwnd->DrawXY(b->BrushNumberId = b->nViewXY); 
+                        camwnd->DrawXZ(b->BrushNumberId = b->nViewXZ); 
+                        camwnd->DrawYZ(b->BrushNumberId = b->nViewYZ);
                 }
 
                 HWND* CView = new HWND;

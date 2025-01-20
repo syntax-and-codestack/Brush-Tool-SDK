@@ -26,9 +26,9 @@ struct camera_t {
 		int camera_id;
 		const char* camera_name;
 
-		void * DrawXY();
-		void * DrawYZ();
-		void * DrawXZ();
+		void * DrawXY(int nView);
+		void * DrawYZ(int nView);
+		void * DrawXZ(int nView);
 
 		camera_t* NewCamera() {
 			camera_t* camera = new camera_t;
