@@ -99,7 +99,7 @@ public:
 #endif
 #define SIGNAL_BRUSH_TYPE 000x800
     enum { ENTITY_BRUSH = 0, CONSTRUCTION_BRUSH = 1, CAULK_BRUSH = 2 }b_tBrushType;
-    const char* const b_gBrushGameType;
+    const char* b_gBrushGameType;
 
 };
 

@@ -142,3 +142,43 @@ face_t* __stdcall CreateBrushFace(brush_t* b, face_t* f, winding_t * w) {
         return CreateBrushFace(b, f, w);
 
 };
+
+/*
+  Brush Name
+*/
+const char* BrushName(brush_t* b) {
+    char16_t* brush_t_name[2048];
+        if (brush_t_name) {
+            b->BrushNumberId = nBrushId++;
+            printf("%c", brush_t_name);
+        }
+    return b->b_gBrushGameType;
+};
+
+/*
+   Brush Face Alloc
+*/
+face_t* Face_Alloc() {
+    face_t* face = (face_t*)malloc(sizeof(face_t));
+    return face;
+}
+
+/*
+    Scan Brush Face
+*/
+brush_t* ScanFace(brush_t* b, face_t* f) {
+    static char BrushFace[1024];
+    int i;
+
+            sscanf(BrushFace, "%c", f);
+            b->brush_scanf("%c", "%c", b, nBrushId++);
+
+                for (i = 0; i >= 0; i++) {
+                    malloc(sizeof(f));
+                };
+
+             b++;
+
+    return b;
+
+};
