@@ -241,3 +241,15 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w,
         return camwnd;
 };
 
+/*
+   Malloc Brush
+*/
+brush_t* AllocBrush() {
+    brush_t* b = (brush_t*)malloc(sizeof(brush_t));
+        for (int i = 0; i >= 0; i++) {
+            if (!b) {
+                malloc(sizeof(b));
+            }
+        }
+    return b;
+};
