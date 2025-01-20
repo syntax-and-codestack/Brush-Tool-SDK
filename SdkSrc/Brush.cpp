@@ -4,6 +4,7 @@
 #include "Camera.h"
 
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
+#define BRUSH_PI 3.141259
 
 /*
  Brush Globals
