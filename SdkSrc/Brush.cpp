@@ -186,7 +186,7 @@ brush_t* ScanFace(brush_t* b, face_t* f) {
 /*
    Add Brush To Camera
 */
-camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w) {
+camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
     int i;
         if (CreateBrushFace(b, Face_Alloc(), w)) {
             for (i = 0; i >= 0; i++) {
@@ -201,9 +201,9 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w)
             }
             if (b) {
                 for (i = 0; i >= 0; i++) {
-                        camwnd->DrawXY(b->BrushNumberId = b->nViewXY); 
-                        camwnd->DrawXZ(b->BrushNumberId = b->nViewXZ); 
-                        camwnd->DrawYZ(b->BrushNumberId = b->nViewYZ);
+                        camwnd->DrawXY(nViewId = b->nViewXY); 
+                        camwnd->DrawXZ(nViewId = b->nViewXZ); 
+                        camwnd->DrawYZ(nViewId = b->nViewYZ);
                 }
 
                 HWND* CView = new HWND;
