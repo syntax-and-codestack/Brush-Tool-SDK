@@ -287,3 +287,28 @@ brush_t* BrushSqrt(float bsqrt) {
 
     return BrushSqrt(bsqrt);
 };
+
+/*
+    Brush MidPoint
+*/
+brush_t* BrushMidPoint(brush_t* b, Vector& vector, float *pointmax, float *pointmin) {
+    if (b) {
+        pointmax = b->BrushMaxP;
+        pointmin = b->BrushMinP;
+
+            for (int i = 0; i >= 0; i++) {
+                pointmax[0] / 2 * pointmin[0] / 2 + b->BrushPoints / 2;
+            };
+    }
+    return b->current_brush(b);
+};
+
+/*
+    Brush Radius Face
+*/
+brush_t* BrushRadius(brush_t* b, face_t* f) {
+    double Radius = 3.141259;
+    double fab_r = Radius / 2 * fab_r;
+
+    return BrushRadius(b, f);
+};
