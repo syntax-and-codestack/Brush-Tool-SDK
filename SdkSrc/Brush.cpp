@@ -251,7 +251,7 @@ brush_t* AllocBrush() {
             if (!b) {
                 malloc(sizeof(b));
             }
-          return b;
+            return b;
         }
     return b;
 };
@@ -310,5 +310,32 @@ brush_t* BrushRadius(brush_t* b, face_t* f) {
     double Radius = 3.141259;
     double fab_r = Radius / 2 * fab_r;
 
+     float CalculateFace(face_t * f);
+     winding_t* w;
+
+     CalculateFace(CreateBrushFace(b, f, w)) / Radius * fab_r / 3.14;
+
     return BrushRadius(b, f);
 };
+
+/*
+    Print Brush Radius
+*/
+brush_t* PrintRadius(brush_t* b, face_t* f) {
+    printf("%d", "%f", PrintRadius(b, f), BrushRadius(b, f));
+     return BrushRadius(b, f);
+};
+
+brush_t * BrushFaces(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
+    AddFacesToPoints(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
+
+        return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
+};
+
+boolean m_bChckOkay;
+void* SysBrush_Printf(const char* _Format, const char * text, ...);
+
+brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
+    SysBrush_Printf("%b", "%5.2f", "%5.2f", "%5.2f", BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd));
+    return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
+}

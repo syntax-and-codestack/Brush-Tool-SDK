@@ -14,8 +14,8 @@ public:
     brush_t& global_brush;
     brush_t* getmin_t;
     brush_t* getmax_t;
-    Vector * BrushMinP;
-    Vector * BrushMaxP;
+    Vector* BrushMinP;
+    Vector* BrushMaxP;
 
     static float MAX_BRUSH_FACES[1024];//able to change in editor preferences
     /*Draw Brush To View Grid*/
