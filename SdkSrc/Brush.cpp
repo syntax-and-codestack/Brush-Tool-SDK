@@ -270,3 +270,19 @@ brush_t* BufferBrushMalloc() {
         }
         return b;
 };
+
+/*
+    Brush Sqrt Operation
+        !-dont use during calculating brush midpoint !*will cause application crash*!-!
+        I wanted to implement Quake III's fast inverse sqrt but that is for rendering
+*/
+brush_t* BrushSqrt(float bsqrt) {
+    float Half = 0.5f * bsqrt;
+        int i = *(int*)&bsqrt;
+        i = 0x5f3759d - (i >> 1);
+
+            bsqrt = *(float*)&i;
+            bsqrt = bsqrt * (1.5f - Half * bsqrt * bsqrt);
+
+    return BrushSqrt(bsqrt);
+};
