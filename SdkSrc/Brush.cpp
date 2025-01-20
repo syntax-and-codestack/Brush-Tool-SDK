@@ -232,10 +232,12 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w,
                         camwnd->DrawYZ(nViewId = b->nViewYZ);
                 }
 
-                HWND* CView = new HWND;
+                HWND* CamWnd = new HWND;
 
-                camwnd->GetCamWnd(CView);
+                    camwnd->GetCamWnd(CamWnd);
+                    b->AddBrushToWnd(b, CamWnd);
             }
         }
         return camwnd;
 };
+

@@ -78,6 +78,8 @@ public:
     brush_t* brush_scanf(const char* key, const char* value, brush_t* current_brush, int nBrushSize);
     //brush position points
     brush_t* brush_setpointpos(brush_t* b, float p, Vector3 position);
+    //draw brush to window
+    brush_t* AddBrushToWnd(brush_t* b, HWND* _CAMWND);
 
     brush_t* BrushMarker();
 
