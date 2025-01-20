@@ -1,6 +1,7 @@
 #include "Brush.h"
 #include "Face.h"
 #include "texgridtool.h"
+#include "Camera.h"
 
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 
@@ -161,7 +162,7 @@ const char* BrushName(brush_t* b) {
 face_t* Face_Alloc() {
     face_t* face = (face_t*)malloc(sizeof(face_t));
     return face;
-}
+};
 
 /*
     Scan Brush Face
@@ -181,4 +182,32 @@ brush_t* ScanFace(brush_t* b, face_t* f) {
 
     return b;
 
+};
+/*
+   Add Brush To Camera
+*/
+camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w) {
+    int i;
+        if (CreateBrushFace(b, Face_Alloc(), w)) {
+            for (i = 0; i >= 0; i++) {
+                camwnd->AllocCamera()->InitCamera(camwnd);
+
+                camwnd->angle = cc;
+                camwnd->camera_id = camwnd->cam_opengl;
+                    camwnd->depth;
+                    camwnd->origin;
+
+                    return camwnd;
+            }
+            if (b) {
+                for (i = 0; i >= 0; i++) {
+                    camwnd->DrawXY(); camwnd->DrawXZ(); camwnd->DrawYZ();
+                }
+
+                HWND* CView = new HWND;
+
+                camwnd->GetCamWnd(CView);
+            }
+        }
+        return camwnd;
 };
