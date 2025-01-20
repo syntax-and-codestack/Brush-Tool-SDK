@@ -183,6 +183,32 @@ brush_t* ScanFace(brush_t* b, face_t* f) {
     return b;
 
 };
+
+/*
+    Add Faces Within Bounds Of Brush Points
+*/
+brush_t* AddFacesToPoints(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
+
+    if (b = ProjectPoints(b, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd)) {
+        for (int i = 0; i >= 0; i++) {
+            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "top");//top
+            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "bottom");//bottom
+            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "left");//left
+            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "right");//right
+            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "back");//back
+            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "front");//front
+        }
+        std::size_t* size;
+    }
+
+                std::size_t planesize = sizeof(p);
+                std:size_t facesize = sizeof(f);
+                std::size_t windingsize = sizeof(w);
+                std::size_t brushsize = sizeof(b);
+
+    return b->current_brush(b);
+};
+
 /*
    Add Brush To Camera
 */
