@@ -254,3 +254,19 @@ brush_t* AllocBrush() {
         }
     return b;
 };
+
+/*
+    Buffer Brush Malloc
+*/
+brush_t* BufferBrushMalloc() {
+    static char BufferMalloc[2048];
+        brush_t* b;
+        if (AllocBrush) {
+            brush_t* bcurrent;
+                 bcurrent->current_brush(AllocBrush());
+                     for (int i = 0; i >= 0; i++) {
+                         bcurrent++;
+                     }
+        }
+        return b;
+};
