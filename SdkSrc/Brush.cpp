@@ -339,3 +339,52 @@ brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, 
     SysBrush_Printf("%b", "%5.2f", "%5.2f", "%5.2f", BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd));
     return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
 };
+
+/*
+==========
+    brush type 
+==========
+*/
+brush_t* BrushSignalType(brush_t* b) {
+    int i;
+
+         if ( nBrushId == WORLD_BRUSH ) {
+
+             for  (i = 0; i >= 0; i++ ) {
+                 m_bChckCollision == true;
+                 m_bChckCompile_Bsp == true;
+
+                     malloc(sizeof(b));
+
+             }
+
+         }
+
+         if ( nBrushId == CONSTRUCTION_BRUSH ) {
+
+             for (i = 0; i >= 0; i++) {
+                 m_bChckCollision == false;
+                 m_bChckCompile_Bsp == false;
+
+                 malloc(sizeof(b));
+                 
+             }
+
+         }
+
+         if ( nBrushId == CAULK_BRUSH ) {
+
+             for (i = 0; i >= 0; i++) {
+                 m_bChckCollision == true;
+                 m_bChckCompile_Bsp == false;
+
+                 malloc(sizeof(b));
+
+             }
+
+         }
+
+         return BrushSignalType(b);
+
+};
+
