@@ -341,6 +341,31 @@ brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, 
 };
 
 /*
+=========================
+   
+            BRUSH TYPE INFO
+
+=========================
+*/
+/*
+=======================
+    check collision :
+     if true, collision is on
+     if false, collision is off
+=======================
+*/
+bool m_bChckCollision;
+/*
+============================
+    check if brush faces compile on brush
+============================
+*/
+bool m_bChckCompile_Bsp;
+
+//brush type
+enum { WORLD_BRUSH, CONSTRUCTION_BRUSH, CAULK_BRUSH }m_bBrushType;
+
+/*
 ==========
     brush type 
 ==========
@@ -387,4 +412,3 @@ brush_t* BrushSignalType(brush_t* b) {
          return BrushSignalType(b);
 
 };
-
