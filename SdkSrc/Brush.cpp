@@ -338,4 +338,4 @@ void* SysBrush_Printf(const char* _Format, const char * text, ...);
 brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
     SysBrush_Printf("%b", "%5.2f", "%5.2f", "%5.2f", BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd));
     return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
-}
+};
