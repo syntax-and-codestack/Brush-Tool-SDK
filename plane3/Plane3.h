@@ -18,10 +18,10 @@ public:
 	Plane3(double nx, double ny, 
 		double nz, double dist);
 
-	double vx;
-	double vy;
-	double vz;
-
+	float vx;
+	float vy;
+	float vz;
+	
 	Vector3& _normal() {
 		return normal;
 	};
