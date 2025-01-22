@@ -17,6 +17,8 @@
 #ifdef _WIN32
 
 typedef HWND WinWidget;
+typedef HINSTANCE WinInstance;
+typedef MSG WinMsg;
 typedef WINAPI CallApi;
 typedef HICON WinIcon;
 typedef HMENU WinMenu;
