@@ -14,6 +14,8 @@
   &&other common win32 resources  
 */
 
+#include <Windows.h>
+
 #ifdef _WIN32
 
 typedef HWND WinWidget;
