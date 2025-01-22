@@ -2,6 +2,8 @@
 #include "Face.h"
 #include "texgridtool.h"
 #include "Camera.h"
+#include "globalafx.h"
+#include "gqafx.h"
 
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 #define BRUSH_PI 3.141259
@@ -412,3 +414,23 @@ brush_t* BrushSignalType(brush_t* b) {
          return BrushSignalType(b);
 
 };
+
+/*
+=======================
+    new brush sarrus det updated 
+=======================
+*/
+Vector SarrusDet(Vector3 a, Vector3 b, Vector3 c) {
+    return a[0] * b[1] * c[2] + b[0] * c[1] * a[2] + c[0] * a[1] * b[2]
+        - c[0] * b[1] * a[2] - a[1] * b[0] * c[2] - a[0] * b[2] * c[1];
+};
+
+extern "C";
+
+brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert, HMENU* BrushMenu, GQ_Globals * gq_globals) {
+    if(gq_globals->g_qBrushPrimitMode = true)
+       globalInsert->globalType()->globalConsturctMenuCommand(BrushMenu);
+       globalInsert->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+
+};
+
