@@ -427,10 +427,10 @@ Vector SarrusDet(Vector3 a, Vector3 b, Vector3 c) {
 
 extern "C";
 
-brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert, HMENU* BrushMenu, GQ_Globals * gq_globals) {
+brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals * gq_globals) {
     if(gq_globals->g_qBrushPrimitMode = true)
-       globalInsert->globalType()->globalConsturctMenuCommand(BrushMenu);
-       globalInsert->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+       globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
+       globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
 
 };
 
