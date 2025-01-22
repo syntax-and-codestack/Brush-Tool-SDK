@@ -8,6 +8,13 @@
   numeric Primit_IdBrush = 0 ? 1;
   numeric * nPrimitiveId;
 
- decimal Primit_PointDistance = 0.5d ? random<d>;
+ decimal Primit_PointDistance = 0.5d ? random;
+
+ xmlbase BrushPrimit<
+  opened:
+
+  determine qg_nBrushPrimitMode;
+
+ >;
 
 #<ENDTAG>
