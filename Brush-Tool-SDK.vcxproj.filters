@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SdkSrc">
+      <UniqueIdentifier>{816c4827-0224-4517-a460-61e9c5dc5e8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="textool">
+      <UniqueIdentifier>{e986e13b-06db-4d97-9637-37d52d4539c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="plane3">
+      <UniqueIdentifier>{2e5089c2-957d-4f52-8bee-b0efe39242bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes\SdkVector.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\BoundingBox.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Winding.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Plane.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Brush.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Map.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Face.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="textool\texgridtool.h">
+      <Filter>textool</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Camera.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\gqafx.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkSrc\Matrix.h">
+      <Filter>SdkSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\globalafx.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="plane3\Plane3.h">
+      <Filter>plane3</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SdkSrc\BoundingBox.cpp">
+      <Filter>SdkSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SdkSrc\Brush.cpp">
+      <Filter>SdkSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SdkSrc\Plane.cpp">
+      <Filter>SdkSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="plane3\Plane3.cpp">
+      <Filter>plane3</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
