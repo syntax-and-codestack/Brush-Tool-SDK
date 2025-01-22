@@ -1,0 +1,10 @@
+#<IFNTAG>BRUSHPRIMIT_XMLPP
+#<TAG>BRUSHPRIMIT_XMLPP
+  
+//=========================
+//numeric is an integer
+// ? means or
+//=========================
+  numeric Primit_IdBrush = 0 ? 1;
+
+#<ENDTAG>
