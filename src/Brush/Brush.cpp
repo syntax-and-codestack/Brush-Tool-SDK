@@ -56,8 +56,8 @@ brush_t* BrushPoints(brush_t* b) {
     static char cBuff[1024];
     if (b->b_pBrushPrimitMode) {
         b->BrushPoints = 8;
-        printf("%f", b->BrushPoints);
-        b->global_brush.FreeBrush(b);
+          printf("%f", b->BrushPoints);
+          b->global_brush.FreeBrush(b);
     }
     return b->current_brush(b);
 };
