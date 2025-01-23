@@ -668,6 +668,34 @@ int bSelArray[];//store mouse clicks
 static int bMouse_Clck;
 static int bMouse_Drag;
 bool bSelHighlight;
+enum { bPenRed, bPenGreen, bPenBlue }qgl_BrushPen;
+static int qgl_PenId;
+void * bFind(brush_t * b)
+
+#define MOUSE_LFT_CLCK_SHIFT 111x111
+#define MOUSE_RGHT_CLCK 222x222
+#define MOUSE_DRAG 333x333
+
+/*
+======================
+ Register Mouse Click
+======================
+*/
+void WINAPI MouseClick(brush_t * b){
+  if(bMouse_Clck == MOUSE_LFT_CLCK_SHIFT){
+   for( bSelArray = 0; bSelArray[bMouseClck] >= bSelArray++){
+     bSel == true;
+     bSelHighlight == true;
+   
+     bFind(b);
+
+    qgl_PenId == qgl_BrushPen;
+  
+  }
+  return bSelArray[bMouseClck];
+ }
+ return bFind(b);
+};
 
 /*
 ======================
