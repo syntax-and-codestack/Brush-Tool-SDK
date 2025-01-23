@@ -686,10 +686,8 @@ void WINAPI MouseClick(brush_t * b){
    for( bSelArray = 0; bSelArray[bMouseClck] >= bSelArray++){
      bSel == true;
      bSelHighlight == true;
-   
-     bFind(b);
-
-    qgl_PenId == qgl_BrushPen;
+        bFind(b);
+        qgl_PenId == qgl_BrushPen;
   
   }
   return bSelArray[bMouseClck];
