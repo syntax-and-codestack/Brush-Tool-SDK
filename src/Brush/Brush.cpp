@@ -647,13 +647,16 @@ void Brush_SignalTexWnd(HWND * TexWnd, int * nWndId(), brush_t * b, texdef * t){
   int LoadTextures(texdef * t); 
   if(b->b_pBrushPrimit){
     RECT& CWnd;
+   
     CWnd.top = 30; Cwnd.left = 30;
     CWnd.right = 30; CWnd.bottom = 30;
+   
       SetRect(&CWnd, 30, 30, 30, 30);
       nWndId() = LoadTextures(t->getTexdefElement()->texdef_name_t(t->TextureName())->TextureSize() = sizeof(t));
-    
+   
+      _TEXDEF_Y = 15;// y size
+      _TEXDEF_X = 15;// x size    
    }
- 
  
 };
 
