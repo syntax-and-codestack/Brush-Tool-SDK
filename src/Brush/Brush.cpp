@@ -667,6 +667,7 @@ bool bSel;
 int bSelArray[];//store mouse clicks
 static int bMouse_Clck;
 static int bMouse_Drag;
+bool bSelHighlight;
 
 /*
 ======================
