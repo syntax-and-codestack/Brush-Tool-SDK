@@ -200,7 +200,9 @@ const char* BrushName(brush_t* b) {
 };
 
 /*
+======================
    Brush Face Alloc
+======================
 */
 face_t* Face_Alloc() {
     face_t* face = (face_t*)malloc(sizeof(face_t));
@@ -208,13 +210,14 @@ face_t* Face_Alloc() {
 };
 
 /*
+======================
     Scan Brush Face
+======================
 */
 brush_t* ScanFace(brush_t* b, face_t* f) {
     static char BrushFace[1024];
     int i;
-
-            sscanf(BrushFace, "%c", f);
+       
             b->brush_scanf("%c", "%c", b, nBrushId++);
 
                 for (i = 0; i >= 0; i++) {
@@ -228,7 +231,9 @@ brush_t* ScanFace(brush_t* b, face_t* f) {
 };
 
 /*
+============================================
     Add Faces Within Bounds Of Brush Points
+============================================
 */
 brush_t* AddFacesToPoints(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
 
@@ -253,7 +258,9 @@ brush_t* AddFacesToPoints(brush_t* b, face_t* f, plane_t* p, winding_t* w, int n
 };
 
 /*
-   Add Brush To Camera
+======================
+  Add Brush To Camera
+======================
 */
 camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
     int i;
@@ -285,7 +292,9 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w,
 };
 
 /*
-   Malloc Brush
+======================
+    Malloc Brush
+======================
 */
 brush_t* AllocBrush() {
     brush_t* b = (brush_t*)malloc(sizeof(brush_t));
@@ -299,7 +308,9 @@ brush_t* AllocBrush() {
 };
 
 /*
-    Buffer Brush Malloc
+============================================
+          Buffer Brush Malloc
+============================================
 */
 brush_t* BufferBrushMalloc() {
     static char BufferMalloc[2048];
