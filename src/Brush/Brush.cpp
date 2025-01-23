@@ -677,9 +677,10 @@ void * bFind(brush_t * b)
 #define MOUSE_DRAG 333
 
 /*
-======================
- Register Mouse Click
-======================
+====================================
+    Register Mouse Click
+ *Mouse Within Brush Face Bounds*
+====================================
 */
 void WINAPI MouseClick(brush_t * b){
   if(bMouse_Clck == MOUSE_LFT_CLCK_SHIFT){
