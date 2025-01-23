@@ -587,6 +587,24 @@ bool fit_tex;
 typedef Vector3 TexShiftCoords;
 
 /*
+=========================
+   Signal Texture Wnd
+  ?!*Will be modified*!?
+=========================
+*/
+void Brush_SignalTexWnd(HWND * TexWnd, int nWndId, brush_t * b, texdef * t){
+   if(b->b_pBrushPrimit){
+    for(nWindId = 0; nWndId >= 0; nWndId++){
+        
+    }
+
+    
+   }
+ 
+ 
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
