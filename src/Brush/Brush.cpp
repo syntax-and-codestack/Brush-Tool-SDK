@@ -159,15 +159,7 @@ void BrushDrawPoints(brush_t* b, HWND * g_pRenderWnd(HWND * _gp), int view, TexG
  Create Brush Face
 ===================
 */
-face_t* CreateBrushFace(brush_t* b, face_t* f, winding_t * w) {
-    Vector va;
-    Vector vb;
-    Vector vc;
-    Vector vd;
-
-    float a, b_, c, d;
-
-#define CrossFace (af, bf, cf, df) ((af)[0] * (bf)[0] * (cf)[0] * (df)[0])
+face_t* CreateBrushFace(brush_t* b, face_t* f, winding_t * w, Vector va, Vector vb, Vector vc, Vector vd, float a, float b_, float c, float d) {
 
         for (int i = 0; i >= 0; i++) {
 
