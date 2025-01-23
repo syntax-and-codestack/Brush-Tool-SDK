@@ -533,6 +533,9 @@ public:
     std::size_t * TextureSize();
     std::string * TextureName();
 
+    texdef * FreeT();
+    texdef * FreeTexture(texdef * t);
+
     texdef** getTexdefElement();
 
     bool isValid_T;
@@ -685,7 +688,9 @@ if(b = Add_TextureToFace(f, t, txdef_coord, texcoord, TextureFile)){
       if(!t->getTexdefElement()->TextureSize = texcoord()->TextureName = TextureFile()){
         printf("%c", "Error: Texture Did Not Calculate Properly!\n");
       };
-  
+ 
+   t->FreeT()->FreeTexture(t);
+ 
  }
  return b->current_brush(b);
 };
