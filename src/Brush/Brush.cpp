@@ -493,6 +493,7 @@ Vector SarrusDet(Vector3 a, Vector3 b, Vector3 c) {
 
 //Brush C Marker
 extern "C";
+#define BRUSH_T (brush_t*)
 
 /*
 ===============================================
