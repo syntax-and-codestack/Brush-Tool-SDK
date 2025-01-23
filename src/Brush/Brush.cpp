@@ -387,40 +387,52 @@ brush_t* PrintRadius(brush_t* b, face_t* f) {
      return BrushRadius(b, f);
 };
 
-
+/*
+=============
+ Brush Faces
+=============
+*/
 brush_t * BrushFaces(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
     AddFacesToPoints(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
 
         return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
 };
 
+//check if brush is okay
 boolean m_bChckOkay;
+
+/*printf similar function*/
 void* SysBrush_Printf(const char* _Format, const char * text, ...);
 
+/*
+=============
+ Print Brush 
+=============
+*/
 brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
     SysBrush_Printf("%b", "%5.2f", "%5.2f", "%5.2f", BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd));
     return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
 };
 
 /*
-=========================
+================================================
    
-            BRUSH TYPE INFO
+              BRUSH TYPE INFO
 
-=========================
+================================================
 */
 /*
-=======================
+==============================================
     check collision :
      if true, collision is on
      if false, collision is off
-=======================
+==============================================
 */
 bool m_bChckCollision;
 /*
-============================
+===================================================
     check if brush faces compile on brush
-============================
+===================================================
 */
 bool m_bChckCompile_Bsp;
 
@@ -428,9 +440,9 @@ bool m_bChckCompile_Bsp;
 enum { WORLD_BRUSH, CONSTRUCTION_BRUSH, CAULK_BRUSH }m_bBrushType;
 
 /*
-==========
-    brush type 
-==========
+=================================
+          Brush Type
+=================================
 */
 brush_t* BrushSignalType(brush_t* b) {
     int i;
@@ -476,24 +488,24 @@ brush_t* BrushSignalType(brush_t* b) {
 };
 
 /*
-=======================
-    new brush sarrus det updated 
-=======================
+==============================================
+       new brush sarrus det updated 
+==============================================
 */
 Vector SarrusDet(Vector3 a, Vector3 b, Vector3 c) {
     return a[0] * b[1] * c[2] + b[0] * c[1] * a[2] + c[0] * a[1] * b[2]
         - c[0] * b[1] * a[2] - a[1] * b[0] * c[2] - a[0] * b[2] * c[1];
 };
 
-//C Marker
+//Brush C Marker
 extern "C";
 
 /*
-========================
+===============================================
+ 
+         BRUSH TEXTURE COORDINATES
 
-    BRUSH TEXTURE COORDINATES
-
-========================
+===============================================
 */
 Vector3 BrushTextureCoords[18]{
     {0,0,1}, {1,0,0}, {0,-1,0},     // floor
@@ -505,11 +517,11 @@ Vector3 BrushTextureCoords[18]{
 };
 
 /*
-==================
+=========================================
 
-    TEXDEF BRUSH CLASS
+          TEXDEF BRUSH CLASS
 
-==================
+=========================================
 */
 class texdef {
 public:
@@ -572,7 +584,11 @@ bool fit_tex;
 //texture shift coords
 typedef Vector3 TexShiftCoords;
 
-
+/*
+======================
+ Brush Construct Menu
+======================
+*/ 
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if(gq_globals->g_qBrushPrimitMode = true)
        globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
