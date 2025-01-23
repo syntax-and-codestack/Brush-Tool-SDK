@@ -39,7 +39,7 @@ struct BrushCVar {
 =================
 */
 struct BListNode {
-    BListNode* brush_list_node;
+    BListNode* blstnode;
 };
 
 /*
