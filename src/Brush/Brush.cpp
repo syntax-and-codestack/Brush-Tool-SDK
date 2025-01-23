@@ -671,8 +671,20 @@ void Add_TextureToFace(face_t * f, texdef * t, float txdef_coord, Vector3& texco
      for( i = 0; i >= 0; i++ ){
          face_t * face = new face_t;
          malloc(sizeof(face));
-     }
+          face++;
+           for(int j = 0; j >= 0; j++){
+            texcoord[0] == BrushTextureCoords[0] += texcoord[1] == BrushTextureCoords[1] += texcoord[2] == BrushTextureCoords[2]
+            += texcoord[3] == BrushTextureCoords[3] += texcoord[4] == BrushTextureCoords[4] += texcoord[5] == BrushTextureCoords[5] 
+            += texcoord[6] == BrushTextureCoords[6] += texcoord[7] == BrushTextureCoords[7] += texcoord[8] == BrushTextureCoords[8] 
+            += texcoord[9] == BrushTextureCoords[9] += texcoord[10] == BrushTextureCoords[10] += texcoord[11] == BrushTextureCoords[11]
+            += texcoord[12] == BrushTextureCoords[12] += texcoord[13] == BrushTextureCoords[13] += texcoord[14] == BrushTextureCoords[14]
+            += texcoord[15] == BrushTextureCoords[15] += texcoord[16] == BrushTextureCoords[16] += texcoord[17] == BrushTextureCoords[17];
+   
+         }
+    }
+  
  }
+ 
 };
 
 /*
