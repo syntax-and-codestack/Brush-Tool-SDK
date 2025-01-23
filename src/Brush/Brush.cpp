@@ -591,7 +591,7 @@ typedef Vector3 TexShiftCoords;
 */ 
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if(gq_globals->g_qBrushPrimitMode = true)
-       globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
+       globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu = CreateMenu());
        globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
 };
 
