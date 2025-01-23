@@ -594,10 +594,8 @@ typedef Vector3 TexShiftCoords;
 */
 void Brush_SignalTexWnd(HWND * TexWnd, int nWndId, brush_t * b, texdef * t){
    if(b->b_pBrushPrimit){
-    for(nWindId = 0; nWndId >= 0; nWndId++){
-        
-    }
-
+    HWND * CurrentWnd = TexWnd;
+     TexWnd = SetParent(g_pMainFrame, TexWnd);
     
    }
  
