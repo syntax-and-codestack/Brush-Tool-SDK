@@ -695,6 +695,15 @@ if(b = Add_TextureToFace(f, t, txdef_coord, texcoord, TextureFile)){
  return b->current_brush(b);
 };
 
+#ifndef DEBUG_BRUSH
+#define DEBUG_BRUSH
+ brush_t * debug_brush = malloc(sizeof(debug_brush));
+  return debug_brush++;
+   if(!DEBUG_BRUSH){
+     debug_brush != sizeof(brush_t);
+    }
+#endif
+
 /*
  BrushAfx
 */
