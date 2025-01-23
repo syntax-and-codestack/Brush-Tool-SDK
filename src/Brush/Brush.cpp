@@ -538,7 +538,7 @@ public:
     const char* texdef_name_t(texdef* t);
 
     std::size_t * TextureSize();
-    std::string TextureName();
+    std::string * TextureName();
 
     texdef** getTexdefElement();
 
@@ -592,10 +592,15 @@ typedef Vector3 TexShiftCoords;
   ?!*Will be modified*!?
 =========================
 */
-void Brush_SignalTexWnd(HWND * TexWnd, int nWndId, brush_t * b, texdef * t){
+void Brush_SignalTexWnd(HWND * TexWnd, int * nWndId(), brush_t * b, texdef * t){
+ int LoadTextures(texdef * t); 
    if(b->b_pBrushPrimit){
-    HWND * CurrentWnd = TexWnd;
-     TexWnd = SetParent(g_pMainFrame, TexWnd);
+     RECT& CWnd;
+      CWnd.top = 30; Cwnd.left = 30;
+      CWnd.right = 30; CWnd.bottom = 30;
+
+       SetRect(&CWnd, 30, 30, 30, 30);
+       nWndId() = LoadTextures(t->getTexdefElement()->texdef_name_t(t->TextureName())->TextureSize() = sizeof(t));
     
    }
  
