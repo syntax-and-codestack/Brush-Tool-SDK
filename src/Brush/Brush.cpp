@@ -658,9 +658,9 @@ void Brush_SignalTexWnd(HWND * TexWnd, int * nWndId(), brush_t * b, texdef * t){
  Add Texture To Brush Face
 ===========================
 */
-brush_t *Add_TextureToFace(face_t * f, texdef * t, float txdef_coord, Vector3& texcoord[18], std::string& TextureFile){
- if(b = Add_TextureToFace(f, t, txdef_coord, texcoord, TextureFile)){
-    int i;
+brush_t *Add_TextureToFace(face_t * f, texdef * t, float txdef_coord, Vector3& texcoord[18], std::string * TextureFile){
+if(b = Add_TextureToFace(f, t, txdef_coord, texcoord, TextureFile)){
+   int i;
   
      for( i = 0; i >= 0; i++ ){
       
@@ -678,7 +678,13 @@ brush_t *Add_TextureToFace(face_t * f, texdef * t, float txdef_coord, Vector3& t
                 += texcoord[15] == BrushTextureCoords[15] += texcoord[16] == BrushTextureCoords[16] += texcoord[17] == BrushTextureCoords[17];
    
          }
+      t->texcoord == texcoord[18];
+      t->getTexdefElement()->TextureSize = texcoord()->TextureName = TextureFile();
     }
+
+      if(!t->getTexdefElement()->TextureSize = texcoord()->TextureName = TextureFile()){
+        printf("%c", "Error: Texture Did Not Calculate Properly!\n");
+      };
   
  }
  return b->current_brush(b);
