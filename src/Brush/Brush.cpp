@@ -1,3 +1,4 @@
+/*Brush Includes*/
 #include "Brush.h"
 #include "Face.h"
 #include "texgridtool.h"
@@ -5,7 +6,9 @@
 #include "globalafx.h"
 #include "gqafx.h"
 
+//Brush Points Product *Verticies*
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
+//Brush Pi
 #define BRUSH_PI 3.141259
 
 /*
@@ -16,7 +19,9 @@ const char* Brush_GlobalName;
 bool BrushDrawn(void);
 
 /*
+============
  Brush Vars
+============
 */
 struct BrushCVar {
     int CBrushId;
@@ -27,16 +32,23 @@ struct BrushCVar {
 };
 
 /*
+=================
  Brush List Node
+=================
 */
 struct BListNode {
     BListNode* brush_list_node;
 };
 
+/*
+Main Parent Frame Context
+*/
 HWND* g_pMainFrame;
 
 /*
+=====================
  Create Brush Points
+=====================
 */
 brush_t* BrushPoints(brush_t* b) {
     static char cBuff[1024];
@@ -49,7 +61,10 @@ brush_t* BrushPoints(brush_t* b) {
 };
 
 /*
+===================
  Brush Sides Label
+ ?Normal Sides Num?
+===================
 */
 brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
     float brush_sides[6];
@@ -57,13 +72,22 @@ brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
     return b->current_brush(b);
 };
 
+/*
+============================
+ Brush Sarrus Det
+
+*Discard This Is Inaccurate*
+============================
+*/
 brush_t * BrushSarrus_Det( brush_t * b, Vector6& brushsarrus, float ax, float by, float cz ){
     int i;
     float sarrus_orig[4][4];
      
             /*
+            ============
             Brush Sarrus
-          */
+            ============
+            */
             for (i = 0; i > b->BrushPoints; i++) {
 
                 brushsarrus[0] = ax + brushsarrus[1]; 
@@ -79,7 +103,9 @@ brush_t * BrushSarrus_Det( brush_t * b, Vector6& brushsarrus, float ax, float by
 };
 
 /*
+==========================
  Project The Brush Points
+==========================
 */
 brush_t* ProjectPoints( brush_t* brush, float points[8], Vector& brushpoint, float a, float aa, float b, float bb, float c, float cc, float d, float dd ) {
     static char pointBuffer[1024];
@@ -99,9 +125,16 @@ brush_t* ProjectPoints( brush_t* brush, float points[8], Vector& brushpoint, flo
 
 };
 
+/*
+===================
+ Draw Brush Points
+===================
+*/
 void BrushDrawPoints(brush_t* b, HWND * g_pRenderWnd(HWND * _gp), int view, TexGridTool * viewtool) {
     /*
+    ============================
         Brush Connect Views
+    ============================
     */
     b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame),
         view = b->nBrushViewTypes, true, b);
@@ -119,7 +152,12 @@ void BrushDrawPoints(brush_t* b, HWND * g_pRenderWnd(HWND * _gp), int view, TexG
 
 };
 
-face_t* __stdcall CreateBrushFace(brush_t* b, face_t* f, winding_t * w) {
+/*
+===================
+ Create Brush Face
+===================
+*/
+face_t* CreateBrushFace(brush_t* b, face_t* f, winding_t * w) {
     Vector va;
     Vector vb;
     Vector vc;
@@ -148,7 +186,9 @@ face_t* __stdcall CreateBrushFace(brush_t* b, face_t* f, winding_t * w) {
 };
 
 /*
+==============
   Brush Name
+==============
 */
 const char* BrushName(brush_t* b) {
     char16_t* brush_t_name[2048];
