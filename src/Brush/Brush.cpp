@@ -661,6 +661,14 @@ void Brush_SignalTexWnd(HWND * TexWnd, int * nWndId(), brush_t * b, texdef * t){
 };
 
 /*
+ BrushAfx
+*/
+bool bSel;
+int bSelArray[];//store mouse clicks
+static int bMouse_Clck;
+static int bMouse_Drag;
+
+/*
 ======================
  Brush Construct Menu
 ======================
