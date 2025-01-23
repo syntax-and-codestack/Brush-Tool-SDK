@@ -361,7 +361,9 @@ brush_t* BrushMidPoint(brush_t* b, Vector& vector, float *pointmax, float *point
 };
 
 /*
-    Brush Radius Face
+=======================
+   Brush Radius Face
+=======================
 */
 brush_t* BrushRadius(brush_t* b, face_t* f) {
     double Radius = 3.141259;
@@ -376,12 +378,15 @@ brush_t* BrushRadius(brush_t* b, face_t* f) {
 };
 
 /*
-    Print Brush Radius
+=======================
+  Print Brush Radius
+=======================
 */
 brush_t* PrintRadius(brush_t* b, face_t* f) {
     printf("%d", "%f", PrintRadius(b, f), BrushRadius(b, f));
      return BrushRadius(b, f);
 };
+
 
 brush_t * BrushFaces(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
     AddFacesToPoints(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
