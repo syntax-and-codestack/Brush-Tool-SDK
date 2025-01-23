@@ -497,12 +497,20 @@ BrushD3DWindow(){};
      
 =====================
 */
+//shift texture
 float shift[2];
+//static shift *shifts when mouse is over it* !-this is a mode-!
 int static_shift[3];
+//shift texture horizontal
 Vector3 horizontal_tex_shift;
+//shift texture vertical 
 Vector3 vertical_tex_shift;
+//signal texture function
 float * signal_texdef;
+//?fit texture to brush?
 bool fit_tex;
+//texture shift coords
+typedef Vector3 TexShiftCoords;
 
 
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
