@@ -479,7 +479,31 @@ typedef _BrushGlWindow BrushGlWindow;
 BrushGlWindow(){};
 
 /*Graphics Types*/
-enum { GLRender, D3DRender, Win32Render }g_nGraphicsApiType;
+enum { 
+ GLRender, D3DRender, Win32Render 
+}g_nGraphicsApiType;
+
+/*Brush D3D Window*/
+typedef struct _BrushD3DWindow;
+typedef _BrushD3DWindow BrushD3DWindow;
+/*constructor*/
+BrushD3DWindow(){};
+
+/*
+=====================
+
+ ADD TEXTURE TO FACE
+     FUNCTIONS
+     
+=====================
+*/
+float shift[2];
+int static_shift[3];
+Vector3 horizontal_tex_shift;
+Vector3 vertical_tex_shift;
+float * signal_texdef;
+bool fit_tex;
+
 
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if(gq_globals->g_qBrushPrimitMode = true)
