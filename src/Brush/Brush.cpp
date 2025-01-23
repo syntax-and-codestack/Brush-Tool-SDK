@@ -472,7 +472,11 @@ public:
 
 };
 
-
+/*Brush Gl Window*/
+typedef struct _BrushGlWindow;
+typedef _BrushGlWindow BrushGlWindow;
+/*constructor*/
+BrushGlWindow(){};
 
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if(gq_globals->g_qBrushPrimitMode = true)
