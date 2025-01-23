@@ -478,6 +478,9 @@ typedef _BrushGlWindow BrushGlWindow;
 /*constructor*/
 BrushGlWindow(){};
 
+/*Graphics Types*/
+enum { GLRender, D3DRender, Win32Render }g_nGraphicsApiType;
+
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if(gq_globals->g_qBrushPrimitMode = true)
        globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
