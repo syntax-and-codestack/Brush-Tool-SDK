@@ -12,7 +12,9 @@
 #define BRUSH_PI 3.141259
 
 /*
+===============
  Brush Globals
+===============
 */
 int nBrushId = 0;
 const char* Brush_GlobalName;
