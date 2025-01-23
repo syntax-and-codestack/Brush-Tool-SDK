@@ -592,15 +592,65 @@ typedef Vector3 TexShiftCoords;
   ?!*Will be modified*!?
 =========================
 */
-void Brush_SignalTexWnd(HWND * TexWnd, int * nWndId(), brush_t * b, texdef * t){
- int LoadTextures(texdef * t); 
-   if(b->b_pBrushPrimit){
-     RECT& CWnd;
-      CWnd.top = 30; Cwnd.left = 30;
-      CWnd.right = 30; CWnd.bottom = 30;
+/*
 
-       SetRect(&CWnd, 30, 30, 30, 30);
-       nWndId() = LoadTextures(t->getTexdefElement()->texdef_name_t(t->TextureName())->TextureSize() = sizeof(t));
+RECT FUNCTIONS:
+
+// Initialize a RECT with specific coordinates
+BOOL SetRect(LPRECT lprc, int xLeft, int yTop, int xRight, int yBottom);
+
+// Initialize a RECT as empty (all coordinates set to 0)
+BOOL SetRectEmpty(LPRECT lprc);
+
+// Offset a RECT by specified x and y values
+BOOL OffsetRect(LPRECT lprc, int dx, int dy);
+
+// Expand or shrink a RECT by specified amounts
+BOOL InflateRect(LPRECT lprc, int dx, int dy);
+
+// Combine two RECTs into their bounding rectangle
+BOOL UnionRect(LPRECT lprcDst, const RECT* lprcSrc1, const RECT* lprcSrc2);
+
+// Subtract one RECT from another
+BOOL SubtractRect(LPRECT lprcDst, const RECT* lprcSrc1, const RECT* lprcSrc2);
+
+// Calculate the intersection of two RECTs
+BOOL IntersectRect(LPRECT lprcDst, const RECT* lprcSrc1, const RECT* lprcSrc2);
+
+// Check if a point is inside a RECT
+BOOL PtInRect(const RECT* lprc, POINT pt);
+
+// Check if two RECTs are equal
+BOOL EqualRect(const RECT* lprc1, const RECT* lprc2);
+
+// Check if a RECT is empty (all coordinates are zero)
+BOOL IsRectEmpty(const RECT* lprc);
+
+// Copy one RECT into another
+BOOL CopyRect(LPRECT lprcDst, const RECT* lprcSrc);
+
+// Retrieve the screen dimensions of a window, including borders
+BOOL GetWindowRect(HWND hWnd, LPRECT lpRect);
+
+// Retrieve the client area dimensions of a window (excluding borders)
+BOOL GetClientRect(HWND hWnd, LPRECT lpRect);
+
+// Normalize a RECT so that left <= right and top <= bottom
+void NormalizeRect(RECT* lprc);
+
+// Adjust a window's RECT to account for styles (borders, menus, etc.)
+BOOL AdjustWindowRect(LPRECT lprc, DWORD dwStyle, BOOL bMenu);
+BOOL AdjustWindowRectEx(LPRECT lprc, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle);
+
+*/
+void Brush_SignalTexWnd(HWND * TexWnd, int * nWndId(), brush_t * b, texdef * t){
+  int LoadTextures(texdef * t); 
+  if(b->b_pBrushPrimit){
+    RECT& CWnd;
+    CWnd.top = 30; Cwnd.left = 30;
+    CWnd.right = 30; CWnd.bottom = 30;
+      SetRect(&CWnd, 30, 30, 30, 30);
+      nWndId() = LoadTextures(t->getTexdefElement()->texdef_name_t(t->TextureName())->TextureSize() = sizeof(t));
     
    }
  
