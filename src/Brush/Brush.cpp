@@ -672,9 +672,9 @@ enum { bPenRed, bPenGreen, bPenBlue }qgl_BrushPen;
 static int qgl_PenId;
 void * bFind(brush_t * b)
 
-#define MOUSE_LFT_CLCK_SHIFT 111x111
-#define MOUSE_RGHT_CLCK 222x222
-#define MOUSE_DRAG 333x333
+#define MOUSE_LFT_CLCK_SHIFT 111
+#define MOUSE_RGHT_CLCK 222
+#define MOUSE_DRAG 333
 
 /*
 ======================
