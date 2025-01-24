@@ -942,6 +942,9 @@ winding_t * copywinding(winding_t* w){
 };
 
 /*
+*/
+
+/*
 ======================
  Brush Construct Menu
 ======================
