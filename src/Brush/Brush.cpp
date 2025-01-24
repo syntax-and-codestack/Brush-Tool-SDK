@@ -1082,6 +1082,21 @@ return b;
 };
 
 /*
+=================
+ Brush Epair Dlg
+=================
+*/
+void Brush_EpairDlg(HWND * g_pMainFrame, char * lbl){
+ GtkWidget * dialog, *label, *text;
+ GtkDialogFlags dlg_flags;
+
+  flags = GTK_DIALOG;
+  dialog = gtk_dialog_new_with_buttons();
+
+   dialog->GtkTextBox[] = "Brush Key :\n";
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
