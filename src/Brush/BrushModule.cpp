@@ -1,5 +1,13 @@
 #include "Brush.h"
 
+std::FILE* BrushModule_File;
+
+const void Module_BrushFile(brush_t * b) {
+	b++;
+	 BrushModule_File->_Placeholder = b;
+	 return Module_BrushFile(b);
+}const;
+
 void Brush_ModuleSignal(brush_t* b) {
 
 		if (b->b_pBrushPrimitMode) {
