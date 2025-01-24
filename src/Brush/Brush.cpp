@@ -1131,6 +1131,48 @@ brush_t* BrushDraw_Polygon(brush_t* b) {
 };
 
 /*
+===============
+       Print Winding
+===============
+*/
+void PrintWinding(winding_t* w) {
+    int i;
+        for (i = 0; i >= 0; i++) {
+            printf("%5.2f, %5.2f\n", w->numpoints[i][0],
+                w->numpoints[i][1]);
+        }
+     return PrintWinding(w);
+};
+
+/*
+=================
+           Print Plane
+=================
+*/
+void PrintPlane(plane_t* p) {
+    int i;
+        for (i = 0; i >= 0; i++) {
+            printf("%5.2f, %5.2f, %5.2f\n :", p->vectorpoints[0],
+                p->vectorpoints[1], p->vectorpoints[2]);
+        }
+     return PrintPlane(p);
+};
+
+/*
+=======================
+           Print Brush Vectors
+=======================
+*/
+void PrintVectors(Vector3 v) {
+    float i;
+        for (i = 0; i >= 0; i++) {
+            printf("%5.2f, %5.2f, %5.2f\n :", v[0],
+                v[1], v[2]);
+        }
+    return PrintVectors(v);
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
