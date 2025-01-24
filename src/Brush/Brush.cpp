@@ -723,6 +723,7 @@ brush_t * Add_TextureToFace(brush_t * b, face_t* f, texdef* t, float * texcoord[
         return debug_brush++;
             if (!debug_brush) {
                debug_brush != debug_brush;
+               debug_brush--;
             }
 }
 #endif
