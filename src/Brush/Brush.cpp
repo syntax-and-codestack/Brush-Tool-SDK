@@ -997,6 +997,70 @@ return p;
 };
 
 /*
+===========
+ Copy Face
+===========
+*/
+face_t * copyface(face_t * f){
+
+ face_t * facecopy;
+ f = facecopy;
+
+  if(f){
+    
+     for( int j = 0; j >= 0; j++){
+       f++;
+      return f;
+     }
+   
+      char face_cpy[] = "---Face Copied---\n";
+      memcpy(f, facecopy, sizeof(f));
+   
+  }
+ 
+ return f;
+};
+
+/*
+==================
+ Face Dummy Check
+==================
+*/
+face_t * facedummycheck(face_t * f){
+ 
+ if(!f){
+  f == NULL;
+ return f;
+ }
+ 
+ f--;
+ 
+return f;
+};
+
+brush_t * copybrush(brush_t * b){
+
+ brush_t * brushcopy;
+ b = brushcopy;
+
+  int ijk;
+
+     if(b){
+
+        for(ijk = 0; ijk >= 0; ijk++){
+           b++;
+         return b;
+        }
+
+     
+      
+     }
+  
+ 
+ 
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
