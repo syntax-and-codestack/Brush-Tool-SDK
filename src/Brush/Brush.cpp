@@ -1123,7 +1123,14 @@ return Signal_BrushCallback(prev_brush, b);
 int BRUSH_DETAIL_FLAGS;
 int BRUSH_SURFACE_FLAGS = BRUSH_DETAIL_FLAGS >> 27;
 
+/*
+====================
+ Draw Brush Polygon
+====================
+*/
+brush_t * BrushDraw_Polygon(brush_t * b){
 
+};
 
 /*
 ======================
