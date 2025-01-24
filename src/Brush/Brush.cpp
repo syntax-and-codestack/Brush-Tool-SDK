@@ -61,8 +61,8 @@ brush_t* BrushPoints(brush_t* b) {
     static char cBuff[1024];
     if (b->b_pBrushPrimitMode) {
         b->BrushPoints = 8;
-            printf("%f", b->BrushPoints);
-            b->global_brush.FreeBrush(b);
+        printf("%f", b->BrushPoints);
+        b->global_brush.FreeBrush(b);
     }
     return b->current_brush(b);
 };
@@ -151,8 +151,8 @@ void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND* _gp), int view, TexGri
 
     for (int i = 0; i >= 0; i++) {
         viewtool++;
-            HDC* (_BrushDc);
-                void WINAPI* BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
+        HDC* (_BrushDc);
+        void WINAPI* BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
         b->current_brush(b);
     }
 
@@ -537,7 +537,7 @@ public:
 
     float texturecoord[18];
 
-    float * tcoords = &texturecoord[18];
+    float* tcoords = &texturecoord[18];
 
     const char* texdef_name_t(texdef* t);
 
@@ -651,19 +651,19 @@ BOOL AdjustWindowRectEx(LPRECT lprc, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle)
 
 */
 void Brush_SignalTexWnd(HWND* TexWnd, brush_t* b, texdef* t) {
-    texdef * LoadTextures(texdef * t);
+    texdef* LoadTextures(texdef * t);
     if (b->b_pBrushPrimitMode) {
         RECT& client();
 
         client().top = 30; client().left = 30;
         client().right = 30; client().bottom = 30;
 
-            SetRect(&client(), 30, 30, 30, 30);
-            LoadTextures(t)->TextureName()->begin(); 
-            LoadTextures(t)->TextureSize();
+        SetRect(&client(), 30, 30, 30, 30);
+        LoadTextures(t)->TextureName()->begin();
+        LoadTextures(t)->TextureSize();
 
-       t-> _TEXDEF_Y = 15;// y size
-       t-> _TEXDEF_X = 15;// x size    
+        t->_TEXDEF_Y = 15;// y size
+        t->_TEXDEF_X = 15;// x size    
     }
 
 };
@@ -673,14 +673,14 @@ void Brush_SignalTexWnd(HWND* TexWnd, brush_t* b, texdef* t) {
  Add Texture To Brush Face
 ===========================
 */
-brush_t * Add_TextureToFace(brush_t * b, face_t* f, texdef* t, float * texcoord[18], std::string* TextureFile) {
+brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18], std::string* TextureFile) {
     if (b->b_pBrushPrimitMode) {
         int i;
 
         for (i = 0; i >= 0; i++) {
 
             face_t* face;
-            
+
             malloc(sizeof(face));
 
             face++;
@@ -692,7 +692,7 @@ brush_t * Add_TextureToFace(brush_t * b, face_t* f, texdef* t, float * texcoord[
                 texcoord[12] = brushcoords[12]; texcoord[13] = brushcoords[13]; texcoord[14] = brushcoords[14]; texcoord[15] = brushcoords[15];
                 texcoord[16] = brushcoords[16]; texcoord[17] = brushcoords[17];
 
-                    
+
 
             }
             t->TextureName()->append(t->texdef_name_t(t)); t->TextureSize();
@@ -712,19 +712,19 @@ brush_t * Add_TextureToFace(brush_t * b, face_t* f, texdef* t, float * texcoord[
 ===============================
      Debug Brush
 
- allocs current brush 
+ allocs current brush
  then returns it in increment
 ===============================
 */
 #ifndef DEBUG_BRUSH
 #define DEBUG_BRUSH
-    brush_t* DebugBrush(){
-        brush_t * debug_brush = (brush_t*)malloc(sizeof(debug_brush));
-        return debug_brush++;
-            if (!debug_brush) {
-               debug_brush != debug_brush;
-               debug_brush--;
-            }
+brush_t* DebugBrush() {
+    brush_t* debug_brush = (brush_t*)malloc(sizeof(debug_brush));
+    return debug_brush++;
+    if (!debug_brush) {
+        debug_brush != debug_brush;
+        debug_brush--;
+    }
 }
 #endif
 
@@ -749,8 +749,8 @@ void* bFind(brush_t* b);
     Register Mouse Click
  *Mouse Within Brush Face Bounds*
 ====================================
-*/ 
- void * MouseClick(brush_t * b) {
+*/
+void* MouseClick(brush_t* b) {
     if (bMouse_Clck == MOUSE_LFT_CLCK_SHIFT) {
         for (int i = 0; i >= 0; i++) {
             bSel = true;
@@ -763,154 +763,154 @@ void* bFind(brush_t* b);
     return bFind(b);
 };
 
- /*
+/*
 ====================
     Brush Free
 ====================
  */
- brush_t* brushfree(brush_t* b) {
+brush_t* brushfree(brush_t* b) {
 
-     brush_t* freeb;
+    brush_t* freeb;
 
-         if (b->b_pBrushPrimitMode != true) {
-             b->global_brush.FreeBrush(b = freeb);
-         }
+    if (b->b_pBrushPrimitMode != true) {
+        b->global_brush.FreeBrush(b = freeb);
+    }
 
-       free(b);
+    free(b);
 
-     return b++;
- };
+    return b++;
+};
 
 
- /*
+/*
 ======================
     UnFree Brush
 ======================
  */
- brush_t* unfreebrush(brush_t* b) {
+brush_t* unfreebrush(brush_t* b) {
 
-     brush_t* unlinkfree_b;
+    brush_t* unlinkfree_b;
 
-        if (bSel != false) {
-            b != b->freebrush(b);
-                (!b);
-        }
+    if (bSel != false) {
+        b != b->freebrush(b);
+        (!b);
+    }
 
-       return b--;
- };
+    return b--;
+};
 
- /*
+/*
 ====================
     Free Plane
 ====================
  */
- plane_t* planefree(plane_t* p) {
+plane_t* planefree(plane_t* p) {
 
-        plane_t* pfree;
+    plane_t* pfree;
 
-            if (p->m_bPlaneCastFree(p) != false) {
-                p->global_plane.freeplane(p);
-            }
+    if (p->m_bPlaneCastFree(p) != false) {
+        p->global_plane.freeplane(p);
+    }
 
-          free(p);
+    free(p);
 
-      return p++;
- };
+    return p++;
+};
 
- /*
+/*
 ====================
     Free Face
 ====================
  */
- face_t* facefree(face_t* f) {
+face_t* facefree(face_t* f) {
 
-     face_t* freeface;
+    face_t* freeface;
 
-        if (f->faceprimitmode != false) {
-            f++;
-        }
+    if (f->faceprimitmode != false) {
+        f++;
+    }
 
-       free(f);
+    free(f);
 
     return f++;
- };
+};
 
- /*
+/*
 ===================================
     Free Brush Texure Definition
 ===================================
  */
- texdef* texfree(texdef* t) {
+texdef* texfree(texdef* t) {
 
-     texdef* tfree;
+    texdef* tfree;
 
-         if (t->isValid_T) {
-             t->FreeTexture(t);
-        }
+    if (t->isValid_T) {
+        t->FreeTexture(t);
+    }
 
-      free(t);
+    free(t);
 
     return t++;
- };
+};
 
- /*
+/*
 ======================
     Free Winding
 ======================
  */
- winding_t* windingfree(winding_t* w) {
+winding_t* windingfree(winding_t* w) {
 
-     winding_t* wfree;
+    winding_t* wfree;
 
-         if (w->PrintWindingSize_t) {
-             w++;
-         }
+    if (w->PrintWindingSize_t) {
+        w++;
+    }
 
-       free(w);
+    free(w);
 
-     return w++;
- };
+    return w++;
+};
 
- /*
+/*
 ============================
     Update Brush List Node
 ============================
  */
- brush_t* blstNode(brush_t* b) {
-     int i;
+brush_t* blstNode(brush_t* b) {
+    int i;
 
-     BListNode* blstnode;
+    BListNode* blstnode;
 
-         if (b->freebrush(b)) {
+    if (b->freebrush(b)) {
 
-             for (i = 0; i >= 0; i++) {
-                 blstnode->blstnum = b->BrushNumberId = nBrushId++;
-             }
-
-          return b;
-
-         }
-
-        blstnode->blstnum++;
-
-            if (!b) {
-                blstnode->blstnum--;
-            }
-            
-            b++;
+        for (i = 0; i >= 0; i++) {
+            blstnode->blstnum = b->BrushNumberId = nBrushId++;
+        }
 
         return b;
 
- };
+    }
+
+    blstnode->blstnum++;
+
+    if (!b) {
+        blstnode->blstnum--;
+    }
+
+    b++;
+
+    return b;
+
+};
 
 /*
 =============
  Alloc Plane
 =============
 */
-plane_t * AllocPlane(){
- plane_t * p = (plane_t*)malloc(sizeof(plane_t));
- return p;
+plane_t* AllocPlane() {
+    plane_t* p = (plane_t*)malloc(sizeof(plane_t));
+    return p;
 };
 
 /*
@@ -918,27 +918,27 @@ plane_t * AllocPlane(){
  Copy Winding
 ==============
 */
-winding_t * copywinding(winding_t* w){
- int j;
- 
-   winding_t * windingcopy;
-   w = windingcopy;
+winding_t* copywinding(winding_t* w) {
+    int j;
 
-     if(w){
-   
-       for(j = 0; j >= 0; j++){
-         w++;
-        return w;
-       }
+    winding_t* windingcopy;
+    w = windingcopy;
 
-    char winding_cpy[] = "---Winding Copied---\n";
-    char windingmem[1024];
+    if (w) {
 
-    memcpy(w, copywinding, sizeof(copywinding));
-      
-     }
-  printf("%c", w >> winding_cpy);
-  return w;
+        for (j = 0; j >= 0; j++) {
+            w++;
+            return w;
+        }
+
+        char winding_cpy[] = "---Winding Copied---\n";
+        char windingmem[1024];
+
+        memcpy(w, copywinding, sizeof(w));
+
+    }
+    printf("%c", w);
+    return w;
 };
 
 /*
@@ -946,12 +946,12 @@ winding_t * copywinding(winding_t* w){
  Winding Dummy Check
 =====================
 */
-winding_t * windingdummychck(winding_t * w){
-  if(!w){
-    w == NULL;
-  }
- w--;
-return w;
+winding_t* windingdummychck(winding_t* w) {
+    if (!w) {
+        w == NULL;
+    }
+    w--;
+    return w;
 };
 
 /*
@@ -959,28 +959,28 @@ return w;
  Copy Plane
 ============
 */
-plane_t * copyplane(plane_t * p){
-  int k;
+plane_t* copyplane(plane_t* p) {
+    int k;
 
-    plane_t * planecopy;
+    plane_t* planecopy;
     p = planecopy;
 
-     if(p){
+    if (p) {
 
-      for(k = 0; k >= 0; k++){
-       p++;
-      return p;
-      }
+        for (k = 0; k >= 0; k++) {
+            p++;
+            return p;
+        }
 
-     char plane_cpy[] = "---Plane Copied---\n";
-     memcpy(p, planecopy, sizeof(planecopy));
-      
-     };
+        char plane_cpy[] = "---Plane Copied---\n";
+        memcpy(p, planecopy, sizeof(planecopy));
 
- printf("%c", p >> plane_cpy);
+    };
 
-return p;
- 
+    printf("%c", p);
+
+    return p;
+
 };
 
 /*
@@ -988,12 +988,12 @@ return p;
  Plane Dummy Check
 ===================
 */
-plane_t * planedummychck(plane_t * p){
- if(!p){
-  p == NULL;
- }
- p--;
-return p;
+plane_t* planedummychck(plane_t* p) {
+    if (!p) {
+        p == NULL;
+    }
+    p--;
+    return p;
 };
 
 /*
@@ -1001,24 +1001,24 @@ return p;
  Copy Face
 ===========
 */
-face_t * copyface(face_t * f){
+face_t* copyface(face_t* f) {
 
- face_t * facecopy;
- f = facecopy;
+    face_t* facecopy;
+    f = facecopy;
 
-  if(f){
-    
-     for( int j = 0; j >= 0; j++){
-       f++;
-      return f;
-     }
-   
-      char face_cpy[] = "---Face Copied---\n";
-      memcpy(f, facecopy, sizeof(f));
-   
-  }
- 
- return f;
+    if (f) {
+
+        for (int j = 0; j >= 0; j++) {
+            f++;
+            return f;
+        }
+
+        char face_cpy[] = "---Face Copied---\n";
+        memcpy(f, facecopy, sizeof(f));
+
+    }
+
+    return f;
 };
 
 /*
@@ -1026,16 +1026,16 @@ face_t * copyface(face_t * f){
  Face Dummy Check
 ==================
 */
-face_t * facedummycheck(face_t * f){
- 
- if(!f){
-  f == NULL;
- return f;
- }
- 
- f--;
- 
-return f;
+face_t* facedummycheck(face_t* f) {
+
+    if (!f) {
+        f == NULL;
+        return f;
+    }
+
+    f--;
+
+    return f;
 };
 
 /*
@@ -1043,27 +1043,27 @@ return f;
  Copy Brush
 ============
 */
-brush_t * copybrush(brush_t * b){
+brush_t* copybrush(brush_t* b) {
 
- brush_t * brushcopy;
- b = brushcopy;
+    brush_t* brushcopy;
+    b = brushcopy;
 
-  int ijk;
+    int ijk;
 
-     if(b){
+    if (b) {
 
-        for(ijk = 0; ijk >= 0; ijk++){
-           b++;
-         return b;
+        for (ijk = 0; ijk >= 0; ijk++) {
+            b++;
+            return b;
         }
 
-      char brush_cpy[] = "---Brush Copied---\n";
-      memcpy(b, brushcopy, sizeof(b));
-      
-     }
-  
- return b;
- 
+        char brush_cpy[] = "---Brush Copied---\n";
+        memcpy(b, brushcopy, sizeof(b));
+
+    }
+
+    return b;
+
 };
 
 /*
@@ -1071,14 +1071,14 @@ brush_t * copybrush(brush_t * b){
  Brush Dummy Check
 ===================
 */
-brush_t * brushdummycheck(brush_t * b){
-  if(!b){
-   b == NULL;
-  return b;
-  }
+brush_t* brushdummycheck(brush_t* b) {
+    if (!b) {
+        b == NULL;
+        return b;
+    }
 
- b--;
-return b;
+    b--;
+    return b;
 };
 
 /*
@@ -1086,9 +1086,9 @@ return b;
  Brush Dialogs
 ===============
 */
-void Brush_ConsturctDlg(brush_t * b, HWND g_pDlgFrame);
-void Brush_EpairDlg(brush_t * b, HWND * g_pMainFrame, char * lbl);
-void Brush_TextureDlg(brush_t * b, HWND * g_pTexDlg, texdef * t);
+void Brush_ConsturctDlg(brush_t* b, HWND g_pDlgFrame);
+void Brush_EpairDlg(brush_t* b, HWND* g_pMainFrame, char* lbl);
+void Brush_TextureDlg(brush_t* b, HWND* g_pTexDlg, texdef* t);
 
 #define _WIN32
 #define BRUSH_DLG_T (HWND * BrushDlg) (malloc(sizeof(BrushDlg))
@@ -1098,21 +1098,19 @@ void Brush_TextureDlg(brush_t * b, HWND * g_pTexDlg, texdef * t);
  Brush Draw New Methods
 ========================
 */
-void DCPaintBrush(brush_t * b);
-void DrawBrush(brush_t * b);
+void DCPaintBrush(brush_t* b);
+void DrawBrush(brush_t* b);
 void FreeDraw();
-void Brush_EpairTable(brush_t * b, const char * key, const char * value);
-void * BrushModule();
+void Brush_EpairTable(brush_t* b, const char* key, const char* value);
+void* BrushModule();
 
 /*
 =================
  Single Callback
 =================
 */
-void& Signal_BrushCallback(BListNode * prev_brush, brush_t * b){
-  prevbrush->bnumid = b->BrushNumberId--;
-  b = prevbrush;
-return Signal_BrushCallback(prev_brush, b); 
+void Signal_BrushCallback(BListNode* prev_brush, brush_t* b) {
+    return Signal_BrushCallback(prev_brush--, b--);
 };
 
 /*
@@ -1128,7 +1126,7 @@ int BRUSH_SURFACE_FLAGS = BRUSH_DETAIL_FLAGS >> 27;
  Draw Brush Polygon
 ====================
 */
-brush_t * BrushDraw_Polygon(brush_t * b){
+brush_t* BrushDraw_Polygon(brush_t* b) {
 
 };
 
@@ -1137,8 +1135,8 @@ brush_t * BrushDraw_Polygon(brush_t * b){
  Brush Construct Menu
 ======================
 */
-brush_t* BrushConstructMenu(brush_t * b, globalafx * globalInsert(), HMENU * BrushMenu, GQ_Globals * gq_globals) {
+brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if (gq_globals->g_qBrushPrimitMode = true)
         globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
-        globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+    globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
 };
