@@ -942,7 +942,59 @@ winding_t * copywinding(winding_t* w){
 };
 
 /*
+=====================
+ Winding Dummy Check
+=====================
 */
+winding_t * windingdummychck(winding_t * w){
+  if(!w){
+    w == NULL;
+  }
+ w--;
+return w;
+};
+
+/*
+============
+ Copy Plane
+============
+*/
+plane_t * copyplane(plane_t * p){
+  int k;
+
+    plane_t * planecopy;
+    p = planecopy;
+
+     if(p){
+
+      for(k = 0; k >= 0; k++){
+       p++;
+      return p;
+      }
+
+     char plane_cpy[] = "---Plane Copied---\n";
+     memcpy(p, planecopy, sizeof(planecopy));
+      
+     };
+
+ printf("%c", p >> plane_cpy);
+
+return p;
+ 
+};
+
+/*
+===================
+ Plane Dummy Check
+===================
+*/
+plane_t * planedummychck(plane_t * p){
+ if(!p){
+  p == NULL;
+ }
+ p--;
+return p;
+};
 
 /*
 ======================
