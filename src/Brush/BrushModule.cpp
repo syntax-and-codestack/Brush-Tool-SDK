@@ -55,9 +55,9 @@ public:
 		const char BrushModuleKey;
 		const char BrushModuleValue;
 
-			BrushModule& PrimitBrushModule();
+		BrushModule& PrimitBrushModule();
 
-			const void MallocBrushModuleKey(brush_t* b, BrushModule* bmodule);
-			const void MallocBrushModuleValue(brush_t* b, BrushModule* bmodule);
+		const void MallocBrushModuleKey(brush_t* b, BrushModule* bmodule);
+		const void MallocBrushModuleValue(brush_t* b, BrushModule* bmodule);
 
 };
