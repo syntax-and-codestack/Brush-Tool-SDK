@@ -708,6 +708,14 @@ brush_t * Add_TextureToFace(brush_t * b, face_t* f, texdef* t, float * texcoord[
     return b->current_brush(b);
 };
 
+/*
+===============================
+     Debug Brush
+
+ allocs current brush 
+ then returns it in increment
+===============================
+*/
 #ifndef DEBUG_BRUSH
 #define DEBUG_BRUSH
     brush_t* DebugBrush(){
@@ -755,9 +763,9 @@ void* bFind(brush_t* b);
 };
 
  /*
-==========
+====================
     Brush Free
-==========
+====================
  */
  brush_t* brushfree(brush_t* b) {
 
@@ -774,9 +782,9 @@ void* bFind(brush_t* b);
 
 
  /*
-============
+======================
     UnFree Brush
-============
+======================
  */
  brush_t* unfreebrush(brush_t* b) {
 
@@ -791,9 +799,9 @@ void* bFind(brush_t* b);
  };
 
  /*
-==========
+====================
     Free Plane
-==========
+====================
  */
  plane_t* planefree(plane_t* p) {
 
@@ -809,9 +817,9 @@ void* bFind(brush_t* b);
  };
 
  /*
-==========
+====================
     Free Face
-==========
+====================
  */
  face_t* facefree(face_t* f) {
 
@@ -827,9 +835,9 @@ void* bFind(brush_t* b);
  };
 
  /*
-=====================
+===================================
     Free Brush Texure Definition
-=====================
+===================================
  */
  texdef* texfree(texdef* t) {
 
@@ -845,9 +853,9 @@ void* bFind(brush_t* b);
  };
 
  /*
-============
+======================
     Free Winding
-============
+======================
  */
  winding_t* windingfree(winding_t* w) {
 
@@ -863,9 +871,9 @@ void* bFind(brush_t* b);
  };
 
  /*
-==================
+============================
     Update Brush List Node
-==================
+============================
  */
  brush_t* blstNode(brush_t* b) {
      int i;
@@ -902,6 +910,34 @@ void* bFind(brush_t* b);
 plane_t * AllocPlane(){
  plane_t * p = (plane_t*)malloc(sizeof(plane_t));
  return p;
+};
+
+/*
+==============
+ Copy Winding
+==============
+*/
+winding_t * copywinding(winding_t* w){
+ int j;
+ 
+   winding_t * windingcopy;
+   w = windingcopy;
+
+     if(w){
+   
+       for(j = 0; j >= 0; j++){
+         w++;
+        return w;
+       }
+
+    char winding_cpy[] = "---Winding Copied---\n";
+    char windingmem[1024];
+
+    memcpy(w, copywinding, sizeof(copywinding));
+      
+     }
+  printf("%c", w >> winding_cpy);
+  return w;
 };
 
 /*
