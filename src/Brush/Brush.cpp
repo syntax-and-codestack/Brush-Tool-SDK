@@ -39,6 +39,7 @@ struct BrushCVar {
 =================
 */
 struct BListNode {
+    int blstnum;
     BListNode* blstnode;
 };
 
@@ -56,8 +57,8 @@ brush_t* BrushPoints(brush_t* b) {
     static char cBuff[1024];
     if (b->b_pBrushPrimitMode) {
         b->BrushPoints = 8;
-        printf("%f", b->BrushPoints);
-        b->global_brush.FreeBrush(b);
+            printf("%f", b->BrushPoints);
+            b->global_brush.FreeBrush(b);
     }
     return b->current_brush(b);
 };
@@ -258,7 +259,7 @@ std:size_t facesize = sizeof(f);
 */
 camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
     int i;
-    if (b->b_pBrushPrimitMode)) {
+    if (b->b_pBrushPrimitMode) {
         for (i = 0; i >= 0; i++) {
             camwnd->AllocCamera()->InitCamera(camwnd);
 
@@ -747,6 +748,146 @@ void* bFind(brush_t* b);
     }
     return bFind(b);
 };
+
+ /*
+==========
+    Brush Free
+==========
+ */
+ brush_t* brushfree(brush_t* b) {
+
+     brush_t* freeb;
+
+         if (b->b_pBrushPrimitMode != true) {
+             b->global_brush.FreeBrush(b = freeb);
+         }
+
+       free(b);
+
+     return b++;
+ };
+
+
+ /*
+============
+    UnFree Brush
+============
+ */
+ brush_t* unfreebrush(brush_t* b) {
+
+     brush_t* unlinkfree_b;
+
+        if (bSel != false) {
+            b != b->freebrush(b);
+                (!b);
+        }
+
+       return b--;
+ };
+
+ /*
+==========
+    Free Plane
+==========
+ */
+ plane_t* planefree(plane_t* p) {
+
+        plane_t* pfree;
+
+            if (p->m_bPlaneCastFree(p) != false) {
+                p->global_plane.freeplane(p);
+            }
+
+          free(p);
+
+      return p++;
+ };
+
+ /*
+==========
+    Free Face
+==========
+ */
+ face_t* facefree(face_t* f) {
+
+     face_t* freeface;
+
+        if (f->faceprimitmode != false) {
+            f++;
+        }
+
+       free(f);
+
+    return f++;
+ };
+
+ /*
+=====================
+    Free Brush Texure Definition
+=====================
+ */
+ texdef* texfree(texdef* t) {
+
+     texdef* tfree;
+
+         if (t->isValid_T) {
+             t->FreeTexture(t);
+        }
+
+      free(t);
+
+    return t++;
+ };
+
+ /*
+============
+    Free Winding
+============
+ */
+ winding_t* windingfree(winding_t* w) {
+
+     winding_t* wfree;
+
+         if (w->PrintWindingSize_t) {
+             w++;
+         }
+
+       free(w);
+
+     return w++;
+ };
+
+ /*
+==================
+    Update Brush List Node
+==================
+ */
+ brush_t* blstNode(brush_t* b) {
+     int i;
+
+     BListNode* blstnode;
+
+         if (b->freebrush(b)) {
+
+             for (i = 0; i >= 0; i++) {
+                 blstnode->blstnum = b->BrushNumberId = nBrushId++;
+             }
+
+          return b;
+
+         }
+
+        blstnode->blstnum++;
+
+            if (!b) {
+                blstnode->blstnum--;
+            }
+            
+            b++;
+
+        return b;
+
+ };
 
 /*
 ======================

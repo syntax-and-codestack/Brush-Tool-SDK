@@ -45,6 +45,9 @@ public:
 
     bool b_pBrushPrimitMode;
 
+    //match with free
+    void* freebrush(brush_t* b);
+
     /*
      ?:
       *BRUSH TOOLS LIST*
