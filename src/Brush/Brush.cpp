@@ -80,11 +80,12 @@ brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
 };
 
 /*
-============================
- Brush Sarrus Det
+=============================
+     Brush Sarrus Det
 
-*Discard This Is Inaccurate*
-============================
+ *Discard This Is Inaccurate*
+ *!im to lazy to delete it!*
+=============================
 */
 brush_t* BrushSarrus_Det(brush_t* b, Vector6& brushsarrus, float ax, float by, float cz) {
     int i;
