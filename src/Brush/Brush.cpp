@@ -1052,11 +1052,12 @@ brush_t * copybrush(brush_t * b){
          return b;
         }
 
-     
+      char brush_cpy[] = "---Brush Copied---\n";
+      memcpy(b, brushcopy, sizeof(b));
       
      }
   
- 
+ return b;
  
 };
 
