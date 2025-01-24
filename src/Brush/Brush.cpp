@@ -1087,13 +1087,20 @@ return b;
 =================
 */
 void Brush_EpairDlg(HWND * g_pMainFrame, char * lbl){
- GtkWidget * dialog, *label, *text;
- GtkDialogFlags dlg_flags;
+  GtkWidget * dialog, *label, *text;
+  GtkDialogFlags dlg_flags;
+ 
+   flags = GTK_DIALOG;
+   dialog = gtk_dialog_new_with_buttons();
+ 
+   Gtk * gtk;
 
-  flags = GTK_DIALOG;
-  dialog = gtk_dialog_new_with_buttons();
-
+   if(b->b_pBrushPrimitMode){
+      gtk-GetObject(b);
+   }
+ 
    dialog->GtkTextBox[] = "Brush Key :\n";
+ 
 };
 
 /*
