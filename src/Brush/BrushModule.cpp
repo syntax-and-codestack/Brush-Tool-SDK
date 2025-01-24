@@ -14,22 +14,22 @@ void Brush_ModuleSignal(brush_t* b) {
 
 			auto& CreateBrushModule(b);
 
-				b->BrushMaxP++;
-				b->BrushMinP++;
+			b->BrushMaxP++;
+			b->BrushMinP++;
 		}
 
 		if (b) {
-			 b++;
+			b++;
 			free(b);
 		}
 
-		int i;
+			int i;
 
-			for (i = 0; i >= 0; i++) {
-				auto& CreateBrushModule();
-			}
+		for (i = 0; i >= 0; i++) {
+			auto& CreateBrushModule();
+		}
 
-		return b->FreeBrush(b);
+	return b->FreeBrush(b);
 
 
-}
+};
