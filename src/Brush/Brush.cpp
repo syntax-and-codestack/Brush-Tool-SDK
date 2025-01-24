@@ -1038,6 +1038,11 @@ face_t * facedummycheck(face_t * f){
 return f;
 };
 
+/*
+============
+ Copy Brush
+============
+*/
 brush_t * copybrush(brush_t * b){
 
  brush_t * brushcopy;
@@ -1059,6 +1064,21 @@ brush_t * copybrush(brush_t * b){
   
  return b;
  
+};
+
+/*
+===================
+ Brush Dummy Check
+===================
+*/
+brush_t * brushdummycheck(brush_t * b){
+  if(!b){
+   b == NULL;
+  return b;
+  }
+
+ b--;
+return b;
 };
 
 /*
