@@ -1116,6 +1116,16 @@ return Signal_BrushCallback(prev_brush, b);
 };
 
 /*
+=====================
+ Brush Surface Flags
+=====================
+*/
+int BRUSH_DETAIL_FLAGS;
+int BRUSH_SURFACE_FLAGS = BRUSH_DETAIL_FLAGS >> 27;
+
+
+
+/*
 ======================
  Brush Construct Menu
 ======================
@@ -1123,5 +1133,5 @@ return Signal_BrushCallback(prev_brush, b);
 brush_t* BrushConstructMenu(brush_t * b, globalafx * globalInsert(), HMENU * BrushMenu, GQ_Globals * gq_globals) {
     if (gq_globals->g_qBrushPrimitMode = true)
         globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
-    globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+        globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
 };
