@@ -1082,11 +1082,38 @@ return b;
 };
 
 /*
+===============
+ Brush Dialogs
+===============
+*/
+void Brush_ConsturctDlg(brush_t * b, HWND g_pDlgFrame);
+void Brush_EpairDlg(brush_t * b, HWND * g_pMainFrame, char * lbl);
+void Brush_TextureDlg(brush_t * b, HWND * g_pTexDlg, texdef * t);
+
+#define _WIN32
+#define BRUSH_DLG_T (HWND * BrushDlg) (malloc(sizeof(BrushDlg))
+
+/*
+========================
+ Brush Draw New Methods
+========================
+*/
+void DCPaintBrush(brush_t * b);
+void DrawBrush(brush_t * b);
+void FreeDraw();
+void Brush_EpairTable(brush_t * b, const char * key, const char * value);
+void * BrushModule();
+
+/*
 =================
- Brush Epair Dlg
+ Single Callback
 =================
 */
-void Brush_EpairDlg(HWND * g_pMainFrame, char * lbl);
+void& Signal_BrushCallback(BListNode * prev_brush, brush_t * b){
+  prevbrush->bnumid = b->BrushNumberId--;
+  b = prevbrush;
+return Signal_BrushCallback(prev_brush, b); 
+};
 
 /*
 ======================
