@@ -895,6 +895,16 @@ void* bFind(brush_t* b);
  };
 
 /*
+=============
+ Alloc Plane
+=============
+*/
+plane_t * AllocPlane(){
+ plane_t * p = (plane_t*)malloc(sizeof(plane_t));
+ return p;
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
