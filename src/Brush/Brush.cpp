@@ -1250,28 +1250,43 @@ brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3]) {
     Brush Normal Plane
 ================
 */
-brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector * normal) {
+brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal) {
     int i;
     plane_t* plane;
     Vector3* NormalPosition(Vector * normal);
     double distance;
 
-        /*
-            Draw Normal Brush Plane
-        */
-            for (i = 0; plane; plane++) {
-                distance *= plane->_dist = 0.5 / plane->vectorpoints[i][2];
-                planepoints[i][0] = plane->vectorpoints[i][0]; planepoints[i][1] = plane->vectorpoints[i][1]; planepoints[i][2] = plane->vectorpoints[i][2];
+    /*
+        Draw Normal Brush Plane
+    */
+    for (i = 0; plane; plane++) {
+        distance *= plane->_dist = 0.5 / plane->vectorpoints[i][2];
+        planepoints[i][0] = plane->vectorpoints[i][0]; planepoints[i][1] = plane->vectorpoints[i][1]; planepoints[i][2] = plane->vectorpoints[i][2];
 
-                    normal = plane->_normal += 15 / 2;
-                    NormalPosition(normal);
+        normal = plane->_normal += 15 / 2;
+        NormalPosition(normal);
 
-              std::size_t NormSize = sizeof(plane);
+        std::size_t NormSize = sizeof(plane);
 
-            }
+    }
 
- return b;
+    return b;
 
+};
+
+/*
+===============
+    Brush Make Plane
+===============
+*/
+brush_t* Brush_MakePlane(brush_t* b) {
+    plane_t* plane;
+
+        for (int i = 0; i >= 0; i++) {
+            plane->Brush_MakePlane(plane);
+        }
+
+    return b;
 }
 
 /*
