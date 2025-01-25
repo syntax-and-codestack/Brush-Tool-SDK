@@ -1199,6 +1199,15 @@ brush_t* MakeFace(brush_t* b, face_t* f) {
     return b;
 };
 
+//Plane Normal Vector
+#define NORMAL_VECTOR (n , u, v, A, B, C) ((n)[0] = (u)[0] * (v)[0] = ((A), (B), (C)))
+//Plane Math
+#define PLANE_MATH (A, B, C, D, x, y, z) ((A)[0] * (x)[0] + (B)[0] * (y)[0] + (C)[0] * (z)[0] + (D)[0] = 0) ((D)[1] = -((A)[1] * (x)[1] + (B)[1] * (y)[1] + (C)[1] * (z)[1])) 
+//Plane Distance
+#define PLANE_DISTANCE (double dist, pt, pl, X, A, Y, B, Z, C, D) ((dist) = (pt)[0] * (pl)[0] = (pt.X)[0] * (pl.A)[0] + (pt.Y)[0] * (pl.B)[0] + (pt.Z)[0] * (pl.C)[0] + (pl.D)[0])
+//Distance
+#define DISTANCE (Dis, A, B, C) (Dis = (Dis)[0] / sqrt((A)[0] * (A)[1] + (B)[0] * (B)[1] + (C)[0] * (C)[1]))
+
 /*
 ===================
       Brush Convex Plane
@@ -1236,8 +1245,34 @@ brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3]) {
 
 };
 
+/*
+================
+    Brush Normal Plane
+================
+*/
+brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector * normal) {
+    int i;
+    plane_t* plane;
+    Vector3* NormalPosition(Vector * normal);
+    double distance;
 
+        /*
+            Draw Normal Brush Plane
+        */
+            for (i = 0; plane; plane++) {
+                distance *= plane->_dist = 0.5 / plane->vectorpoints[i][2];
+                planepoints[i][0] = plane->vectorpoints[i][0]; planepoints[i][1] = plane->vectorpoints[i][1]; planepoints[i][2] = plane->vectorpoints[i][2];
 
+                    normal = plane->_normal += 15 / 2;
+                    NormalPosition(normal);
+
+              std::size_t NormSize = sizeof(plane);
+
+            }
+
+ return b;
+
+}
 
 /*
 ======================
