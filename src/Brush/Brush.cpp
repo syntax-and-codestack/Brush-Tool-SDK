@@ -1200,6 +1200,46 @@ brush_t* MakeFace(brush_t* b, face_t* f) {
 };
 
 /*
+===================
+      Brush Convex Plane
+===================
+*/
+brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3]) {
+    int i;
+    plane_t* plane;
+
+        /*plane vectors*/
+       Vector3 * vMinA, * vMinB, * vMaxC;
+
+       /*
+        Draw Convex Plane
+       */
+       for (i = 0; plane; plane++) {
+           //make plane points equal to vectors
+           planepoints[i][0] = plane->vectorpoints[i][0]; planepoints[i][1] = plane->vectorpoints[i][1]; planepoints[i][2] = plane->vectorpoints[i][2];
+
+           //make mins and maxs equal to the plane points
+           vMinA[i][0] = planepoints[i][0]; vMinB[i][1] = planepoints[i][1]; vMaxC[i][2] = planepoints[i][2];
+
+           plane->planevectors(vMinA[i][0], vMinB[i][1], vMaxC[i][2], plane);
+
+            if (!i) {
+                plane == NULL;
+               return b;
+            }
+
+            malloc(sizeof(plane));
+
+       }
+
+       return b;
+
+};
+
+
+
+
+/*
 ======================
  Brush Construct Menu
 ======================
