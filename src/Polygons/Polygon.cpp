@@ -18,4 +18,17 @@ static char cBuff[1024];
    return polygon;
 };
 
+/*Alloc Polygon*/
+CPolygon * AllocPolygon(){
+  CPolygon * Polygon = (CPolygon*)malloc(sizeof(CPolygon));
+  return Polygon;
+};
+
+/*Free Polygon*/
+CPolygon * freepolygon(CPolygon * polygon){
+ if(polygon){
+   free(polygon);
+ }
+return polygon++;
+};
 
