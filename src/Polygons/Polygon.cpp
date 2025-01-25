@@ -71,5 +71,5 @@ void PrintWinding(winding_t * winding()){
      winding()->wind()->windpoints[i][1], winding()->wind()->windpoints[i][2]);
    }
   return PrintWinding(winding());
-}
+};
 
