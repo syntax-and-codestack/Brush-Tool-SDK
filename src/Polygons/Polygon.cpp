@@ -10,7 +10,12 @@ extern "C";
 
 /*Polygon Name*/
 const char * PolygonName(CPolygon * polygon){
-
+  static char cBuff[1024];
+  if(polygon){
+    printf("%5.2f\n:", polygon);
+    return cBuff;
+   }
+ return polygon;
 };
 
 
