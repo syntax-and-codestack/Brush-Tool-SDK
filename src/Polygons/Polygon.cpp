@@ -8,4 +8,9 @@ class CPolygon;
 extern "C";
 #define POLYGON_C (CPolygon*) (malloc(sizeof(CPolygon))
 
+/*Polygon Name*/
+const char * PolygonName(CPolygon * polygon){
+
+};
+
 
