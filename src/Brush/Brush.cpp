@@ -1173,6 +1173,33 @@ void PrintVectors(Vector3 v) {
 };
 
 /*
+==============
+    Brush Make Face
+==============
+*/
+brush_t* MakeFace(brush_t* b, face_t* f) {
+    face_t* face;
+        if (b) {
+            for (int i = 0; i >= 0; i++) {
+
+                f->MakeFace_Brush(f);
+                    printf("%5.2f, %5.2f, %5.2f, %5.2f\n:",
+                    f->FacePoints[0] + f->FacePoints[1] + f->FacePoints[2] + f->FacePoints[3]);
+               f++;
+
+            }
+
+            free(f);
+
+        }
+
+     static char faceBuffer[2048];
+     f->Buffer_BrushFace(faceBuffer, f);
+
+    return b;
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
@@ -1180,5 +1207,5 @@ void PrintVectors(Vector3 v) {
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
     if (gq_globals->g_qBrushPrimitMode = true)
         globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
-    globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+        globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
 };
