@@ -1333,6 +1333,8 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face
                       free(texture);
              }
 
+                  brush->b_pBrushPrimitMode = true;
+ 
       return brush->FreeBrush(brush);
 
 };
