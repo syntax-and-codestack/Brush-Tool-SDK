@@ -1290,6 +1290,16 @@ brush_t* Brush_MakePlane(brush_t* b) {
 }
 
 /*
+===========
+    Brush Tools
+===========
+*/
+
+int             c_active_brushes;
+int             c_no_draw_brushes;
+int             c_caulk_brush;
+
+/*
 ======================
  Brush Construct Menu
 ======================
