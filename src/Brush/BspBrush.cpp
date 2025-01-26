@@ -6,9 +6,9 @@
 
 //brush tools
 
-int		c_nodes; //make node
-int		c_nonvisbrush; //not visible
-int		c_active_brushes; //active brushes
+int	*	c_nodes; //make node
+int	*	c_nonvisbrush; //not visible
+int	*	c_active_brushes; //active brushes
 
 bool clip_brush_t; //?clip?
 
@@ -29,12 +29,20 @@ bool clip_brush_t; //?clip?
 	Add Brush To Bsp
 ==============
 */
-void Add_BrushToBsp(brush_t* b) {
+void Add_BrushToBsp(brush_t* b, bsp_t * bsp) {
+	int c;
+	brush_t* brush;
+
+	brush_t& brush_s();
+
+		for (c = 0; brush; brush++) {
+			c_active_brushes = bsp->c_get_node->c_node = brush->brushnumber_t;
+				if (brush) {
+					brush->brushnumber_t++;
+				}
+
+		}
+
+	return brush_s().BrushHandle();
 
 };
-
-
-
-
-
-
