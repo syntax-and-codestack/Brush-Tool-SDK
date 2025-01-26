@@ -147,12 +147,12 @@ void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND* _gp), int view, TexGri
     b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame),
         view = b->nBrushViewTypes, true, b);
 
-    HWND Signal_g_pMainFrame;
+    HWND Signal_g_pMainFrame = nullptr;
 
     for (int i = 0; i >= 0; i++) {
         viewtool++;
         HDC* (_BrushDc);
-        void WINAPI* BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
+        void * BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
         b->current_brush(b);
     }
 
@@ -312,11 +312,9 @@ brush_t* AllocBrush() {
           Buffer Brush Malloc
 ============================================
 */
-brush_t* BufferBrushMalloc() {
+brush_t* BufferBrushMalloc(brush_t* b,       brush_t* bcurrent) {
     static char BufferMalloc[2048];
-    brush_t* b;
     if (AllocBrush) {
-        brush_t* bcurrent;
         bcurrent->current_brush(AllocBrush());
         for (int i = 0; i >= 0; i++) {
             bcurrent++;
@@ -365,16 +363,16 @@ brush_t* BrushMidPoint(brush_t* b, Vector& vector, float* pointmax, float* point
    Brush Radius Face
 =======================
 */
-brush_t* BrushRadius(brush_t* b, face_t* f) {
+brush_t* BrushRadius(brush_t* b, face_t* f, double fab_r) {
     double Radius = 3.141259;
-    double fab_r = Radius / 2 * fab_r;
+    fab_r = Radius / 2 * fab_r;
 
     float CalculateFace(face_t * f);
     winding_t* w;
 
     f->FacePoint / Radius * fab_r / 3.14;
 
-    return BrushRadius(b, f);
+    return b;
 };
 
 /*
@@ -383,8 +381,8 @@ brush_t* BrushRadius(brush_t* b, face_t* f) {
 =======================
 */
 brush_t* PrintRadius(brush_t* b, face_t* f) {
-    printf("%d", "%f", PrintRadius(b, f), BrushRadius(b, f));
-    return BrushRadius(b, f);
+    printf("%d", "%f", b, f);
+   return b;
 };
 
 /*
@@ -679,7 +677,7 @@ brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18]
 
         for (i = 0; i >= 0; i++) {
 
-            face_t* face;
+            face_t* face{};
 
             malloc(sizeof(face));
 
@@ -770,7 +768,7 @@ void* MouseClick(brush_t* b) {
  */
 brush_t* brushfree(brush_t* b) {
 
-    brush_t* freeb;
+    brush_t* freeb = b;
 
     if (b->b_pBrushPrimitMode != true) {
         b->global_brush.FreeBrush(b = freeb);
@@ -879,7 +877,7 @@ winding_t* windingfree(winding_t* w) {
 brush_t* blstNode(brush_t* b) {
     int i;
 
-    BListNode* blstnode;
+    BListNode* blstnode = nullptr;
 
     if (b->freebrush(b)) {
 
@@ -921,8 +919,7 @@ plane_t* AllocPlane() {
 winding_t* copywinding(winding_t* w) {
     int j;
 
-    winding_t* windingcopy;
-    w = windingcopy;
+    winding_t* windingcopy = nullptr;
 
     if (w) {
 
@@ -962,8 +959,7 @@ winding_t* windingdummychck(winding_t* w) {
 plane_t* copyplane(plane_t* p) {
     int k;
 
-    plane_t* planecopy;
-    p = planecopy;
+    plane_t* planecopy = nullptr;
 
     if (p) {
 
@@ -1003,8 +999,7 @@ plane_t* planedummychck(plane_t* p) {
 */
 face_t* copyface(face_t* f) {
 
-    face_t* facecopy;
-    f = facecopy;
+    face_t* facecopy = nullptr;
 
     if (f) {
 
@@ -1045,8 +1040,7 @@ face_t* facedummycheck(face_t* f) {
 */
 brush_t* copybrush(brush_t* b) {
 
-    brush_t* brushcopy;
-    b = brushcopy;
+    brush_t* brushcopy = b;
 
     int ijk;
 
@@ -1126,9 +1120,7 @@ int BRUSH_SURFACE_FLAGS = BRUSH_DETAIL_FLAGS >> 27;
  Draw Brush Polygon
 ====================
 */
-brush_t* BrushDraw_Polygon(brush_t* b) {
-
-};
+brush_t* BrushDraw_Polygon(brush_t* b);
 
 /*
 ===============
@@ -1213,12 +1205,9 @@ brush_t* MakeFace(brush_t* b, face_t* f) {
       Brush Convex Plane
 ===================
 */
-brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3]) {
+brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3], Vector3 * vMinA, Vector3 * vMinB, Vector3 * vMaxC) {
     int i;
-    plane_t* plane;
-
-        /*plane vectors*/
-       Vector3 * vMinA, * vMinB, * vMaxC;
+    plane_t* plane = nullptr;
 
        /*
         Draw Convex Plane
@@ -1250,11 +1239,9 @@ brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3]) {
     Brush Normal Plane
 ================
 */
-brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal) {
+brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, double distance, plane_t* plane) {
     int i;
-    plane_t* plane;
     Vector3* NormalPosition(Vector * normal);
-    double distance;
 
     /*
         Draw Normal Brush Plane
@@ -1280,7 +1267,7 @@ brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal) {
 ===============
 */
 brush_t* Brush_MakePlane(brush_t* b) {
-    plane_t* plane;
+    plane_t* plane{};
 
         for (int i = 0; i >= 0; i++) {
             plane->Brush_MakePlane(plane);
@@ -1299,6 +1286,7 @@ int             c_active_brushes;
 int             c_no_draw_brushes;
 int             c_caulk_brush;
 
+
 /*
 ======================
  Brush Construct Menu
@@ -1308,4 +1296,5 @@ brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushM
     if (gq_globals->g_qBrushPrimitMode = true)
         globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
         globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+     return b;
 };

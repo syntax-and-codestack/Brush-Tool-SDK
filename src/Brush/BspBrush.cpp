@@ -29,9 +29,8 @@ bool clip_brush_t; //?clip?
 	Add Brush To Bsp
 ==============
 */
-void Add_BrushToBsp(brush_t* b, bsp_t * bsp) {
+void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 	int c;
-	brush_t* brush;
 
 	brush_t& brush_s();
 
