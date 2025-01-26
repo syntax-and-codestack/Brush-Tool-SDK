@@ -1317,7 +1317,7 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face
                         brushmaxs[i][5] = brush->side[i][3] + brush->side[i][4] + brush->side[i][5];
                     }
 
-                    printf("%i, f, %5.2f\n:", brushsides[i][0], brushsides[i][1], brushsides[i][2],
+                    printf("%i, %f, %5.2f\n:", brushsides[i][0], brushsides[i][1], brushsides[i][2],
                         brushsides[i][3], brushsides[i][4], brushsides[i][5]);
 
                         for (j = 0; texture; texture++) {
