@@ -1,10 +1,5 @@
 /*Brush Includes*/
-#include "Brush.h"
-#include "Face.h"
-#include "texgridtool.h"
-#include "Camera.h"
-#include "globalafx.h"
-#include "gqafx.h"
+#include "afx.h"
 
 /*
 Brush.cpp copyright @hunter manko
@@ -138,7 +133,7 @@ brush_t* ProjectPoints(brush_t* brush, float points[8], Vector& brushpoint, floa
  Draw Brush Points
 ===================
 */
-void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND* _gp), int view, TexGridTool* viewtool) {
+void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND _gp), int view, TexGridTool* viewtool) {
     /*
     ============================
         Brush Connect Views
@@ -1281,19 +1276,59 @@ brush_t* Brush_MakePlane(brush_t* b) {
     Brush Tools
 ===========
 */
-
 int             c_active_brushes;
 int             c_no_draw_brushes;
 int             c_caulk_brush;
 
+typedef int side_t;
+typedef float brushvec_t;
+typedef brushvec_t brushvec3_t[3];
+typedef brushvec_t brushvec4_t[4];
+typedef brushvec_t brushvec6_t[6];
+
+void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face_t* face, texdef* texture) {
+    int i;
+    int j;
+    int k;
+    
+        side_t* brushsides[6];
+        brushvec3_t* brushmins;
+        brushvec3_t* brushmaxs;
+
+             for (i = 0; brush; brush++) {
+                 brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+                 brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+                 brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+                 brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+                 brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+                 brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+
+                    if (brushsides[i][0]) {
+                        brush->side[i][0] = i++;
+                        brushmins[i][0] = brush->side[i][0] + brush->side[i][1] + brush->side[i][2];
+                    }
+
+                    if (brushsides[i][5]) {
+                        brush->side[i][5] = i++;
+                        brushmaxs[i][5] = brush->side[i][3] + brush->side[i][4] + brush->side[i][5];
+                    }
+
+                    printf("%i, f, %5.2f\n:", brushsides[i][0], brushsides[i][1], brushsides[i][2],
+                        brushsides[i][3], brushsides[i][4], brushsides[i][5]);
+
+             }
+
+      return brush->FreeBrush(brush);
+
+};
 
 /*
 ======================
  Brush Construct Menu
 ======================
 */
-brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu, GQ_Globals* gq_globals) {
-    if (gq_globals->g_qBrushPrimitMode = true)
+brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu) {
+    if (b->b_pBrushPrimitMode)
         globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
         globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
      return b;
