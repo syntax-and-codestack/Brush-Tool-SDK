@@ -1328,7 +1328,9 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face
                             brushsides[j][4] = texture->texturecoord[j][16] + texture->texturecoord[j][17] + texture->texturecoord[j][NULL] + texture->texturecoord[j][NULL] * brushsides[j][4] + brush->side[j][4];
                             brushsides[j][5] + brush->side[j][5];
                         }
+                      free(brush);
 
+                      free(texture);
              }
 
       return brush->FreeBrush(brush);
