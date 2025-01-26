@@ -1116,9 +1116,9 @@ int BRUSH_SURFACE_FLAGS = BRUSH_DETAIL_FLAGS >> 27;
 brush_t* BrushDraw_Polygon(brush_t* b);
 
 /*
-===============
+===============================
        Print Winding
-===============
+===============================
 */
 void PrintWinding(winding_t* w) {
     int i;
@@ -1130,9 +1130,9 @@ void PrintWinding(winding_t* w) {
 };
 
 /*
-=================
+=================================
            Print Plane
-=================
+=================================
 */
 void PrintPlane(plane_t* p) {
     int i;
@@ -1144,9 +1144,9 @@ void PrintPlane(plane_t* p) {
 };
 
 /*
-=======================
+=======================================
            Print Brush Vectors
-=======================
+=======================================
 */
 void PrintVectors(Vector3 v) {
     float i;
@@ -1158,9 +1158,9 @@ void PrintVectors(Vector3 v) {
 };
 
 /*
-==============
+==============================
     Brush Make Face
-==============
+==============================
 */
 brush_t* MakeFace(brush_t* b, face_t* f) {
     face_t* face;
@@ -1194,9 +1194,9 @@ brush_t* MakeFace(brush_t* b, face_t* f) {
 #define DISTANCE (Dis, A, B, C) (Dis = (Dis)[0] / sqrt((A)[0] * (A)[1] + (B)[0] * (B)[1] + (C)[0] * (C)[1]))
 
 /*
-===================
+===================================
       Brush Convex Plane
-===================
+===================================
 */
 brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3], Vector3 * vMinA, Vector3 * vMinB, Vector3 * vMaxC) {
     int i;
@@ -1228,9 +1228,9 @@ brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3], Vector3 * vMinA, 
 };
 
 /*
-================
+================================
     Brush Normal Plane
-================
+================================
 */
 plane_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, double distance, plane_t* plane) {
     int i;
@@ -1255,9 +1255,9 @@ plane_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, dou
 };
 
 /*
-===============
+==========================
     Brush Make Plane
-===============
+==========================
 */
 brush_t* Brush_MakePlane(brush_t* b) {
     plane_t* plane{};
@@ -1270,9 +1270,9 @@ brush_t* Brush_MakePlane(brush_t* b) {
 }
 
 /*
-===========
+======================
     Brush Tools
-===========
+======================
 */
 int             c_active_brushes;
 int             c_no_draw_brushes;
@@ -1286,9 +1286,9 @@ typedef brushvec_t brushvec6_t[6];
 
 
 /*
-==================================
+====================================================================
                         Draw Solid Brush
-==================================
+====================================================================
 */
 void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plane_t* plane, face_t* face, texdef* texture, double distance) {
     int i;
