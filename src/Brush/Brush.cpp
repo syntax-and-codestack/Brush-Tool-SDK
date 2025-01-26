@@ -528,9 +528,7 @@ public:
     float _TEXDEF_X;
     float _TEXDEF_Y;
 
-    float texturecoord[18];
-
-    float* tcoords = &texturecoord[18];
+    float * texturecoord[18];
 
     const char* texdef_name_t(texdef* t);
 
@@ -1286,6 +1284,12 @@ typedef brushvec_t brushvec3_t[3];
 typedef brushvec_t brushvec4_t[4];
 typedef brushvec_t brushvec6_t[6];
 
+
+/*
+==================================
+                        Draw Solid Brush
+==================================
+*/
 void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face_t* face, texdef* texture) {
     int i;
     int j;
@@ -1315,6 +1319,15 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face
 
                     printf("%i, f, %5.2f\n:", brushsides[i][0], brushsides[i][1], brushsides[i][2],
                         brushsides[i][3], brushsides[i][4], brushsides[i][5]);
+
+                        for (j = 0; texture; texture++) {
+                            brushsides[j][0] = texture->texturecoord[j][0] + texture->texturecoord[j][1] + texture->texturecoord[j][2] + texture->texturecoord[j][3] * brushsides[j][0] + brush->side[j][0];
+                            brushsides[j][1] = texture->texturecoord[j][4] + texture->texturecoord[j][5] + texture->texturecoord[j][6] + texture->texturecoord[j][7] * brushsides[j][1] + brush->side[j][1];
+                            brushsides[j][2] = texture->texturecoord[j][8] + texture->texturecoord[j][9] + texture->texturecoord[j][10] + texture->texturecoord[j][11] * brushsides[j][2] + brush->side[j][2];
+                            brushsides[j][2] = texture->texturecoord[j][12] + texture->texturecoord[j][13] + texture->texturecoord[j][14] + texture->texturecoord[j][15] * brushsides[j][3] + brush->side[j][3];
+                            brushsides[j][4] = texture->texturecoord[j][16] + texture->texturecoord[j][17] + texture->texturecoord[j][NULL] + texture->texturecoord[j][NULL] * brushsides[j][4] + brush->side[j][4];
+                            brushsides[j][5] + brush->side[j][5];
+                        }
 
              }
 
