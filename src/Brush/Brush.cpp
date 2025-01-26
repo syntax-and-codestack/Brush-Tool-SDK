@@ -1232,7 +1232,7 @@ brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3], Vector3 * vMinA, 
     Brush Normal Plane
 ================
 */
-brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, double distance, plane_t* plane) {
+plane_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, double distance, plane_t* plane) {
     int i;
     Vector3* NormalPosition(Vector * normal);
 
@@ -1250,7 +1250,7 @@ brush_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, dou
 
     }
 
-    return b;
+    return plane;
 
 };
 
@@ -1290,7 +1290,7 @@ typedef brushvec_t brushvec6_t[6];
                         Draw Solid Brush
 ==================================
 */
-void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face_t* face, texdef* texture) {
+void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plane_t* plane, face_t* face, texdef* texture, double distance) {
     int i;
     int j;
     int k;
@@ -1300,12 +1300,12 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face
         brushvec3_t* brushmaxs;
 
              for (i = 0; brush; brush++) {
-                 brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
-                 brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
-                 brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
-                 brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
-                 brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
-                 brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+                 brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
 
                     if (brushsides[i][0]) {
                         brush->side[i][0] = i++;
@@ -1333,8 +1333,9 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, plane_t* plane, face
                       free(texture);
              }
 
-                  brush->b_pBrushPrimitMode = true;
- 
+
+             brush->b_pBrushPrimitMode = true;
+
       return brush->FreeBrush(brush);
 
 };
