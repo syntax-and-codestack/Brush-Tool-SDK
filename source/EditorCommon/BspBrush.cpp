@@ -45,3 +45,7 @@ void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 	return brush_s().BrushHandle();
 
 };
+
+void PrintBrush_List(brush_t* brush, bsp_t * bsp){
+
+};
