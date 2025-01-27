@@ -28,9 +28,8 @@ AXIS_Z 015
  /
 /
 z
-
-
-
 */
+
+ Vector3 X_Origin = { 0.0, 0.1f, 0.0f };
 
 #endif
