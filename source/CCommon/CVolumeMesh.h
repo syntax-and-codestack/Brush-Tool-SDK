@@ -2,6 +2,8 @@
 #ifndef C_VOLUME_MESH_H
 #define C_VOLUME_MESH_H
 
+#include "SdkVector.h"
+
 int c_volume_mesh;
 int c_id;
 int * c_active_volume_mesh;
