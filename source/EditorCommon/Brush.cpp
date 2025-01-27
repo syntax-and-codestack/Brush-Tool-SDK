@@ -1286,9 +1286,11 @@ typedef brushvec_t brushvec6_t[6];
 
 
 /*
-==================================
+====================================================================
+
                         Draw Solid Brush
-==================================
+                        
+====================================================================
 */
 void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plane_t* plane, face_t* face, texdef* texture, double distance) {
     int i;
