@@ -25,9 +25,9 @@ bool clip_brush_t; //?clip?
 
 
 /*
-==============
-	Add Brush To Bsp
-==============
+============================
+     Add Brush To Bsp
+============================
 */
 void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 	int c;
@@ -45,3 +45,20 @@ void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 	return brush_s().BrushHandle();
 
 };
+
+/*
+====================
+   Bsp Brush Calls
+====================
+*/
+brush_t * BspBrush_Signal(brush_t * brush, int c_num){
+	
+  brush_t * current_brush;
+  brush_t * prev_brush;
+
+	int split_c_brush_node[3];//split brush int to triangle and cut out prev edges
+	qboolean flush_node_c;
+	
+
+};
+
