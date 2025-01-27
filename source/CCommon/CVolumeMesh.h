@@ -30,6 +30,7 @@ public:
 }CVolumeRendering;
 
 int sides[6];
+int * c_sides;//sides arent visible just encapsed in the box bounds
 
 bool HollowMeshC;
 
@@ -37,12 +38,13 @@ Vector3 &vMeshMins;
 Vector3 &vMeshMaxs;
 
 Vector3 &vMeshSpawnOrigin = { 0.0f, 0.0f, 0.0f };
-
 Vector3 &vMeshPosition;
 
 Vector3 * vMeshVecCall;
-
 float CVolumeMeshLineColor[3];
+
+void SpawnCVolumeMesh(void);
+virtual void SpawnVMesh(void) = 0;
 
 
 };
