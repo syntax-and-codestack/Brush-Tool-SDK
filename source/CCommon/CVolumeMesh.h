@@ -31,6 +31,8 @@ public:
   c_wireframe = 0x0
 }CVolumeRendering;
 
+CVolumeMesh * mesh();
+
 int sides[6];
 int * c_sides;//sides arent visible just encapsed in the box bounds
 
