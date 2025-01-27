@@ -10,6 +10,7 @@ public:
     virtual ~brush_t();
 
     float BrushPoints;
+    float BrushBounds[8];
     int BrushNumberId;
     int* brushnumber_t;
     brush_t& global_brush;
