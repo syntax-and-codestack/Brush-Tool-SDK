@@ -3,7 +3,11 @@
 #include "afx.h"
 #include <limits.h>
 
-//CONSTRUCT BRUSH CUBOID
+/*
+==============================
+   CONSTRUCT BRUSH CUBOID
+==============================
+*/
 void Construct_BrushCuboid(brush_t * brush, float Bounds[8], float MinBounds[4], float MaxBounds[4]){
  int i;
  
@@ -15,3 +19,9 @@ void Construct_BrushCuboid(brush_t * brush, float Bounds[8], float MinBounds[4],
   }
  
 };
+
+/*
+====================
+ BRUSH SARRUS DET
+====================
+*/
