@@ -60,23 +60,30 @@ public:
  int GridPixelFormat = ChoosePixelFormat(g_nGridDeviceContext, &gridpixels);
  HGLRC glGridPen = wglCreateContext(g_nGridDeviceContext);
 
- void ZoomGridOut(Grid * gridpanel()){
+void ZoomGridOut(Grid * gridpanel()){
   
   if(gridpanel()->GridZoomPreference().GridZoomOut()){
      gridpanel()->g_nGetGridLines()->g_nGridColumns = -g_nGridColumns;
      gridpanel()->g_nGetGridLines()->g_nGridRows = -g_nGridRows;
   }
   
- };
+};
 
- void ZoomGridIn(Grid * gridpanel()){
+void ZoomGridIn(Grid * gridpanel()){
   
   if(gridpanel()->GridZoomPreference().GridZoomIn()){
    gridpanel()->g_nGetGridLines()->g_nGridColumns = +g_nGridColumns;
    gridpanel()->g_nGetGridLines()->g_nGridRows = +g_nGridRows;
   }
   
- }
+};
+
+
+
+
+
+
+
 
 };
 
