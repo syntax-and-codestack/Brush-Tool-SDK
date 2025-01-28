@@ -102,10 +102,28 @@ bool AddEntitiesToScene;
 
 Grid * Add();
 
-void GridDimensions(Grid * grid, int nDim){
+void GridDimensions(Grid * grid(), int nDim){
  switch(nDim){
+   case 112:
+    grid()->g_nSetColumns = 112; 
+    grid()->g_nSetRows = 112;
+   break;
   
- } 
+   case 256:
+    grid()->g_nSetColumns = 256; 
+    grid()->g_nSetRows = 256;
+   break;
+  
+   case 512:
+    grid()->g_nSetColumns = 512; 
+    grid()->g_nSetRows = 512;
+   break;
+  
+   case 1024:
+    grid()->g_nSetColumns = 1024; 
+    grid()->g_nSetRows = 1024;
+   break;
+  } 
 };
 
 };
