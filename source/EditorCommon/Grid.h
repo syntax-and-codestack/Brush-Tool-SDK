@@ -30,6 +30,23 @@ public:
 
  std::size_t g_nGridSize = sizeof(Grid);
 
+ int          g_nGridColumns;
+ int          g_nGridRows;
+
+ int * g_nGetGridLines();
+
+ bool GridZoomIn();
+ bool GridZoomOut();
+
+ bool & GridZoomPrefrence();
+
+ Grid * prev_grid;
+ Grid * current_grid;
+ Grid * next_grid;
+
+ void GridAddToPanel(HWND m_pPanel, Grid * grid);
+ Grid & GridDevice();
+
 };
 
 #endif
