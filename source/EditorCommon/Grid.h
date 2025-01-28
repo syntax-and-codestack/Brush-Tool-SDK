@@ -37,8 +37,7 @@ public:
 
  bool GridZoomIn();
  bool GridZoomOut();
-
- bool & GridZoomPrefrence();
+ bool & GridZoomPreference();
 
  Grid * prev_grid;
  Grid * current_grid;
@@ -46,6 +45,28 @@ public:
 
  void GridAddToPanel(HWND m_pPanel, Grid * grid);
  Grid & GridDevice();
+
+ HWND m_pGridPanel;
+
+ HDC g_nGridDeviceContext = GetDC(m_pGridPanel);
+ PIXELFORMATDESCRIPTOR gridpixels{};
+
+ int GridPixelFormat = ChoosePixelFormat(g_nGridDeviceContext, &gridpixels);
+ HGLRC glGridPen = wglCreateContext(g_nGridDeviceContext);
+
+ void ZoomGridOut(Grid * gridpanel()){
+  if(gridpanel()->GridZoomPreference().GridZoomOut()){
+     gridpanel()->g_nGetGridLines()->g_nGridColumns = -g_nGridColumns;
+     gridpanel()->g_nGetGridLines()->g_nGridRows = -g_nGridRows;
+  }
+ };
+
+ void ZoomGridIn(Grid * gridpanel()){
+  if(gridpanel()->GridZoomPreference().GridZoomOut()){
+   gridpanel()->g_nGetGridLines()->g_nGridColumns = +g_nGridColumns;
+   gridpanel()->g_nGetGridLines()->g_nGridRows = +g_nGridRows;
+  }
+ }
 
 };
 
