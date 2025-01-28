@@ -12,12 +12,18 @@ public:
  int x;
  int y;
 
- #define PAINT_PANEL_GRID 101
+ #define PAINT_PANEL_GRID 10
 
  enum{
   MFC = 0,
   WIN32
  }GridPanelWidgetOwner;
+
+ enum{
+  XY = 0,
+  YZ,
+  XZ
+ }GridPanelView;
 
 virtual void Paint() = 0;
 
