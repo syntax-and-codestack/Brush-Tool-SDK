@@ -70,11 +70,18 @@ void ZoomGridOut(Grid * gridpanel()){
 
 /*Zoom Grid In*/
 void ZoomGridIn(Grid * gridpanel()){  
-  if(gridpanel()->GridZoomPreference().GridZoomIn()){
-   gridpanel()->g_nGetGridLines()->g_nGridColumns = +g_nGridColumns;
-   gridpanel()->g_nGetGridLines()->g_nGridRows = +g_nGridRows;
+   if(gridpanel()->GridZoomPreference().GridZoomIn()){
+    gridpanel()->g_nGetGridLines()->g_nGridColumns = +g_nGridColumns;
+    gridpanel()->g_nGetGridLines()->g_nGridRows = +g_nGridRows;
   }  
 };
+
+int g_nId;
+
+virtual void PaintGrid() = 0;
+virtual void PaintColumms() = 0;
+virtual void PaintRows() = 0;
+virtual void PaintObjects() = 0;
 
 
 
