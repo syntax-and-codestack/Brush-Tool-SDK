@@ -1,0 +1,20 @@
+//CVolumeMesh.cpp copyright@ hunter manko
+#include "CVolumeMesh.h"
+
+/////////////////////
+//MESH CONSTRUCTOR//
+///////////////////
+CVolumeMesh::CVolumeMesh(){
+
+};
+
+///////////////////////
+//MESH DECONSTRUCTOR//
+/////////////////////
+CVolumeMesh::~CVolumeMesh(){
+
+};
+
+//////////////////////
+//SPAWN VOLUME MESH//
+////////////////////
