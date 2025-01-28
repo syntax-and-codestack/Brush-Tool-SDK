@@ -96,6 +96,12 @@ typedef bool g_nboolean;
 
 g_nboolean GridFlushTitle;
 
+bool AddBrushToScene;
+bool AddModelToScene;
+bool AddEntitiesToScene;
+
+Grid * Add();
+
 };
 
 #endif
