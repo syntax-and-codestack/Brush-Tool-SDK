@@ -83,12 +83,9 @@ virtual void PaintColumms() = 0;
 virtual void PaintRows() = 0;
 virtual void PaintObjects() = 0;
 
-
-
-
-
-
-
+LPSTR * GridTitleXY = "XY VIEW";
+LPSTR * GridTitleYZ = "YZ VIEW";
+LPSTR * GridTitleXZ = "XZ VIEW";
 
 };
 
