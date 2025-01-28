@@ -52,14 +52,15 @@ public:
  void GridAddToPanel(HWND m_pPanel, Grid * grid);
  Grid & GridDevice();
 
- HWND m_pGridPanel;
+ HWND m_pGridPanel;//grid panel
 
- HDC g_nGridDeviceContext = GetDC(m_pGridPanel);
- PIXELFORMATDESCRIPTOR gridpixels{};
+ HDC g_nGridDeviceContext = GetDC(m_pGridPanel);//set device panel
+ PIXELFORMATDESCRIPTOR gridpixels{};//pfe
 
- int GridPixelFormat = ChoosePixelFormat(g_nGridDeviceContext, &gridpixels);
- HGLRC glGridPen = wglCreateContext(g_nGridDeviceContext);
+ int GridPixelFormat = ChoosePixelFormat(g_nGridDeviceContext, &gridpixels);//pixel format for grid panel
+ HGLRC glGridPen = wglCreateContext(g_nGridDeviceContext);//opengl context for grid
 
+/*Zoom Grid Out*/
 void ZoomGridOut(Grid * gridpanel()){
   
   if(gridpanel()->GridZoomPreference().GridZoomOut()){
@@ -69,6 +70,7 @@ void ZoomGridOut(Grid * gridpanel()){
   
 };
 
+/*Zoom Grid In*/
 void ZoomGridIn(Grid * gridpanel()){
   
   if(gridpanel()->GridZoomPreference().GridZoomIn()){
