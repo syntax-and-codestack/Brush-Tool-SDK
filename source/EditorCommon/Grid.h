@@ -61,24 +61,19 @@ public:
  HGLRC glGridPen = wglCreateContext(g_nGridDeviceContext);//opengl context for grid
 
 /*Zoom Grid Out*/
-void ZoomGridOut(Grid * gridpanel()){
-  
+void ZoomGridOut(Grid * gridpanel()){  
   if(gridpanel()->GridZoomPreference().GridZoomOut()){
      gridpanel()->g_nGetGridLines()->g_nGridColumns = -g_nGridColumns;
      gridpanel()->g_nGetGridLines()->g_nGridRows = -g_nGridRows;
-  }
-  
+  }  
 };
 
 /*Zoom Grid In*/
-void ZoomGridIn(Grid * gridpanel()){
-  
+void ZoomGridIn(Grid * gridpanel()){  
   if(gridpanel()->GridZoomPreference().GridZoomIn()){
    gridpanel()->g_nGetGridLines()->g_nGridColumns = +g_nGridColumns;
    gridpanel()->g_nGetGridLines()->g_nGridRows = +g_nGridRows;
-      gridpanel()->GridDevice().GridAddToPanel();
-  }
-  
+  }  
 };
 
 
