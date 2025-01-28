@@ -76,16 +76,25 @@ void ZoomGridIn(Grid * gridpanel()){
   }  
 };
 
-int g_nId;
+//grid view id
+int g_nGridViewId;
 
+//paint grid 
 virtual void PaintGrid() = 0;
+//paint columns
 virtual void PaintColumms() = 0;
+//paint rows
 virtual void PaintRows() = 0;
+//paint objects *brushes, models, entities*
 virtual void PaintObjects() = 0;
 
 LPSTR * GridTitleXY = "XY VIEW";
 LPSTR * GridTitleYZ = "YZ VIEW";
 LPSTR * GridTitleXZ = "XZ VIEW";
+
+typedef bool g_nboolean;
+
+g_nboolean GridFlushTitle;
 
 };
 
