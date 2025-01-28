@@ -102,6 +102,12 @@ bool AddEntitiesToScene;
 
 Grid * Add();
 
+void GridDimensions(Grid * grid, int nDim){
+ switch(nDim){
+  
+ } 
+};
+
 };
 
 #endif
