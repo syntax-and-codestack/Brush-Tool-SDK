@@ -46,6 +46,16 @@ void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 
 };
 
-void PrintBrush_List(brush_t* brush, bsp_t * bsp){
-
-};
+/*
+=============
+	Bsp Wind Sides
+=============
+*/
+void BspWindingSides(brush_t* brush, winding_t* w) {
+	int i;
+		for (i = 0; brush; brush++) {
+				brush->side[i][0];
+					brush->sides[i].winding;
+		}
+	free(brush->sides->winding);
+}

@@ -1286,11 +1286,9 @@ typedef brushvec_t brushvec6_t[6];
 
 
 /*
-====================================================================
-
+==================================
                         Draw Solid Brush
-                        
-====================================================================
+==================================
 */
 void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plane_t* plane, face_t* face, texdef* texture, double distance) {
     int i;
@@ -1302,26 +1300,20 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plan
         brushvec3_t* brushmaxs;
 
              for (i = 0; brush; brush++) {
-                 brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-              plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-              plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-              plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-              plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-              plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-              plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+                 brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
 
                     if (brushsides[i][0]) {
-                       brush->side[i][0] = i++;
+                        brush->side[i][0] = i++;
                         brushmins[i][0] = brush->side[i][0] + brush->side[i][1] + brush->side[i][2];
                     }
 
                     if (brushsides[i][5]) {
-                       brush->side[i][5] = i++;
+                        brush->side[i][5] = i++;
                         brushmaxs[i][5] = brush->side[i][3] + brush->side[i][4] + brush->side[i][5];
                     }
 

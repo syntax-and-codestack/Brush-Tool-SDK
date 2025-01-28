@@ -10,7 +10,7 @@ public:
     virtual ~brush_t();
 
     float BrushPoints;
-    float BrushBounds[8];
+    float * BrushBounds[8];
     int BrushNumberId;
     int* brushnumber_t;
     brush_t& global_brush;
@@ -19,6 +19,8 @@ public:
     Vector* BrushMinP;
     Vector* BrushMaxP;
     int* side[6];
+    winding_t* winding;
+    brush_t* sides;
 
     void BrushHandle();
 
@@ -34,7 +36,7 @@ public:
     }nBrushViewTypes;
 
     //connects views and brush to current grid window to draw
-    void nGlobalBrushView_ConnectToGridView(HWND * GridWnd, int nViewType, bool nSignalView, brush_t* b_draw_t);
+    void nGlobalBrushView_ConnectToGridView(HWND* GridWnd, int nViewType, bool nSignalView, brush_t* b_draw_t);
     virtual void FreeBrush(brush_t* b) = 0;
     virtual void ConstructPrimitBrush(brush_t* primitbrush) = 0;
 
