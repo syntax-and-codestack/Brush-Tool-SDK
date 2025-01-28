@@ -74,6 +74,7 @@ void ZoomGridIn(Grid * gridpanel()){
   if(gridpanel()->GridZoomPreference().GridZoomIn()){
    gridpanel()->g_nGetGridLines()->g_nGridColumns = +g_nGridColumns;
    gridpanel()->g_nGetGridLines()->g_nGridRows = +g_nGridRows;
+      gridpanel()->GridDevice().GridAddToPanel();
   }
   
 };
