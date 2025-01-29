@@ -6,7 +6,7 @@ Brush.cpp copyright @hunter manko
 */
 
 //Draw Bsp Brush: Line - 1239
-//Brush.cpp Total Lines - 1386
+//Brush.cpp Total Lines - 1402
 
 //Brush Points Product *Verticies*
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
