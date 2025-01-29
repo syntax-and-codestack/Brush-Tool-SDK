@@ -3,7 +3,7 @@
 #ifndef CGL_H
 #define CGL_H
 
-#define (_WIN32)
+#define (_Win32)
 
 typedef float VColorId[4];
 #define CGL_PEN_RED
