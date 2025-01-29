@@ -80,7 +80,7 @@ void Chop_BrushWinding(brush_t* brush, plane_t* plane) {
 			brush->winding->windpoints[i] = plane->planenumberid-- * 2;
 		}
 	 void Chop(int split = 2);
-    clip_brush_t != true;
+    clip_brush_t != false;
 	}
 	c_nodes++;
 };
