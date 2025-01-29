@@ -29,9 +29,27 @@ const char * BrushName(brush_t * b){
  static char BrushBuff[1024]; 
  b->BrushNumberId = nBrushId++;
      if(b->b_pBrushPrimitMode){
-       sprintf(b, "Brush %i", BrushBuff);
+       sprintf(BrushBuff, "Brush %i", b->BrushNumberId);
      }
  return BrushBuff;
+};
+
+//Brush Path
+const char * BrushPath(brush_t * b){
+ char Brush_PathPrintf[] = "Brush Extern Path\n";
+return Brush_PathPrintf;
+};
+
+/*
+=============================
+  Brush Primit Mode Message
+=============================
+*/
+brush_t * bprimit_msg(brush_t * b){
+   if(b->b_pBrushPrimitMode){
+     printf("%b, %i, %c, "%5.2f", "%c BrushName", "---Brush %i Is In Primit Mode---\n");
+   }
+ return bprimit_msg(b);
 };
 
 /*
