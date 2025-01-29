@@ -726,11 +726,11 @@ brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18]
             face++;
 
             for (int j = 0; j >= 0; j++) {
-                texcoord[0] = brushcoords[0]; texcoord[1] = brushcoords[1]; texcoord[2] = brushcoords[2]; texcoord[3] = brushcoords[3];
-                texcoord[4] = brushcoords[4]; texcoord[5] = brushcoords[5]; texcoord[6] = brushcoords[6]; texcoord[7] = brushcoords[7];
-                texcoord[8] = brushcoords[8]; texcoord[9] = brushcoords[9]; texcoord[10] = brushcoords[10]; texcoord[11] = brushcoords[11];
-                texcoord[12] = brushcoords[12]; texcoord[13] = brushcoords[13]; texcoord[14] = brushcoords[14]; texcoord[15] = brushcoords[15];
-                texcoord[16] = brushcoords[16]; texcoord[17] = brushcoords[17];
+                texcoord[j][0] = brushcoords[j][0]; texcoord[1] = brushcoords[1]; texcoord[2] = brushcoords[2]; texcoord[3] = brushcoords[3];
+                texcoord[j][4] = brushcoords[j][4]; texcoord[5] = brushcoords[5]; texcoord[6] = brushcoords[6]; texcoord[7] = brushcoords[7];
+                texcoord[j][8] = brushcoords[j][8]; texcoord[9] = brushcoords[9]; texcoord[10] = brushcoords[10]; texcoord[11] = brushcoords[11];
+                texcoord[j][12] = brushcoords[j][12]; texcoord[13] = brushcoords[13]; texcoord[14] = brushcoords[14]; texcoord[15] = brushcoords[15];
+                texcoord[j][16] = brushcoords[j][16]; texcoord[17] = brushcoords[17];
 
 
 
