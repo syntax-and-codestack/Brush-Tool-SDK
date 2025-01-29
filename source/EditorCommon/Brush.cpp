@@ -26,11 +26,12 @@ extern MainFrame * g_pParentWnd;
 
 //Brush Name
 const char * BrushName(brush_t * b){
-static char BrushBuffer[1024]; 
-b->
+ static char BrushBuff[1024]; 
+ b->BrushNumberId = nBrushId++;
      if(b->b_pBrushPrimitMode){
-       
+       sprintf(b, "Brush %i", BrushBuff);
      }
+ return BrushBuff;
 };
 
 /*
