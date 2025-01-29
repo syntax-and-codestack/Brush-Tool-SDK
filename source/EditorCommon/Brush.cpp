@@ -1411,7 +1411,9 @@ const void Brush_CurrentList(){
  brush_t * prev;
 
   for(int i = 0; brush; brush++){
-   current = brush; next = brush++; prev = brush--;
+    current = brush; 
+    next = brush++; 
+    prev = brush--;
   }
 
 };
