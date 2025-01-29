@@ -5,19 +5,33 @@
 Brush.cpp copyright @hunter manko
 */
 
+//Draw Bsp Brush: Line - 1239
+//Brush.cpp Total Lines - 1353
+
 //Brush Points Product *Verticies*
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 //Brush Pi
 #define BRUSH_PI 3.141259
 
 /*
-===============
+
  Brush Globals
-===============
+
 */
 int nBrushId = 0;
-const char* Brush_GlobalName;
-bool BrushDrawn(void);
+
+
+//Main Parent Window
+extern MainFrame * g_pParentWnd;
+
+//Brush Name
+const char * BrushName(brush_t * b){
+static char BrushBuffer[1024]; 
+b->
+     if(b->b_pBrushPrimitMode){
+       
+     }
+};
 
 /*
 ============
