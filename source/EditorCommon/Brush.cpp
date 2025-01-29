@@ -102,9 +102,25 @@ brush_t* BrushPoints(brush_t* b) {
 ===================
 */
 brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
-    float brush_sides[6];
+  float brush_sides[6];
+      if(b->sides.winding){
+         printf("%5.2f, %5.2f, %5.2f, %5.2f, %5.2f, %5.2f",
+         brush_sides[0], brush_sides[1], brush_sides[2], brush_sides[3], brush_sides[4], brush_sides[5]);
+      }
 
-    return b->current_brush(b);
+      if(brush_sides[0] && brush_sides[1]){
+       printf("Side 0") && printf("Side 1");
+      }
+
+      if(brush_sides[2] && brush_sides[3]){
+       printf("Side 2") && printf("Side 3");
+      }
+
+      if(brush_sides[4] && brush_sides[5]){
+       printf("Side 4") && printf("Side 5");
+      }
+ 
+ return b->current_brush(b);
 };
 
 /*
