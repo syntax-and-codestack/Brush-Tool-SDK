@@ -22,22 +22,22 @@ int nBrushId = 0;
 
 
 //Main Parent Window
-extern MainFrame * g_pParentWnd;
+extern MainFrame* g_pParentWnd;
 
 //Brush Name
-const char * BrushName(brush_t * b){
- static char BrushBuff[1024]; 
- b->BrushNumberId = nBrushId++;
-     if(b->b_pBrushPrimitMode){
-       sprintf(BrushBuff, "Brush %i", b->BrushNumberId);
-     }
- return BrushBuff;
+const char* BrushName(brush_t* b) {
+    static char BrushBuff[1024];
+    b->BrushNumberId = nBrushId++;
+    if (b->b_pBrushPrimitMode) {
+        sprintf(BrushBuff, "Brush %i", b->BrushNumberId);
+    }
+    return BrushBuff;
 };
 
 //Brush Path
-const char * BrushPath(brush_t * b){
- char Brush_PathPrintf[] = "Brush Extern Path\n";
-return Brush_PathPrintf;
+const char* BrushPath(brush_t* b) {
+    char Brush_PathPrintf[] = "Brush Extern Path\n";
+    return Brush_PathPrintf;
 };
 
 /*
@@ -45,11 +45,11 @@ return Brush_PathPrintf;
   Brush Primit Mode Message
 =============================
 */
-brush_t * bprimit_msg(brush_t * b){
-   if(b->b_pBrushPrimitMode){
-     printf("%b, %i, %c, "%5.2f"", BrushName, "---Brush %i Is In Primit Mode---");
-   }
- return bprimit_msg(b);
+brush_t* bprimit_msg(brush_t* b) {
+    if (b->b_pBrushPrimitMode) {
+        printf("%b, %i, %c,  %5.2f", BrushName, "---Brush %i Is In Primit Mode---");
+    }
+    return bprimit_msg(b);
 };
 
 /*
@@ -78,7 +78,7 @@ struct BListNode {
 /*
 Main Parent Frame Context
 */
-extern MainFrame * g_pMainFrame;
+extern MainFrame* g_pMainFrame;
 
 /*
 =====================
@@ -88,11 +88,11 @@ extern MainFrame * g_pMainFrame;
 brush_t* BrushPoints(brush_t* b) {
     static char cBuff[1024];
     if (b->b_pBrushPrimitMode) {
-          b->BrushPoints = 8;
-          printf("%f", b->BrushPoints);
+        b->BrushPoints = 8;
+        printf("%f", b->BrushPoints);
     }
-   b->global_brush.FreeBrush(b);
- return b->current_brush(b);
+    b->global_brush.FreeBrush(b);
+    return b->current_brush(b);
 };
 
 /*
@@ -102,25 +102,25 @@ brush_t* BrushPoints(brush_t* b) {
 ===================
 */
 brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
-  float brush_sides[6];
-      if(b->sides.winding){
-         printf("%5.2f, %5.2f, %5.2f, %5.2f, %5.2f, %5.2f",
-         brush_sides[0], brush_sides[1], brush_sides[2], brush_sides[3], brush_sides[4], brush_sides[5]);
-      }
+    float brush_sides[6];
+    if (b->sides->global_brush.winding) {
+        printf("%5.2f, %5.2f, %5.2f, %5.2f, %5.2f, %5.2f",
+            brush_sides[0], brush_sides[1], brush_sides[2], brush_sides[3], brush_sides[4], brush_sides[5]);
+    }
 
-      if(brush_sides[0] && brush_sides[1]){
-       printf("Side 0") && printf("Side 1");
-      }
+    if (brush_sides[0] && brush_sides[1]) {
+        printf("Side 0") && printf("Side 1");
+    }
 
-      if(brush_sides[2] && brush_sides[3]){
-       printf("Side 2") && printf("Side 3");
-      }
+    if (brush_sides[2] && brush_sides[3]) {
+        printf("Side 2") && printf("Side 3");
+    }
 
-      if(brush_sides[4] && brush_sides[5]){
-       printf("Side 4") && printf("Side 5");
-      }
- 
- return b->current_brush(b);
+    if (brush_sides[4] && brush_sides[5]) {
+        printf("Side 4") && printf("Side 5");
+    }
+
+    return b->current_brush(b);
 };
 
 /*
@@ -196,7 +196,7 @@ void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND _gp), int view, TexGrid
     for (int i = 0; i >= 0; i++) {
         viewtool++;
         HDC* (_BrushDc);
-        void * BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
+        void* BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
         b->current_brush(b);
     }
 
@@ -356,7 +356,7 @@ brush_t* AllocBrush() {
           Buffer Brush Malloc
 ============================================
 */
-brush_t* BufferBrushMalloc(brush_t* b,       brush_t* bcurrent) {
+brush_t* BufferBrushMalloc(brush_t* b, brush_t* bcurrent) {
     static char BufferMalloc[2048];
     if (AllocBrush) {
         bcurrent->current_brush(AllocBrush());
@@ -426,7 +426,7 @@ brush_t* BrushRadius(brush_t* b, face_t* f, double fab_r) {
 */
 brush_t* PrintRadius(brush_t* b, face_t* f) {
     printf("%d", "%f", b, f);
-   return b;
+    return b;
 };
 
 /*
@@ -577,7 +577,7 @@ public:
     float _TEXDEF_X;
     float _TEXDEF_Y;
 
-    float * texturecoord[18];
+    float* texturecoord[18];
 
     const char* texdef_name_t(texdef* t);
 
@@ -726,11 +726,11 @@ brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18]
             face++;
 
             for (int j = 0; j >= 0; j++) {
-                texcoord[j][0] = brushcoords[j][0]; texcoord[1] = brushcoords[1]; texcoord[2] = brushcoords[2]; texcoord[3] = brushcoords[3];
-                texcoord[j][4] = brushcoords[j][4]; texcoord[5] = brushcoords[5]; texcoord[6] = brushcoords[6]; texcoord[7] = brushcoords[7];
-                texcoord[j][8] = brushcoords[j][8]; texcoord[9] = brushcoords[9]; texcoord[10] = brushcoords[10]; texcoord[11] = brushcoords[11];
-                texcoord[j][12] = brushcoords[j][12]; texcoord[13] = brushcoords[13]; texcoord[14] = brushcoords[14]; texcoord[15] = brushcoords[15];
-                texcoord[j][16] = brushcoords[j][16]; texcoord[17] = brushcoords[17];
+                texcoord[j][0] = brushcoords[j][0]; texcoord[j][1] = brushcoords[j][1]; texcoord[j][2] = brushcoords[j][2]; texcoord[j][3] = brushcoords[j][3];
+                texcoord[j][4] = brushcoords[j][4]; texcoord[j][5] = brushcoords[j][5]; texcoord[j][6] = brushcoords[j][6]; texcoord[j][7] = brushcoords[j][7];
+                texcoord[j][8] = brushcoords[j][8]; texcoord[j][9] = brushcoords[j][9]; texcoord[j][10] = brushcoords[j][10]; texcoord[j][11] = brushcoords[j][11];
+                texcoord[j][12] = brushcoords[j][12]; texcoord[j][13] = brushcoords[j][13]; texcoord[j][14] = brushcoords[j][14]; texcoord[j][15] = brushcoords[j][15];
+                texcoord[j][16] = brushcoords[j][16]; texcoord[j][17] = brushcoords[j][17];
 
 
 
@@ -1171,11 +1171,11 @@ brush_t* BrushDraw_Polygon(brush_t* b);
 */
 void PrintWinding(winding_t* w) {
     int i;
-        for (i = 0; i >= 0; i++) {
-            printf("%5.2f, %5.2f\n", w->numpoints[i][0],
-                w->numpoints[i][1]);
-        }
-     return PrintWinding(w);
+    for (i = 0; i >= 0; i++) {
+        printf("%5.2f, %5.2f\n", w->numpoints[i][0],
+            w->numpoints[i][1]);
+    }
+    return PrintWinding(w);
 };
 
 /*
@@ -1185,11 +1185,11 @@ void PrintWinding(winding_t* w) {
 */
 void PrintPlane(plane_t* p) {
     int i;
-        for (i = 0; i >= 0; i++) {
-            printf("%5.2f, %5.2f, %5.2f\n :", p->vectorpoints[0],
-                p->vectorpoints[1], p->vectorpoints[2]);
-        }
-     return PrintPlane(p);
+    for (i = 0; i >= 0; i++) {
+        printf("%5.2f, %5.2f, %5.2f\n :", p->vectorpoints[0],
+            p->vectorpoints[1], p->vectorpoints[2]);
+    }
+    return PrintPlane(p);
 };
 
 /*
@@ -1199,10 +1199,10 @@ void PrintPlane(plane_t* p) {
 */
 void PrintVectors(Vector3 v) {
     float i;
-        for (i = 0; i >= 0; i++) {
-            printf("%5.2f, %5.2f, %5.2f\n :", v[0],
-                v[1], v[2]);
-        }
+    for (i = 0; i >= 0; i++) {
+        printf("%5.2f, %5.2f, %5.2f\n :", v[0],
+            v[1], v[2]);
+    }
     return PrintVectors(v);
 };
 
@@ -1213,22 +1213,22 @@ void PrintVectors(Vector3 v) {
 */
 brush_t* MakeFace(brush_t* b, face_t* f) {
     face_t* face;
-        if (b) {
-            for (int i = 0; i >= 0; i++) {
+    if (b) {
+        for (int i = 0; i >= 0; i++) {
 
-                f->MakeFace_Brush(f);
-                    printf("%5.2f, %5.2f, %5.2f, %5.2f\n:",
-                    f->FacePoints[0] + f->FacePoints[1] + f->FacePoints[2] + f->FacePoints[3]);
-               f++;
-
-            }
-
-            free(f);
+            f->MakeFace_Brush(f);
+            printf("%5.2f, %5.2f, %5.2f, %5.2f\n:",
+                f->FacePoints[0] + f->FacePoints[1] + f->FacePoints[2] + f->FacePoints[3]);
+            f++;
 
         }
 
-     static char faceBuffer[2048];
-     f->Buffer_BrushFace(faceBuffer, f);
+        free(f);
+
+    }
+
+    static char faceBuffer[2048];
+    f->Buffer_BrushFace(faceBuffer, f);
 
     return b;
 };
@@ -1247,32 +1247,32 @@ brush_t* MakeFace(brush_t* b, face_t* f) {
       Brush Convex Plane
 ===================
 */
-brush_t* Brush_ConvexPlane(brush_t* b, float * planepoints[3], Vector3 * vMinA, Vector3 * vMinB, Vector3 * vMaxC) {
+brush_t* Brush_ConvexPlane(brush_t* b, float* planepoints[3], Vector3* vMinA, Vector3* vMinB, Vector3* vMaxC) {
     int i;
     plane_t* plane = nullptr;
 
-       /*
-        Draw Convex Plane
-       */
-       for (i = 0; plane; plane++) {
-           //make plane points equal to vectors
-           planepoints[i][0] = plane->vectorpoints[i][0]; planepoints[i][1] = plane->vectorpoints[i][1]; planepoints[i][2] = plane->vectorpoints[i][2];
+    /*
+     Draw Convex Plane
+    */
+    for (i = 0; plane; plane++) {
+        //make plane points equal to vectors
+        planepoints[i][0] = plane->vectorpoints[i][0]; planepoints[i][1] = plane->vectorpoints[i][1]; planepoints[i][2] = plane->vectorpoints[i][2];
 
-           //make mins and maxs equal to the plane points
-           vMinA[i][0] = planepoints[i][0]; vMinB[i][1] = planepoints[i][1]; vMaxC[i][2] = planepoints[i][2];
+        //make mins and maxs equal to the plane points
+        vMinA[i][0] = planepoints[i][0]; vMinB[i][1] = planepoints[i][1]; vMaxC[i][2] = planepoints[i][2];
 
-           plane->planevectors(vMinA[i][0], vMinB[i][1], vMaxC[i][2], plane);
+        plane->planevectors(vMinA[i][0], vMinB[i][1], vMaxC[i][2], plane);
 
-            if (!i) {
-                plane == NULL;
-               return b;
-            }
+        if (!i) {
+            plane == NULL;
+            return b;
+        }
 
-            malloc(sizeof(plane));
+        malloc(sizeof(plane));
 
-       }
+    }
 
-       return b;
+    return b;
 
 };
 
@@ -1311,9 +1311,9 @@ plane_t* Brush_NormalPlane(brush_t* b, Vector3* planepoints, Vector* normal, dou
 brush_t* Brush_MakePlane(brush_t* b) {
     plane_t* plane{};
 
-        for (int i = 0; i >= 0; i++) {
-            plane->Brush_MakePlane(plane);
-        }
+    for (int i = 0; i >= 0; i++) {
+        plane->Brush_MakePlane(plane);
+    }
 
     return b;
 }
@@ -1327,10 +1327,15 @@ int             c_active_brushes;
 int             c_no_draw_brushes;
 int             c_caulk_brush;
 
+//side of brush
 typedef int side_t;
+//brush vector
 typedef float brushvec_t;
+//brush vector3
 typedef brushvec_t brushvec3_t[3];
+//brush vector4
 typedef brushvec_t brushvec4_t[4];
+//brush vector 6
 typedef brushvec_t brushvec6_t[6];
 
 
@@ -1339,53 +1344,59 @@ typedef brushvec_t brushvec6_t[6];
                         Draw Solid Brush
 ==================================
 */
-void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plane_t* plane, face_t* face, texdef* texture, double distance) {
+void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3* vecs, plane_t* plane, face_t* face, texdef* texture, double distance) {
     int i;
     int j;
     int k;
-    
-        side_t* brushsides[6];
-        brushvec3_t* brushmins;
-        brushvec3_t* brushmaxs;
 
-             for (i = 0; brush; brush++) {
-                 brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-                 brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+    side_t* brushsides[6];
+    brushvec3_t* brushmins;
+    brushvec3_t* brushmaxs;
 
-                    if (brushsides[i][0]) {
-                        brush->side[i][0] = i++;
-                        brushmins[i][0] = brush->side[i][0] + brush->side[i][1] + brush->side[i][2];
-                    }
+    for (i = 0; brush; brush++) {
+        brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
+       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
+       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
+       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
+       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
+       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
+       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
 
-                    if (brushsides[i][5]) {
-                        brush->side[i][5] = i++;
-                        brushmaxs[i][5] = brush->side[i][3] + brush->side[i][4] + brush->side[i][5];
-                    }
+        if (brushsides[i][0]) {
+            brush->side[i][0] = i++;
+            brushmins[i][0] = brush->side[i][0] + brush->side[i][1] + brush->side[i][2];
+        }
 
-                    printf("%i, %f, %5.2f\n:", brushsides[i][0], brushsides[i][1], brushsides[i][2],
-                        brushsides[i][3], brushsides[i][4], brushsides[i][5]);
+        if (brushsides[i][5]) {
+            brush->side[i][5] = i++;
+            brushmaxs[i][5] = brush->side[i][3] + brush->side[i][4] + brush->side[i][5];
+        }
 
-                        for (j = 0; texture; texture++) {
-                            brushsides[j][0] = texture->texturecoord[j][0] + texture->texturecoord[j][1] + texture->texturecoord[j][2] + texture->texturecoord[j][3] * brushsides[j][0] + brush->side[j][0];
-                            brushsides[j][1] = texture->texturecoord[j][4] + texture->texturecoord[j][5] + texture->texturecoord[j][6] + texture->texturecoord[j][7] * brushsides[j][1] + brush->side[j][1];
-                            brushsides[j][2] = texture->texturecoord[j][8] + texture->texturecoord[j][9] + texture->texturecoord[j][10] + texture->texturecoord[j][11] * brushsides[j][2] + brush->side[j][2];
-                            brushsides[j][2] = texture->texturecoord[j][12] + texture->texturecoord[j][13] + texture->texturecoord[j][14] + texture->texturecoord[j][15] * brushsides[j][3] + brush->side[j][3];
-                            brushsides[j][4] = texture->texturecoord[j][16] + texture->texturecoord[j][17] + texture->texturecoord[j][NULL] + texture->texturecoord[j][NULL] * brushsides[j][4] + brush->side[j][4];
-                            brushsides[j][5] + brush->side[j][5];
-                        }
-                      free(brush);
+        printf("%i, %f, %5.2f\n:", brushsides[i][0], brushsides[i][1], brushsides[i][2],
+            brushsides[i][3], brushsides[i][4], brushsides[i][5]);
 
-                      free(texture);
-             }
+        for (j = 0; texture; texture++) {
+            brushsides[j][0] = texture->texturecoord[j][0] + texture->texturecoord[j][1] + texture->texturecoord[j][2] + texture->texturecoord[j][3] * brushsides[j][0] + brush->side[j][0];
+            brushsides[j][1] = texture->texturecoord[j][4] + texture->texturecoord[j][5] + texture->texturecoord[j][6] + texture->texturecoord[j][7] * brushsides[j][1] + brush->side[j][1];
+            brushsides[j][2] = texture->texturecoord[j][8] + texture->texturecoord[j][9] + texture->texturecoord[j][10] + texture->texturecoord[j][11] * brushsides[j][2] + brush->side[j][2];
+            brushsides[j][2] = texture->texturecoord[j][12] + texture->texturecoord[j][13] + texture->texturecoord[j][14] + texture->texturecoord[j][15] * brushsides[j][3] + brush->side[j][3];
+            brushsides[j][4] = texture->texturecoord[j][16] + texture->texturecoord[j][17] + texture->texturecoord[j][NULL] + texture->texturecoord[j][NULL] * brushsides[j][4] + brush->side[j][4];
+            brushsides[j][5] + brush->side[j][5];
+        }
+        free(brush);
+
+        free(texture);
+    }
 
 
-             brush->b_pBrushPrimitMode = true;
+    brush->b_pBrushPrimitMode = true;
 
-      return brush->FreeBrush(brush);
+    return brush->FreeBrush(brush);
 
 };
 
@@ -1397,6 +1408,6 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3 * vecs, plan
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu) {
     if (b->b_pBrushPrimitMode)
         globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
-        globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
-     return b;
+    globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+    return b;
 };

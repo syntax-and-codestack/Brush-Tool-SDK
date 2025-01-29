@@ -18,10 +18,14 @@ bool clip_brush_t; //?clip?
 #define MAX_PLANE_NUM 68223
 //max faces per bsp
 #define MAX_FACE_NUM 75233
-
+//brush points on winding
 #define BRUSH_POINTS 000
-
+//brush mayjor
 #define BRUSH_IS_MAYJOR "Brush"
+
+
+//bsp compiler file
+const char* Bsp_CompileFile = "CompileMap.bat";
 
 
 /*
@@ -53,9 +57,30 @@ void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 */
 void BspWindingSides(brush_t* brush, winding_t* w) {
 	int i;
+	for (i = 0; brush; brush++) {
+		brush->side[i][0];
+			brush->sides[i].winding;
+	}
+ free(brush->sides->winding);
+};
+
+/*
+=====================
+	    Chop Brush Winding
+
+	 Split Brush Into Two Nodes
+
+		*!-not finished code-!*
+=====================
+*/
+void Chop_BrushWinding(brush_t* brush, plane_t* plane) {
+	int i;
+	if (Bsp_CompileFile) {
 		for (i = 0; brush; brush++) {
-				brush->side[i][0];
-					brush->sides[i].winding;
+			brush->winding->windpoints[i] = plane->planenumberid-- * 2;
 		}
-	free(brush->sides->winding);
-}
+	 void Chop(int split = 2);
+    clip_brush_t != true;
+	}
+	c_nodes++;
+};
