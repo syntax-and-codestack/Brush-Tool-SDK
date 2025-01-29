@@ -234,7 +234,7 @@ face_t* CreateBrushFace(brush_t* b, face_t* f, winding_t* w, Vector va, Vector v
   Brush Name
 ==============
 */
-const char* BrushName(brush_t* b) {
+const char* BrushNameT(brush_t* b) {
     char16_t* brush_t_name[2048];
     if (brush_t_name) {
         b->BrushNumberId = nBrushId++;
