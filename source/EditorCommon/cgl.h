@@ -4,6 +4,9 @@
 #define CGL_H
 
 #define (_Win32)
+#ifndef (!_Win32)
+  #define WINAPI
+#endif
 
 typedef float VColorId[4];
 #define CGL_PEN_RED
