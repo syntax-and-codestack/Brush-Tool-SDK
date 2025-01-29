@@ -47,7 +47,7 @@ return Brush_PathPrintf;
 */
 brush_t * bprimit_msg(brush_t * b){
    if(b->b_pBrushPrimitMode){
-     printf("%b, %i, %c, "%5.2f", BrushName, "---Brush %i Is In Primit Mode---");
+     printf("%b, %i, %c, "%5.2f"", BrushName, "---Brush %i Is In Primit Mode---");
    }
  return bprimit_msg(b);
 };
