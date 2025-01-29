@@ -1401,6 +1401,22 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3* vecs, plane
 };
 
 /*
+========================
+   Brush Current List
+========================
+*/
+const void Brush_CurrentList(){
+ brush_t * current;
+ brush_t * next;
+ brush_t * prev;
+
+  for(int i = 0; brush; brush++){
+   current = brush; next = brush++; prev = brush--;
+  }
+
+};
+
+/*
 ======================
  Brush Construct Menu
 ======================
