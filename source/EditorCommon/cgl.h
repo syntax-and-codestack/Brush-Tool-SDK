@@ -3,6 +3,8 @@
 #ifndef CGL_H
 #define CGL_H
 
+#include <Windows.h>
+
 #define (_Win32)
 #ifndef (!_Win32)
   #define WINAPI
