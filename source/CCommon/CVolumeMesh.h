@@ -6,7 +6,7 @@
 
 int c_volume_mesh;
 int c_id;
-int * c_active_volume_mesh;
+int* c_active_volume_mesh;
 
 //////////////////////////////////
 //                              //
@@ -18,37 +18,37 @@ int * c_active_volume_mesh;
 
 //CVolumeMesh.h copyright@ hunter manko
 
-class CVolumeMesh{
+class CVolumeMesh {
 public:
 
- CVolumeMesh();
- ~CVolumeMesh();
+	CVolumeMesh();
+	~CVolumeMesh();
 
- int c_volume_mesh_number;
- bool add_volume;
+	int c_volume_mesh_number;
+	bool add_volume;
 
- enum{
-  c_wireframe = 0x0
-}CVolumeRendering;
+	enum {
+		c_wireframe = 0x0
+	}CVolumeRendering;
 
-CVolumeMesh * mesh();
+	CVolumeMesh* mesh();
 
-int sides[6];
-int * c_sides;//sides arent visible just encapsed in the box bounds
+	int sides[6];
+	int* c_sides;//sides arent visible just encapsed in the box bounds
 
-bool HollowMeshC;
+	bool HollowMeshC;
 
-Vector3 &vMeshMins;
-Vector3 &vMeshMaxs;
+	Vector3& vMeshMins;
+	Vector3& vMeshMaxs;
 
-Vector3 &vMeshSpawnOrigin = { 0.0f, 0.0f, 0.0f };
-Vector3 &vMeshPosition;
+	Vector3& vMeshSpawnOrigin;
+	Vector3& vMeshPosition;
 
-Vector3 * vMeshVecCall;
-float CVolumeMeshLineColor[3];
+	Vector3* vMeshVecCall;
+	float CVolumeMeshLineColor[3];
 
-void SpawnCVolumeMesh(void);
-virtual void SpawnVMesh(void) = 0;
+	void SpawnCVolumeMesh(void);
+	virtual void SpawnVMesh(void) = 0;
 
 
 };
