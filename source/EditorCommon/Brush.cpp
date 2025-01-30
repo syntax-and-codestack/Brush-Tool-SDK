@@ -1059,7 +1059,7 @@ winding_t* copywinding(winding_t* w) {
             return w;
         }
 
-        char winding_cpy[] = "---Winding Copied---\n";
+        char winding_cpy[64] = "---Winding Copied---\n";
         char windingmem[1024];
 
         memcpy(w, copywinding, sizeof(w));
@@ -1099,7 +1099,7 @@ plane_t* copyplane(plane_t* p) {
             return p;
         }
 
-        char plane_cpy[] = "---Plane Copied---\n";
+        char plane_cpy[64] = "---Plane Copied---\n";
         memcpy(p, planecopy, sizeof(planecopy));
 
     };
@@ -1139,7 +1139,7 @@ face_t* copyface(face_t* f) {
             return f;
         }
 
-        char face_cpy[] = "---Face Copied---\n";
+        char face_cpy[64] = "---Face Copied---\n";
         memcpy(f, facecopy, sizeof(f));
 
     }
@@ -1182,7 +1182,7 @@ brush_t* copybrush(brush_t* b) {
             return b;
         }
 
-        char brush_cpy[] = "---Brush Copied---\n";
+        char brush_cpy[64] = "---Brush Copied---\n";
         memcpy(b, brushcopy, sizeof(b));
 
     }
@@ -1513,8 +1513,23 @@ const void Brush_CurrentList(brush_t * brush) {
 ======================
 */
 brush_t* BrushConstructMenu(brush_t* b, globalafx* globalInsert(), HMENU* BrushMenu) {
-    if (b->b_pBrushPrimitMode)
-        globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
-    globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+    if (q_eglobals.qbrushprimit_mode) != false){
+       globalInsert()->globalType()->globalConsturctMenuCommand(BrushMenu);
+       globalInsert()->globalType()->globalInsertMesh("b", b->BrushNumberId = nBrushId++);
+    }
     return b;
 };
+
+/*
+======================
+   Brush Is Selected
+ *!all faces selected!*
+======================
+*/
+qboolean SelectBrush(brush_t * brush){
+ (*q_eglobals).qselectbrush != false;
+};
+
+
+
+
