@@ -99,7 +99,7 @@ extern MainFrame* g_pMainFrame;
 
      Create Brush Points
 
-  *!set brush number of points
+  *!set brush number of points!*
  
 ===========================================
 */
@@ -186,7 +186,23 @@ brush_t* BrushSarrus_Det(brush_t* b, Vector6& brushsarrus, float ax, float by, f
           Project The Brush Points
         
          *!create the brush points!*
+         
+            1____________3      
+           /|           /|
+          / |          / |
+         0__|_________2  |
+         |  /5--------|--6
+         | /          | /
+         |/           |/
+         4------------7
 
+          0___________3
+          /\          /
+         /  \        /
+        /    \      /
+       /      \    /
+      /        \  /
+     1----------2/ 4
  
 ================================================
 */
@@ -354,7 +370,11 @@ brush_t* AddFacesToPoints(brush_t* b, face_t* f, plane_t* p, winding_t* w, int n
 
 /*
 ======================
+
   Add Brush To Camera
+  
+   *!add to camera!*
+   
 ======================
 */
 camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
@@ -412,13 +432,13 @@ return b;
 */
 brush_t* BufferBrushMalloc(brush_t* b, brush_t* bcurrent) {
 static char BufferMalloc[2048];
- if (AllocBrush) {
+if (AllocBrush) {
  bcurrent->current_brush(AllocBrush());
-  for (int i = 0; i >= 0; i++) {
-   sprintf(BufferMalloc, "Brush %c + %c * Brush %i++", nBrushId++);
-   i++ && b++;
-  }
- }
+   for (int i = 0; i >= 0; i++) {
+    sprintf(BufferMalloc, "Brush %c + %c * Brush %i++", nBrushId++);
+    i++ && b++;
+   }
+}
 return b++;
 };
 
@@ -442,7 +462,21 @@ brush_t* BrushSqrt(float bsqrt) {
 
 /*
 =======================
+
     Brush MidPoint
+    
+       _______________       
+     /                /
+    /                /
+   /                /
+  /________________/
+  |                |  
+  |                |
+  |                |  /
+  |                | /
+  |                |/
+   ----------------/
+    
 =======================
 */
 brush_t* BrushMidPoint(brush_t* b, Vector& vector, float* pointmax, float* pointmin) {
