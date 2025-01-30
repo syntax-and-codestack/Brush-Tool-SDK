@@ -9,7 +9,7 @@ Brush.cpp copyright @hunter manko
 //Draw Bsp Brush: Line - 1239
 //Brush.cpp Total Lines - 1402
 
-#define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
+#define BrushPointsProduct (a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 #define BRUSH_PI 3.141256
 
 #define HIGHLIGHT_BRUSH (r, g, b)
