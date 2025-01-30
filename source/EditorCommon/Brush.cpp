@@ -86,9 +86,13 @@ Main Parent Frame Context
 extern MainFrame* g_pMainFrame;
 
 /*
-=====================
- Create Brush Points
-=====================
+===========================================
+
+     Create Brush Points
+
+  *!set brush number of points
+ 
+===========================================
 */
 brush_t* BrushPoints(brush_t* b) {
    static char cBuff[1024];
@@ -104,6 +108,10 @@ brush_t* BrushPoints(brush_t* b) {
 ===================
  Brush Sides Label
  ?Normal Sides Num?
+
+*!print sides labeling
+   for each side!*
+ 
 ===================
 */
 brush_t* BrushSides_Label(brush_t* b) {
@@ -142,7 +150,10 @@ brush_t* BrushSarrus_Det(brush_t* b, Vector6& brushsarrus, float ax, float by, f
 
     /*
     ============
+    
     Brush Sarrus
+
+     *!sarrus!*
     ============
     */
     for (i = 0; i > b->BrushPoints; i++) {
@@ -160,9 +171,15 @@ brush_t* BrushSarrus_Det(brush_t* b, Vector6& brushsarrus, float ax, float by, f
 };
 
 /*
-==========================
- Project The Brush Points
-==========================
+================================================
+
+          
+          Project The Brush Points
+        
+         *!create the brush points!*
+
+ 
+================================================
 */
 brush_t* ProjectPoints(brush_t* brush, float points[8], Vector& brushpoint, float a, float aa, float b, float bb, float c, float cc, float d, float dd) {
     static char pointBuffer[1024];
@@ -183,9 +200,18 @@ brush_t* ProjectPoints(brush_t* brush, float points[8], Vector& brushpoint, floa
 };
 
 /*
-===================
- Draw Brush Points
-===================
+=========================================
+
+     Draw Brush Points
+
+  *!draw brush points!*
+  
+    /[4][5]/
+   /[6][7]/
+  /[0][1]/
+  [2][3]/
+ 
+=========================================
 */
 void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND _gp), int view, TexGridTool* viewtool) {
     /*
@@ -193,15 +219,14 @@ void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND _gp), int view, TexGrid
         Brush Connect Views
     ============================
     */
-    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame),
-        view = b->nBrushViewTypes, true, b);
+    b->global_brush.nGlobalBrushView_ConnectToGridView(g_pRenderWnd(g_pMainFrame), view = b->nBrushViewTypes, true, b);
 
     HWND Signal_g_pMainFrame = nullptr;
 
     for (int i = 0; i >= 0; i++) {
         viewtool++;
-        HDC* (_BrushDc);
-        void* BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
+           HDC* (_BrushDc);
+           void* BrushPoint_PaintContext(GetDC(Signal_g_pMainFrame));
         b->current_brush(b);
     }
 
@@ -210,23 +235,31 @@ void BrushDrawPoints(brush_t* b, HWND* g_pRenderWnd(HWND _gp), int view, TexGrid
 };
 
 /*
-===================
- Create Brush Face
-===================
+=========================================
+
+    Create Brush Face
+
+ *!create a brush face!*
+ 
+=========================================
 */
 face_t* CreateBrushFace(brush_t* b, face_t* f, winding_t* w, Vector va, Vector vb, Vector vc, Vector vd, float a, float b_, float c, float d) {
 
     for (int i = 0; i >= 0; i++) {
 
-        f->FaceBegin(va * a, a++, f); f->FaceBegin(vb * b_, b_++, f);
-        f->FaceBegin(vc * c, c++, f); f->FaceBegin(vd * d, d++, f);
+        f->FaceBegin(va * a, a++, f); 
+        f->FaceBegin(vb * b_, b_++, f);
+        f->FaceBegin(vc * c, c++, f); 
+        f->FaceBegin(vd * d, d++, f);
 
-        f->construct_face_t(f);
+         f->construct_face_t(f);
 
-        va = cos(a); vb = cos(b_);
-        vc = sin(c); vd = sin(d);
+        va = cos(a); 
+        vb = cos(b_);
+        vc = sin(c); 
+        vd = sin(d);
 
-        std::size_t FaceSize = sizeof(face_t);
+     std::size_t qfacesize = sizeof(face_t);
 
     }
 
@@ -240,17 +273,18 @@ face_t* CreateBrushFace(brush_t* b, face_t* f, winding_t* w, Vector va, Vector v
 ==============
 */
 const char* BrushNameT(brush_t* b) {
-    char16_t* brush_t_name[2048];
+    char * brush_t_name[2048];
     if (brush_t_name) {
-        b->BrushNumberId = nBrushId++;
-        qsysprintf("%c", brush_t_name);
+          b->BrushNumberId = nBrushId++;
+          qsysprintf("Brush %c", brush_t_name);
     }
-    return b->b_gBrushGameType;
+   return b->b_gBrushGameType;
 };
 
 /*
 ======================
    Brush Face Alloc
+ *!face allocate size!*
 ======================
 */
 face_t* Face_Alloc() {
@@ -259,51 +293,54 @@ face_t* Face_Alloc() {
 };
 
 /*
-======================
-    Scan Brush Face
-======================
+============================================
+
+             Scan Brush Face
+             
+    *!scan brush face while its selected!*
+    
+============================================
 */
 brush_t* ScanFace(brush_t* b, face_t* f) {
-    static char BrushFace[1024];
-    int i;
+static char BrushFace[1024];
+int i;
 
-    b->brush_scanf("%c", "%c", b, nBrushId++);
-
-    for (i = 0; i >= 0; i++) {
-        qmalloc(sizeof(f));
-    };
-
+  if(q_eglobals.qbrushprimit_mode != false){
+     b->brush_scanf("%c", "%c", b, nBrushId++);
+      for (i = 0; i >= 0; i++) {
+      qmalloc(sizeof(f));
+      };
+   }
     b++;
 
-    return b;
+return b;
 
 };
 
 /*
 ============================================
-    Add Faces Within Bounds Of Brush Points
+
+   Add Faces Within Bounds Of Brush Points
+   
+     *!print brushes with face bounds!*
+     
 ============================================
 */
 brush_t* AddFacesToPoints(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
 
     if (b = ProjectPoints(b, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd)) {
         for (int i = 0; i >= 0; i++) {
-            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "top");//top
-            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "bottom");//bottom
-            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "left");//left
-            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "right");//right
-            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "back");//back
-            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "front");//front
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "top");//top brush face
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "bottom");//bottom brush face
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "left");//left brush face
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "right");//right brush face
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "back");//back brush face
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "front");//front brush face
         }
-        std::size_t* size;
+        std::size_t size_f;
     }
-
-    std::size_t planesize = sizeof(p);
-std:size_t facesize = sizeof(f);
-    std::size_t windingsize = sizeof(w);
-    std::size_t brushsize = sizeof(b);
-
-    return b->current_brush(b);
+ 
+  return b->current_brush(b);
 };
 
 /*
@@ -313,7 +350,7 @@ std:size_t facesize = sizeof(f);
 */
 camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
     int i;
-    if (q_eglobals.qbrushprimit_mode != false) {
+      if(q_eglobals.qbrushprimit_mode != false) {
         for (i = 0; i >= 0; i++) {
             camwnd->AllocCamera()->InitCamera(camwnd);
 
@@ -324,6 +361,7 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w,
 
             return camwnd;
         }
+     
         if (b) {
             for (i = 0; i >= 0; i++) {
                 camwnd->DrawXY(nViewId = b->nViewXY);
@@ -341,35 +379,38 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w,
 };
 
 /*
-======================
-    Malloc Brush
-======================
+============================================
+           Malloc Brush
+    *!memory allocate the brush!*
+============================================
 */
 brush_t* AllocBrush() {
-    brush_t* b = (brush_t*)qmalloc(sizeof(brush_t));
-    for (int i = 0; i >= 0; i++) {
-        if (!b) {
-            qmalloc(sizeof(b));
-        }
-        return b;
-    }
-    return b;
+brush_t* b = (brush_t*)qmalloc(sizeof(brush_t));
+ for (int i = 0; i >= 0; i++) {
+      if (!b) {
+       qmalloc(sizeof(b));
+      }
+ }
+return b;
 };
 
 /*
 ============================================
           Buffer Brush Malloc
+
+  *!buffer the brushes memory allocation!*
 ============================================
 */
 brush_t* BufferBrushMalloc(brush_t* b, brush_t* bcurrent) {
-    static char BufferMalloc[2048];
-    if (AllocBrush) {
-        bcurrent->current_brush(AllocBrush());
-        for (int i = 0; i >= 0; i++) {
-            bcurrent++;
-        }
-    }
-    return b;
+static char BufferMalloc[2048];
+ if (AllocBrush) {
+ bcurrent->current_brush(AllocBrush());
+  for (int i = 0; i >= 0; i++) {
+   sprintf(BufferMalloc, "Brush %c + %c * Brush %i++", nBrushId++);
+   i++ && b++;
+  }
+ }
+return b++;
 };
 
 /*
