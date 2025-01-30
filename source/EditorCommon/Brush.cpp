@@ -29,24 +29,29 @@ extern MainFrame* g_pParentWnd;
 
 //Brush Name
 const char* BrushName(brush_t* b) {
-    static char BrushBuff[1024];
-    b->BrushNumberId = nBrushId++;
+ static char BrushBuff[1024];
+ b->BrushNumberId = nBrushId++;
     if (q_eglobals.qbrushprimit_mode != false) {
         sprintf(BrushBuff, "Brush %i", b->BrushNumberId);
     }
-    return BrushBuff;
+  return BrushBuff;
 };
 
 //Brush Path
-const char* BrushPath(brush_t* b) {
-    char Brush_PathPrintf[64] = "Brush Extern Path\n";
-    return Brush_PathPrintf;
+const char* qBrushPathf(brush_t* b) {
+  char Brush_PathPrintf[64] = "Brush Extern Path\n";
+ return Brush_PathPrintf;
 };
 
 /*
-=============================
-  Brush Primit Mode Message
-=============================
+=====================================
+
+    Brush Primit Mode Message
+    
+    *!if brush is in primit mode 
+   it prints a message to notify!*
+   
+=====================================
 */
 brush_t* qbrushprimit_msg(brush_t* b) {
     if (q_eglobals.qbrushprimit_mode != false) {
@@ -71,13 +76,15 @@ struct BrushCVar {
 */
 
 /*
-=================
- Brush List Node
-=================
+=====================
+  Brush List Node
+  *!only if brush
+    is a node!*
+=====================
 */
 struct BListNode {
-    int blstnum;
-    BListNode* blstnode;
+    int blstnum;//brush node number id
+    BListNode* blstnode;//brush node pointer
 };
 
 /*
