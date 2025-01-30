@@ -38,7 +38,7 @@ const char* BrushName(brush_t* b) {
 };
 
 //Brush Path
-const char* qBrushPathf(brush_t* b) {
+const char* qBrushPath(brush_t* b) {
   char Brush_PathPrintf[64] = "Brush Extern Path\n";
  return Brush_PathPrintf;
 };
