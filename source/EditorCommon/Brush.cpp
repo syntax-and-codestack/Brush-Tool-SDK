@@ -14,6 +14,8 @@ Brush.cpp copyright @hunter manko
 //Brush Pi
 #define BRUSH_PI 3.141259
 
+//brush cleanup
+
 /*
 
  Brush Globals
@@ -37,7 +39,7 @@ const char* BrushName(brush_t* b) {
 
 //Brush Path
 const char* BrushPath(brush_t* b) {
-    char Brush_PathPrintf[] = "Brush Extern Path\n";
+    char Brush_PathPrintf[64] = "Brush Extern Path\n";
     return Brush_PathPrintf;
 };
 
@@ -46,18 +48,19 @@ const char* BrushPath(brush_t* b) {
   Brush Primit Mode Message
 =============================
 */
-brush_t* bprimit_msg(brush_t* b) {
+brush_t* qbrushprimit_msg(brush_t* b) {
     if (q_eglobals.qbrushprimit_mode != false) {
         qsysprintf("%b, %i, %c,  %5.2f", BrushName, "---Brush %i Is In Primit Mode---");
     }
-    return bprimit_msg(b);
+    return qbrushprimit_msg(b);
 };
 
 /*
 ============
  Brush Vars
 ============
-*/
+*/ //cleanup this no longer needed
+/*
 struct BrushCVar {
     int CBrushId;
     const char* CBrushPrimit;
@@ -65,6 +68,7 @@ struct BrushCVar {
     const char* CBrushValue;
     typedef std::string CBrushString;
 };
+*/
 
 /*
 =================
@@ -87,13 +91,13 @@ extern MainFrame* g_pMainFrame;
 =====================
 */
 brush_t* BrushPoints(brush_t* b) {
-    static char cBuff[1024];
-    if (q_eglobals.qbrushprimit_mode != false) {
+   static char cBuff[1024];
+   if (q_eglobals.qbrushprimit_mode != false) {
         b->BrushPoints = 8;
         qsysprintf("%f", b->BrushPoints);
     }
-    b->global_brush.FreeBrush(b);
-    return b->current_brush(b);
+     b->global_brush.FreeBrush(b);
+  return b->current_brush(b);
 };
 
 /*
@@ -102,7 +106,7 @@ brush_t* BrushPoints(brush_t* b) {
  ?Normal Sides Num?
 ===================
 */
-brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
+brush_t* BrushSides_Label(brush_t* b) {
     float brush_sides[6];
     if (b->sides->global_brush.winding) {
         qsysprintf("%5.2f, %5.2f, %5.2f, %5.2f, %5.2f, %5.2f",
