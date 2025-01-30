@@ -48,7 +48,7 @@ const char* BrushPath(brush_t* b) {
 */
 brush_t* bprimit_msg(brush_t* b) {
     if (q_eglobals.qbrushprimit_mode != false) {
-        printf("%b, %i, %c,  %5.2f", BrushName, "---Brush %i Is In Primit Mode---");
+        qsysprintf("%b, %i, %c,  %5.2f", BrushName, "---Brush %i Is In Primit Mode---");
     }
     return bprimit_msg(b);
 };
@@ -93,7 +93,7 @@ brush_t* BrushPoints(brush_t* b) {
         qsysprintf("%f", b->BrushPoints);
     }
     b->global_brush.FreeBrush(b);
-   return b->current_brush(b);
+    return b->current_brush(b);
 };
 
 /*
@@ -110,18 +110,18 @@ brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
     }
 
     if (brush_sides[0] && brush_sides[1]) {
-        qsysprintf("Side 0") && printf("Side 1");
+        printf("Side 0") && printf("Side 1");
     }
 
     if (brush_sides[2] && brush_sides[3]) {
-        qsysprintf("Side 2") && printf("Side 3");
+        printf("Side 2") && printf("Side 3");
     }
 
     if (brush_sides[4] && brush_sides[5]) {
-        qsysprintf("Side 4") && printf("Side 5");
+        printf("Side 4") && printf("Side 5");
     }
 
-   return b->current_brush(b);
+    return b->current_brush(b);
 };
 
 /*
@@ -174,7 +174,7 @@ brush_t* ProjectPoints(brush_t* brush, float points[8], Vector& brushpoint, floa
         return brush;
     }
 
-  return brush->alloc_brush(brush);
+    return brush->alloc_brush(brush);
 
 };
 
@@ -309,7 +309,7 @@ std:size_t facesize = sizeof(f);
 */
 camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
     int i;
-    if q_eglobals.qbrushprimit_mode != false) {
+    if (q_eglobals.qbrushprimit_mode != false) {
         for (i = 0; i >= 0; i++) {
             camwnd->AllocCamera()->InitCamera(camwnd);
 
@@ -526,7 +526,7 @@ brush_t* BrushSignalType(brush_t* b) {
 
     }
 
-   return BrushSignalType(b);
+    return BrushSignalType(b);
 
 };
 
@@ -1355,18 +1355,18 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3* vecs, plane
     brushvec3_t* brushmaxs;
 
     for (i = 0; brush; brush++) {
-        brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-        brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-        brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-        brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-        brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
-        brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++; 
-       plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][0] = brush->side[i][0] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+        plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][1] = brush->side[i][1] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+        plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][2] = brush->side[i][2] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+        plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][3] = brush->side[i][3] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+        plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][4] = brush->side[i][4] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+        plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
+        brushsides[i][5] = brush->side[i][5] = winding[i].WindingNumberId = plane->planenumberid = face->FacePoints[i] + face->FacePoints[i] + plane->planenumberid++;
+        plane = Brush_NormalPlane(brush, vecs, plane->_normal, distance, plane);
 
         if (brushsides[i][0]) {
             brush->side[i][0] = i++;
@@ -1406,16 +1406,16 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3* vecs, plane
    Brush Current List
 ========================
 */
-const void Brush_CurrentList(){
- brush_t * current;
- brush_t * next;
- brush_t * prev;
+const void Brush_CurrentList(brush_t * brush) {
+    brush_t* current;
+    brush_t* next;
+    brush_t* prev;
 
-  for(int i = 0; brush; brush++){
-    current = brush; 
-    next = brush++; 
-    prev = brush--;
-  }
+    for (int i = 0; brush; brush++) {
+        current = brush;
+        next = brush++;
+        prev = brush--;
+    }
 
 };
 
