@@ -1,5 +1,6 @@
 /*Brush Includes*/
 #include "afx.h"
+#include "Stdafx.h"
 
 /*
 Brush.cpp copyright @hunter manko
@@ -19,7 +20,7 @@ Brush.cpp copyright @hunter manko
 
 */
 int nBrushId = 0;
-
+_q_eglobals& q_eglobals;
 
 //Main Parent Window
 extern MainFrame* g_pParentWnd;
@@ -28,7 +29,7 @@ extern MainFrame* g_pParentWnd;
 const char* BrushName(brush_t* b) {
     static char BrushBuff[1024];
     b->BrushNumberId = nBrushId++;
-    if (b->b_pBrushPrimitMode) {
+    if (q_eglobals.qbrushprimit_mode != false) {
         sprintf(BrushBuff, "Brush %i", b->BrushNumberId);
     }
     return BrushBuff;
@@ -46,7 +47,7 @@ const char* BrushPath(brush_t* b) {
 =============================
 */
 brush_t* bprimit_msg(brush_t* b) {
-    if (b->b_pBrushPrimitMode) {
+    if (q_eglobals.qbrushprimit_mode != false) {
         printf("%b, %i, %c,  %5.2f", BrushName, "---Brush %i Is In Primit Mode---");
     }
     return bprimit_msg(b);
@@ -87,12 +88,12 @@ extern MainFrame* g_pMainFrame;
 */
 brush_t* BrushPoints(brush_t* b) {
     static char cBuff[1024];
-    if (b->b_pBrushPrimitMode) {
+    if (q_eglobals.qbrushprimit_mode != false) {
         b->BrushPoints = 8;
-        printf("%f", b->BrushPoints);
+        qsysprintf("%f", b->BrushPoints);
     }
     b->global_brush.FreeBrush(b);
-    return b->current_brush(b);
+   return b->current_brush(b);
 };
 
 /*
@@ -104,23 +105,23 @@ brush_t* BrushPoints(brush_t* b) {
 brush_t* BrushSides_Label(brush_t* b, BrushCVar* brush_c) {
     float brush_sides[6];
     if (b->sides->global_brush.winding) {
-        printf("%5.2f, %5.2f, %5.2f, %5.2f, %5.2f, %5.2f",
+        qsysprintf("%5.2f, %5.2f, %5.2f, %5.2f, %5.2f, %5.2f",
             brush_sides[0], brush_sides[1], brush_sides[2], brush_sides[3], brush_sides[4], brush_sides[5]);
     }
 
     if (brush_sides[0] && brush_sides[1]) {
-        printf("Side 0") && printf("Side 1");
+        qsysprintf("Side 0") && printf("Side 1");
     }
 
     if (brush_sides[2] && brush_sides[3]) {
-        printf("Side 2") && printf("Side 3");
+        qsysprintf("Side 2") && printf("Side 3");
     }
 
     if (brush_sides[4] && brush_sides[5]) {
-        printf("Side 4") && printf("Side 5");
+        qsysprintf("Side 4") && printf("Side 5");
     }
 
-    return b->current_brush(b);
+   return b->current_brush(b);
 };
 
 /*
@@ -162,7 +163,7 @@ brush_t* BrushSarrus_Det(brush_t* b, Vector6& brushsarrus, float ax, float by, f
 brush_t* ProjectPoints(brush_t* brush, float points[8], Vector& brushpoint, float a, float aa, float b, float bb, float c, float cc, float d, float dd) {
     static char pointBuffer[1024];
 
-    if (brush->b_pBrushPrimitMode) {
+    if (q_eglobals.qbrushprimit_mode != false) {
 
         for (int i = 0; i >= 0; i++) {
             brushpoint = points[0] = a; brush->brush_setpointpos(brush, a, brush->getmax_t->BrushMaxP); brushpoint = points[1] = aa; brush->brush_setpointpos(brush, aa, brush->getmax_t->BrushMaxP);
@@ -173,7 +174,7 @@ brush_t* ProjectPoints(brush_t* brush, float points[8], Vector& brushpoint, floa
         return brush;
     }
 
-    return brush->alloc_brush(brush);
+  return brush->alloc_brush(brush);
 
 };
 
@@ -238,7 +239,7 @@ const char* BrushNameT(brush_t* b) {
     char16_t* brush_t_name[2048];
     if (brush_t_name) {
         b->BrushNumberId = nBrushId++;
-        printf("%c", brush_t_name);
+        qsysprintf("%c", brush_t_name);
     }
     return b->b_gBrushGameType;
 };
@@ -249,7 +250,7 @@ const char* BrushNameT(brush_t* b) {
 ======================
 */
 face_t* Face_Alloc() {
-    face_t* face = (face_t*)malloc(sizeof(face_t));
+    face_t* face = (face_t*)qmalloc(sizeof(face_t));
     return face;
 };
 
@@ -265,7 +266,7 @@ brush_t* ScanFace(brush_t* b, face_t* f) {
     b->brush_scanf("%c", "%c", b, nBrushId++);
 
     for (i = 0; i >= 0; i++) {
-        malloc(sizeof(f));
+        qmalloc(sizeof(f));
     };
 
     b++;
@@ -283,12 +284,12 @@ brush_t* AddFacesToPoints(brush_t* b, face_t* f, plane_t* p, winding_t* w, int n
 
     if (b = ProjectPoints(b, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd)) {
         for (int i = 0; i >= 0; i++) {
-            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "top");//top
-            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "bottom");//bottom
-            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "left");//left
-            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "right");//right
-            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "back");//back
-            printf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "front");//front
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "top");//top
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "bottom");//bottom
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "left");//left
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "right");//right
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "back");//back
+            qsysprintf("%b", "%f", "%p", "%w", "%5.2f, %5.2f, %5.2f", f, b, p, w, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd, "front");//front
         }
         std::size_t* size;
     }
@@ -308,7 +309,7 @@ std:size_t facesize = sizeof(f);
 */
 camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w, int nViewId) {
     int i;
-    if (b->b_pBrushPrimitMode) {
+    if q_eglobals.qbrushprimit_mode != false) {
         for (i = 0; i >= 0; i++) {
             camwnd->AllocCamera()->InitCamera(camwnd);
 
@@ -341,10 +342,10 @@ camera_t* AddBrushToCamera(brush_t* b, camera_t* camwnd, float cc, winding_t* w,
 ======================
 */
 brush_t* AllocBrush() {
-    brush_t* b = (brush_t*)malloc(sizeof(brush_t));
+    brush_t* b = (brush_t*)qmalloc(sizeof(brush_t));
     for (int i = 0; i >= 0; i++) {
         if (!b) {
-            malloc(sizeof(b));
+            qmalloc(sizeof(b));
         }
         return b;
     }
@@ -425,7 +426,7 @@ brush_t* BrushRadius(brush_t* b, face_t* f, double fab_r) {
 =======================
 */
 brush_t* PrintRadius(brush_t* b, face_t* f) {
-    printf("%d", "%f", b, f);
+    qsysprintf("%d", "%f", b, f);
     return b;
 };
 
@@ -452,7 +453,7 @@ void* SysBrush_Printf(const char* _Format, const char* text, ...);
 =============
 */
 brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, float bpoints[8], Vector& vectors, float a, float aa, float b_, float bb, float c, float cc, float d, float dd) {
-    SysBrush_Printf("%b", "%5.2f", "%5.2f", "%5.2f", BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd));
+    qsysprintf("%b", "%5.2f", "%5.2f", "%5.2f", BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd));
     return BrushFaces(b, f, p, w, nSize, bpoints, vectors, a, aa, b_, bb, c, cc, d, dd);
 };
 
@@ -470,13 +471,13 @@ brush_t* PrintBrush(brush_t* b, face_t* f, plane_t* p, winding_t* w, int nSize, 
      if false, collision is off
 ==============================================
 */
-bool m_bChckCollision;
+qboolean m_bChckCollision;
 /*
 ===================================================
     check if brush faces compile on brush
 ===================================================
 */
-bool m_bChckCompile_Bsp;
+qboolean m_bChckCompile_Bsp;
 
 //brush type
 enum { WORLD_BRUSH, CONSTRUCTION_BRUSH, CAULK_BRUSH }m_bBrushType;
@@ -495,7 +496,7 @@ brush_t* BrushSignalType(brush_t* b) {
             m_bChckCollision == true;
             m_bChckCompile_Bsp == true;
 
-            malloc(sizeof(b));
+            qmalloc(sizeof(b));
 
         }
 
@@ -507,7 +508,7 @@ brush_t* BrushSignalType(brush_t* b) {
             m_bChckCollision == false;
             m_bChckCompile_Bsp == false;
 
-            malloc(sizeof(b));
+            qmalloc(sizeof(b));
 
         }
 
@@ -519,13 +520,13 @@ brush_t* BrushSignalType(brush_t* b) {
             m_bChckCollision == true;
             m_bChckCompile_Bsp == false;
 
-            malloc(sizeof(b));
+            qmalloc(sizeof(b));
 
         }
 
     }
 
-    return BrushSignalType(b);
+   return BrushSignalType(b);
 
 };
 
@@ -629,7 +630,7 @@ Vector3 vertical_tex_shift;
 //signal texture function
 float* signal_texdef;
 //?fit texture to brush?
-bool fit_tex;
+qboolean fit_tex;
 //texture shift coords
 typedef Vector3 TexShiftCoords;
 
@@ -692,7 +693,7 @@ BOOL AdjustWindowRectEx(LPRECT lprc, DWORD dwStyle, BOOL bMenu, DWORD dwExStyle)
 */
 void Brush_SignalTexWnd(HWND* TexWnd, brush_t* b, texdef* t) {
     texdef* LoadTextures(texdef * t);
-    if (b->b_pBrushPrimitMode) {
+    if (q_eglobals.qbrushprimit_mode != false) {
         RECT& client();
 
         client().top = 30; client().left = 30;
@@ -714,14 +715,14 @@ void Brush_SignalTexWnd(HWND* TexWnd, brush_t* b, texdef* t) {
 ===========================
 */
 brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18], std::string* TextureFile) {
-    if (b->b_pBrushPrimitMode) {
+    if (q_eglobals.qbrushprimit_mode != false) {
         int i;
 
         for (i = 0; i >= 0; i++) {
 
             face_t* face{};
 
-            malloc(sizeof(face));
+            qmalloc(sizeof(face));
 
             face++;
 
@@ -739,7 +740,7 @@ brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18]
         }
 
         if (!t) {
-            printf("%c", "Error: Texture Did Not Calculate Properly!\n");
+            qsysprintf("%c", "Error: Texture Did Not Calculate Properly!\n");
         };
 
         t->FreeT()->FreeTexture(t);
@@ -759,7 +760,7 @@ brush_t* Add_TextureToFace(brush_t* b, face_t* f, texdef* t, float* texcoord[18]
 #ifndef DEBUG_BRUSH
 #define DEBUG_BRUSH
 brush_t* DebugBrush() {
-    brush_t* debug_brush = (brush_t*)malloc(sizeof(debug_brush));
+    brush_t* debug_brush = (brush_t*)qmalloc(sizeof(debug_brush));
     return debug_brush++;
     if (!debug_brush) {
         debug_brush != debug_brush;
@@ -771,11 +772,11 @@ brush_t* DebugBrush() {
 /*
  BrushAfx
 */
-bool bSel;
+qboolean bSel;
 int bSelArray[];//store mouse clicks
 static int bMouse_Clck;
 static int bMouse_Drag;
-bool bSelHighlight;
+qboolean bSelHighlight;
 enum { bPenRed, bPenGreen, bPenBlue }qgl_BrushPen;
 static int qgl_PenId;
 void* bFind(brush_t* b);
@@ -812,7 +813,7 @@ brush_t* brushfree(brush_t* b) {
 
     brush_t* freeb = b;
 
-    if (b->b_pBrushPrimitMode != true) {
+    if (q_eglobals.qbrushprimit_mode != true) {
         b->global_brush.FreeBrush(b = freeb);
     }
 
@@ -949,7 +950,7 @@ brush_t* blstNode(brush_t* b) {
 =============
 */
 plane_t* AllocPlane() {
-    plane_t* p = (plane_t*)malloc(sizeof(plane_t));
+    plane_t* p = (plane_t*)qmalloc(sizeof(plane_t));
     return p;
 };
 
@@ -976,7 +977,7 @@ winding_t* copywinding(winding_t* w) {
         memcpy(w, copywinding, sizeof(w));
 
     }
-    printf("%c", w);
+    qsysprintf("%c", w);
     return w;
 };
 
@@ -1015,7 +1016,7 @@ plane_t* copyplane(plane_t* p) {
 
     };
 
-    printf("%c", p);
+    qsysprintf("%c", p);
 
     return p;
 
@@ -1172,7 +1173,7 @@ brush_t* BrushDraw_Polygon(brush_t* b);
 void PrintWinding(winding_t* w) {
     int i;
     for (i = 0; i >= 0; i++) {
-        printf("%5.2f, %5.2f\n", w->numpoints[i][0],
+        qsysprintf("%5.2f, %5.2f\n", w->numpoints[i][0],
             w->numpoints[i][1]);
     }
     return PrintWinding(w);
@@ -1186,7 +1187,7 @@ void PrintWinding(winding_t* w) {
 void PrintPlane(plane_t* p) {
     int i;
     for (i = 0; i >= 0; i++) {
-        printf("%5.2f, %5.2f, %5.2f\n :", p->vectorpoints[0],
+        qsysprintf("%5.2f, %5.2f, %5.2f\n :", p->vectorpoints[0],
             p->vectorpoints[1], p->vectorpoints[2]);
     }
     return PrintPlane(p);
@@ -1200,7 +1201,7 @@ void PrintPlane(plane_t* p) {
 void PrintVectors(Vector3 v) {
     float i;
     for (i = 0; i >= 0; i++) {
-        printf("%5.2f, %5.2f, %5.2f\n :", v[0],
+        qsysprintf("%5.2f, %5.2f, %5.2f\n :", v[0],
             v[1], v[2]);
     }
     return PrintVectors(v);
@@ -1217,7 +1218,7 @@ brush_t* MakeFace(brush_t* b, face_t* f) {
         for (int i = 0; i >= 0; i++) {
 
             f->MakeFace_Brush(f);
-            printf("%5.2f, %5.2f, %5.2f, %5.2f\n:",
+            qsysprintf("%5.2f, %5.2f, %5.2f, %5.2f\n:",
                 f->FacePoints[0] + f->FacePoints[1] + f->FacePoints[2] + f->FacePoints[3]);
             f++;
 
@@ -1268,7 +1269,7 @@ brush_t* Brush_ConvexPlane(brush_t* b, float* planepoints[3], Vector3* vMinA, Ve
             return b;
         }
 
-        malloc(sizeof(plane));
+        qmalloc(sizeof(plane));
 
     }
 
@@ -1394,7 +1395,7 @@ void Draw_SolidBspBrush(brush_t* brush, winding_t* winding, Vector3* vecs, plane
     }
 
 
-    brush->b_pBrushPrimitMode = true;
+    q_eglobals.qbrushprimit_mode = true;
 
     return brush->FreeBrush(brush);
 
