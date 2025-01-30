@@ -12,7 +12,7 @@ Brush.cpp copyright @hunter manko
 #define BrushPointsProduct (a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
 #define BRUSH_PI 3.141256
 
-#define HIGHLIGHT_BRUSH (r, g, b)
+#define HIGHLIGHT_BRUSH (unsigned double r, unsigned double g, unsigned double b)
 
 #define BRUSH_ADD_INVERSE (a) ((a)[0] + (-a)[0] = -(a)[0] + (a)[1] = 0)
 #define BRUSH_MULTIPLY_INVERSE (a) ((a)[p] * 1/(a)[1] = 1/(a)[0] * (a)[1] = 1) (if((a)[0] != 0))
