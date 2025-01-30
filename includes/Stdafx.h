@@ -7,6 +7,9 @@
 typedef bool qboolean;
 typedef malloc qmalloc;
 
+void qsysprintf(const char * text, ...);//work as printf function
+void qsprintf(char * buffer, const char * format, int * id);//work as a sprintf function
+
 //globals
 class _q_eglobals{
 public:
