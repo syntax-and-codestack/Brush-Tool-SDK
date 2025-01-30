@@ -28,6 +28,7 @@ _q_eglobals& q_eglobals;
 extern MainFrame* g_pParentWnd;
 
 //Brush Name
+#ifdef BRUSH_GLOBALS
 const char* BrushName(brush_t* b) {
  static char BrushBuff[1024];
  b->BrushNumberId = nBrushId++;
@@ -36,6 +37,7 @@ const char* BrushName(brush_t* b) {
     }
   return BrushBuff;
 };
+#endif
 
 //Brush Path
 const char* qBrushPath(brush_t* b) {
