@@ -1,5 +1,5 @@
 /*Polar Brush Includes*/
-#include "afx.h
+#include "afx.h"
 #include "Stdafx.h"
 
 #define BRUSH_POLAR_VELOCITY (dr, dt, rr, r, 00) ((dr)[0] / (dt)[0] = (rr)[0] + ((r)[0](00)[0])
