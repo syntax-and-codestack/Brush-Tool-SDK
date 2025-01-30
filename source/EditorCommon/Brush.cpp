@@ -9,14 +9,15 @@ Brush.cpp copyright @hunter manko
 //Draw Bsp Brush: Line - 1239
 //Brush.cpp Total Lines - 1402
 
-//Brush Points Product *Verticies*
 #define BrushPointsProduct( a, aa, b, bb, c , cc, d, dd) ((a)[0] * (aa)[0] + (b)[0] * (bb)[0] + (c)[0] * (cc)[0] + (d)[0] * (dd)[0])
-//Brush Pi
 #define BRUSH_PI 3.141256
 
 #define HIGHLIGHT_BRUSH (r, g, b)
 
 #define BRUSH_ADD_INVERSE (a) ((a)[0] + (-a)[0] = -(a)[0] + (a)[1] = 0)
+#define BRUSH_MULTIPLY_INVERSE (a) ((a)[p] * 1/(a)[1] = 1/(a)[0] * (a)[1] = 1) (if((a)[0] != 0))
+#define BRUSH_DIFFERENCE (brush_t * brush, a, b) ((brush)[0] *= (a)[0] - (b)[0] = (a)[0] + ((-b)[0]))
+#define BRUSH_NONZERO (a, b) ((a)[0] / (b)[0] = (a)[0] * 1 / (b)[0]) (if((b)[0] != 0))
 
 //brush cleanup
 
