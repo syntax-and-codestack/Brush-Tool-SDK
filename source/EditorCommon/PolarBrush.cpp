@@ -113,4 +113,42 @@ void Signal_GridType(Grid * grid, int GridFormatId){
     }
 };
 
+//polar brush name
+#ifdef CSG_BRUSH
+const char * PolarBrushName(brush_t * b){
+static char cBuff[1024];
+b->BrushNumberId = p_rBrushId++;
+  if(q_epolarglobals.qbrushpolarprimit_mode){
+     sprintf(cBuff, "Brush %i", b->BrushNumberId);
+  }
+  return cBuff;
+};
+#endif
+
+#define POLAR_BRUSH_SIDES 32
+
+typedef struct polarside_t{
+ vec3_t polarside_vector;
+ float psidesize = sizeof(*polarside_t);
+ int side[32];
+ vec_t _tail;
+};
+
+typedef struct polarbrush_t{
+  vec3_t position;
+  vec3_t scale;
+  qboolean _selected;
+
+ void brushsides(polarbrush_t * brush, polarside_t * _side);
+};
+
+typedef struct polartexdef_t{
+  vec3_t texstretch;
+  float shift[2];
+  const char * pTextureName;
+
+ void polarbrushtexdef(polarbrush_t * brush, polartexdef_t * texdef, const char * pTextureName);
+};
+
+
 
