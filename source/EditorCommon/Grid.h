@@ -40,6 +40,11 @@ public:
     int          g_nGridColumns;
     int          g_nGridRows;
 
+    enum{
+     CVectorGrid = 0x0,
+     CPolarGrid = 1x1
+    }CGridLayout;
+
     Grid* g_nGetGridLines();
 
     bool GridZoomIn;
