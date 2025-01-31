@@ -74,6 +74,7 @@ vec3_t p_rPolarMaxCoord;
         2 
 */
 #define BrushDiameter (d, rad) ((rad)[0] = (d)[0] / 2)
+
 /*
   Brush Volume & Height
 
@@ -85,6 +86,14 @@ vec3_t p_rPolarMaxCoord;
 */
 #define BrushVH (r, V, h, pi) ((r)[0] = 2^ (V)[0] / (pi)[0] * (h)[0])
 
+/*
+  Brush Surface Area
+
+      SA - 2pi * h^2
+  r = --------------
+         2pi * h  
+*/
+#define BrushSurfaceArea (r, h, SA) ( (r)[0] = (SA)[0] - 2(pi)[0] * (h^2)[0] / 2(pi)[0] * (h)[0])
 
 
 
