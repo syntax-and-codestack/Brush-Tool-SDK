@@ -150,16 +150,17 @@ typedef struct polartexdef_t{
  void polarbrushtexdef(polarbrush_t * brush, polartexdef_t * texdef, const char * pTextureName);
 };
 
+//after found in tree free the polar brush
 const void PolarBrushTree(int sidecount){
 int i;
 polarbrush_t brush;
-polarside_t * sides; 
-  for( i = 0; brush; sides; brush++; sides++){
-    sides->side[i][0] *= sides->side[i][31];
-    free(sides[i++]);
+polarside_t * sides;   
+  for(i = 0; brush; sides; brush++; sides++){
+    sidecount = sides->side[i][0] *= sidecount = sides->side[i][31];
+     free(sides[i++]);
     brush[i].brushsides(brush, sides);
-    free(brush[i++]);
-  }
+     free(brush[i++]);
+  }  
 };
 
 
