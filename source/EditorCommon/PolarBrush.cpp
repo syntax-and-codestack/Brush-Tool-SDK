@@ -66,8 +66,24 @@ vec3_t p_rPolarMaxCoord;
 //divide polar vector
 #define PolarVectorDivide (x, y) ((x)[0] + (y)[0] / (x)[1] + (y)[1] / (x)[2] + (y)[2])
 
-//brush radius
+/*
+  Brush Diameter
+
+        d
+  rad = -
+        2 
+*/
 #define BrushDiameter (d, rad) ((rad)[0] = (d)[0] / 2)
+/*
+  Brush Volume & Height
+
+          _____________
+ r =   \ |      V
+        \|     ---
+             pi * h
+  
+*/
+#define BrushVH (r, V, h, pi) ((r)[0] = 2^ (V)[0] / (pi)[0] * (h)[0])
 
 
 
