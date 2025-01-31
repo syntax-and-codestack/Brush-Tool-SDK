@@ -1,6 +1,7 @@
 /*Polar Brush Includes*/
 #include "afx.h"
 #include "Stdafx.h"
+#include "Grid.h"
 
 /*
   Brush Polar Velocity * pv
@@ -102,6 +103,14 @@ public:
 
 _q_epolarglobals& q_epolarglobals;
 
-
+/*
+  instead of a standard vector grid it constructs to a polar grid
+     its a grid that drags along circular lines not square  
+*/
+void Signal_GridType(Grid * grid, int GridFormatId){
+    if(q_epolarglobals.qbrushpolarprimit_mode){
+      GridFormatId == grid->CPolarGrid;
+    }
+};
 
 
