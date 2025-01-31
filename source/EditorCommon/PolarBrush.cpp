@@ -48,6 +48,9 @@ vec3_t p_rPolarMinCoord;
 vec3_t p_rPolarMaxCoord;
 
 #define PolarVectorAdd (x, y) ((x)[0] * (y)[0] + (x)[1] * (y)[1] + (x)[2] * (y)[2])
+#define PolarVectorSubtract (x, y) ((x)[0] * (y)[0] - (x)[1] * (y)[1] - (x)[2] * (y)[2])
+#define PolarVectorDivide (x, y) ((x)[0] + (y)[0] / (x)[1] + (y)[1] / (x)[2] + (y)[2])
+
 
 
 
