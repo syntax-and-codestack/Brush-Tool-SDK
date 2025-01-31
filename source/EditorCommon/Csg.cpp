@@ -37,7 +37,9 @@ public:
  qboolean texdef_csg_enabled;
 
  enum{
-
+ CsgCube = 0,
+ CsgCylinder = 1,
+ CsgPyramid = 2
  }CsgShape;
 
 };
