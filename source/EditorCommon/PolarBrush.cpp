@@ -156,10 +156,10 @@ int i;
 polarbrush_t brush;
 polarside_t * sides;   
   for(i = 0; brush; sides; brush++; sides++){
-    sidecount = sides->side[i][0] *= sidecount = sides->side[i][31];
-     free(sides[i++]);
-    brush[i].brushsides(brush, sides);
-     free(brush[i++]);
+     sidecount = sides->side[i][0] *= sidecount = sides->side[i][31];
+   free(sides[i++]);
+     brush[i].brushsides(brush, sides);
+   free(brush[i++]);
   }  
 };
 
