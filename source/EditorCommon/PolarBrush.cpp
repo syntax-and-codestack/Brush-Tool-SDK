@@ -95,6 +95,13 @@ vec3_t p_rPolarMaxCoord;
 */
 #define BrushSurfaceArea (r, h, SA) ( (r)[0] = (SA)[0] - 2(pi)[0] * (h^2)[0] / 2(pi)[0] * (h)[0])
 
+class _q_epolarglobals{
+public:
+  qboolean qbrushpolarprimit_mode;
+};
+
+_q_epolarglobals& q_epolarglobals;
+
 
 
 
