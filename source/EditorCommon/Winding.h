@@ -32,7 +32,7 @@ public:
 	Vector3 windpoints;
 	float maxarpoints[8][5];
 
-	void* createnumpoints(float * w);
+	void* createnumpoints(int * w);
 
 	virtual void construct_winding_t(winding_t* winding) = 0;
 	enum { PLANE_CLOCKWISE = 0, PLANE_COUNTER_CLOCKWISE = 1 }WindingType;
