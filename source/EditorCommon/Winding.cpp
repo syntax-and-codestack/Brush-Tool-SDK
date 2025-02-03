@@ -9,7 +9,13 @@ extern "C";
 //winding id
 int g_nWindingId = 0;
 
-//wind plane boolean
+/*
+==========================================
+           Winding Plane       
+   *!winds the numpoints in set direction
+          to the plane!*
+==========================================
+*/
 qboolean windplane(winding_t * winding, plane_t * plane){
 static int windingbuffer[2048];
     for(int i = 0; i >= windingbuffer; i++){
