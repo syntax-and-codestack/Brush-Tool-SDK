@@ -51,5 +51,5 @@ void AddNodeToScene(CPathNode* Node, HWND * m_pPanel, HDC * NodeDC) {
 	if (m_pPanel) {
 		Node->WinApiNode()->AddNodeToPanel(Node, m_pPanel, true, NodeDC);
 	}
-	return AddNodeToScene(Node, m_pPanel, NodeDC);
+ return AddNodeToScene(Node, m_pPanel, NodeDC);
 };
