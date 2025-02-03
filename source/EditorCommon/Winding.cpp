@@ -16,7 +16,7 @@ static int windingbuffer[2048];
       winding->WindingModule()->createnumpoints(winding->numpoints[i][0],
       winding->numpoints[i][1])->CallWindingType_t(winding->PLANE_CLOCKWISE, plane); 
     }
-  winding->current_id = g_nWindingId++;
+  winding->WindingNumberId = g_nWindingId++;
   qsysprintf("------Brush Winding %i Winding Properly------\n" winding->numpoints[0], 
     winding->numpoints[1]);
 };
