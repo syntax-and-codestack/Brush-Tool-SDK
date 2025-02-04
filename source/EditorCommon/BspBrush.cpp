@@ -1,8 +1,6 @@
 #include "afx.h"
 
-/*
-	BspBrush.cpp copyright@ hunter manko
-*/
+//BspBrush.cpp copyright@ hunter manko
 
 //brush tools
 
@@ -29,20 +27,23 @@ const char* Bsp_CompileFile = "CompileMap.bat";
 
 
 /*
-==============
-	Add Brush To Bsp
-==============
+============================
+
+     Add Brush To Bsp
+        *!modify!*
+	
+============================
 */
 void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 	int c;
 
-	brush_t& brush_s();
+	brush_t& brush_s();//return to handle 
 
 		for (c = 0; brush; brush++) {
-			c_active_brushes = bsp->c_get_node->c_node = brush->brushnumber_t;
-				if (brush) {
-					brush->brushnumber_t++;
-				}
+		  c_active_brushes = bsp->c_get_node->c_node = brush->brushnumber_t;
+			if (brush) {
+				brush->brushnumber_t++;
+			}
 
 		}
 
@@ -59,7 +60,7 @@ void BspWindingSides(brush_t* brush, winding_t* w) {
 	int i;
 	for (i = 0; brush; brush++) {
 		brush->side[i][0];
-			brush->sides[i].winding;
+		 brush->sides[i].winding;
 	}
  free(brush->sides->winding);
 };
@@ -82,5 +83,5 @@ void Chop_BrushWinding(brush_t* brush, plane_t* plane) {
 	 void Chop(int split = 2);
     clip_brush_t != false;
 	}
-	c_nodes++;
+ c_nodes++;
 };
