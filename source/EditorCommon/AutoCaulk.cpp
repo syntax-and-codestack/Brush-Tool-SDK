@@ -8,7 +8,7 @@
 
 qboolean m_bCaulkBrush;
 
-int lstCaulkBrush = 0;
+int listCaulkBrush = 0;
 
 int CAULK_SURFACE_FLAGS;
 int SURFACE_CAULK_DETAIL >> CAULK_SURFACE_FLAGS >> 27;
@@ -27,7 +27,7 @@ brush_t * m_bBrushAlloc(){
 //print caulk brush to list if caulked
 const char * BrushCaulkedList(brush_t * caulkbrush){
 static char cBuff[1024];
-caulkbrush->BrushNumberId = lstCaulkBrush++;
+caulkbrush->BrushNumberId = listCaulkBrush++;
   if(m_bCaulkBrush = true){
     sprintf(cBuff, "Caulked Brush %i", caulkbrush->BrushNumberId);
   }
