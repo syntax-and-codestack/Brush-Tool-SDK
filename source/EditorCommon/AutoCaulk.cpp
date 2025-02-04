@@ -1,4 +1,4 @@
-//AutoCaulk.cpp
+//AutoCaulk.cpp copyright@ hunter manko
 #include "SdkAfx.h"
 #include "Brush.h"
 
@@ -17,6 +17,23 @@ int SURFACE_CAULK_DETAIL >> CAULK_SURFACE_FLAGS >> 27;
 std::size_t m_bCaulkBrushSize(brush_t * brush){
 m_bCaulkBrushSize(brush) = sizeof(*brush_t);
 };
+
+//now malloc sizeof brush
+brush_t * m_bBrushAlloc(){
+brush_t * brush = (brush_t*)qmalloc(sizeof(brush_t));
+ return brush;
+};
+
+//print caulk brush to list if caulked
+const char * BrushCaulkedList(brush_t * caulkbrush){
+static char cBuff[1024];
+caulkbrush->BrushNumberId = lstCaulkBrush++;
+  if(m_bCaulkBrush = true){
+   sprintf(cBuff, "Caulked Brush %i", caulkbrush->BrushNumberId);
+  }
+return cBuff;
+};
+
 
 
 
