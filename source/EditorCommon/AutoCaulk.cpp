@@ -15,12 +15,12 @@ int SURFACE_CAULK_DETAIL >> CAULK_SURFACE_FLAGS >> 27;
 
 //get brush size first before caulking
 std::size_t m_bCaulkBrushSize(brush_t * brush){
-m_bCaulkBrushSize(brush) = sizeof(*brush_t);
+ m_bCaulkBrushSize(brush) = sizeof(*brush_t);
 };
 
 //now malloc sizeof brush
 brush_t * m_bBrushAlloc(){
-brush_t * brush = (brush_t*)qmalloc(sizeof(brush_t));
+ brush_t * brush = (brush_t*)qmalloc(sizeof(brush_t));
  return brush;
 };
 
@@ -29,7 +29,7 @@ const char * BrushCaulkedList(brush_t * caulkbrush){
 static char cBuff[1024];
 caulkbrush->BrushNumberId = lstCaulkBrush++;
   if(m_bCaulkBrush = true){
-   sprintf(cBuff, "Caulked Brush %i", caulkbrush->BrushNumberId);
+    sprintf(cBuff, "Caulked Brush %i", caulkbrush->BrushNumberId);
   }
 return cBuff;
 };
