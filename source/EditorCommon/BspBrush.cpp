@@ -52,9 +52,12 @@ void Add_BrushToBsp(brush_t* brush, bsp_t * bsp) {
 };
 
 /*
-=============
-	Bsp Wind Sides
-=============
+==========================
+
+      Bsp Wind Sides
+   *!wind brush sides!*
+   
+==========================
 */
 void BspWindingSides(brush_t* brush, winding_t* w) {
 	int i;
@@ -67,11 +70,13 @@ void BspWindingSides(brush_t* brush, winding_t* w) {
 
 /*
 ==========================================
+
 	    Chop Brush Winding
 
 	 Split Brush Into Two Nodes
 
 	   *!-not finished code-!*
+    
 ==========================================
 */
 void Chop_BrushWinding(brush_t* brush, plane_t* plane) {
