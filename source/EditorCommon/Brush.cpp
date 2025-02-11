@@ -1,5 +1,5 @@
 /*Brush Includes*/
-#include "afx.h"
+#include "SdkAfx.h"
 #include "Stdafx.h"
 
 /*
