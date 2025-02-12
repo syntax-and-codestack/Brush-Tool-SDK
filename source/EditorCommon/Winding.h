@@ -1,10 +1,7 @@
-#pragma once
-/*Winding.h*/
 #ifndef WINDING_H 
 #define WINDING_H
 
 #include <list>
-#include "Windows.h"
 #include "SdkVector.h"
 #include "Plane.h"
 #include <string>

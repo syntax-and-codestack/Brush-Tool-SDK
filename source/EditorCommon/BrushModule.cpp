@@ -1,5 +1,9 @@
 /*BrushModule.cpp*/
+#include <string>
+#include "ibrush.h"
 #include "Brush.h"
+#include <algorithm>
+#include <set>
 
 /*
 BrushModule.cpp copyright @hunter manko
@@ -8,56 +12,40 @@ BrushModule.cpp copyright @hunter manko
 /*
 	BrushModule.cpp:
 	
-		Handles Brush Info	
-
+		Creates Editor Brushes
 */
+#define discard NULL 000
 
-std::FILE* BrushModule_File;
+std::string BrushCreatorName;
 
-const void Module_BrushFile(brush_t * b) {
-	b++;
-	 BrushModule_File->_Placeholder = b;
-	 return Module_BrushFile(b);
-};
-
-void Brush_ModuleSignal(brush_t* b) {
-
-		if (b->b_pBrushPrimitMode) {
-
-			auto& CreateBrushModule(b);
-
-			b->BrushMaxP++;
-			b->BrushMinP++;
-		}
-
-		if (b) {
-			b++;
-			free(b);
-		}
-
-			int i;
-
-		for (i = 0; i >= 0; i++) {
-			auto& CreateBrushModule();
-		}
-
-	return b->FreeBrush(b);
-
-
-};
-
-class BrushModule {
+class BrushCreator{
 public:
+ BrushCreator();
+  ~BrushCreator();
 
-	BrushModule();
-	virtual ~BrushModule();
+  std::string BrushType;
+  std::set<BrushCreator>CreateBrush;
+  std::set<brush_t>B;
+  std::set<_IBrushTable_>IBrushModule;
 
-		const char BrushModuleKey;
-		const char BrushModuleValue;
+  bool DebugBrush(brush_t * b);
 
-		BrushModule& PrimitBrushModule();
+  struct BrushTable{
+   std::string iKey;
+   std::string iValue;
+  };
 
-		const void MallocBrushModuleKey(brush_t* b, BrushModule* bmodule);
-		const void MallocBrushModuleValue(brush_t* b, BrushModule* bmodule);
+  Vector3 BrushMaxCoord;
+  Vector3 BrushMinCoord;
 
+  const void CreateBrushMax( float x, float y, float z ){
+    CreateVector3( BrushMaxCoord, x, y, z );
+    std::set<Vector3>BrushMax; BrushMax.begin(), BrushMax.end();
+  };
+
+  const void CreateBrushMin( float x, float y, float z ){
+	CreateVector3( BrushMinCoord, x, y, z );
+	std::set<Vector3>BrushMin; BrushMin.begin(), BrushMin.end();
+  };
+  
 };
